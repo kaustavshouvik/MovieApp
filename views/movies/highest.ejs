@@ -1,11 +1,21 @@
 <%- include("../partials/header") %>
 <div class="container my-5">
-        <ol>
-            <% movies.forEach(function(movie){ %>
-                <h2><li><a href="/movies/<%= movie._id %>"><%= movie.name %></a> - <%= movie.ratingValue %>[<%= movie.ratingCount %>]</li></h2>
-            <% }); %>
-        </ol>
-        
+    <table class="table table-striped">
+        <thead class="bg-dark text-light">
+            <th style="width: 100px;"><h4>#</h4></th>
+            <th style="width: 900px;"><h4>Movie Title</h4></th>
+            <th style="width: 200px;"><h4>Rating</h4></th>
+        </thead>
+        <tbody>
+            <% for(i=0; i<movies.length; i++){ %>
+                <tr>
+                    <td><h4><%= i + 1 %></h4></td>
+                    <td><h4><a href="/movies/<%= movies[i]._id %>"><%= movies[i].name %></a></h4></td>
+                    <td><h4><i style="color: red;" class="fa fa-star pr-1"></i><%= movies[i].ratingValue %>[<%= movies[i].ratingCount %>]</h4></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
 </div>
 
 <%- include("../partials/footer") %>

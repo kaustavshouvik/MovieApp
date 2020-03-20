@@ -1,11 +1,16 @@
 const mongoose = require("mongoose");
 
 var movieSchema = {
-    name: String,
+    name: {type: String, required: true},
     poster: String,
     image: String,
     genres: [String],
-    actors: [String],
+    actors: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Actor"
+        }
+    ],
     plot: String,
     boxoffice: {
         budget: String,
@@ -20,6 +25,10 @@ var movieSchema = {
     },
     ratingValue: String,
     ratingCount: Number,
+    primeLink: String,
+    netflixLink: String,
+    hotstarLink: String,
+    youtubeLink: String,
     ratings: [
         {
             type: mongoose.Schema.Types.ObjectId,

@@ -9,17 +9,13 @@
                 <a class="list-group-item list-group-item-action" href="#">FULL-PLOT</a>
                 <a class="list-group-item list-group-item-action active" href="/movies/<%= movie._id %>/cast">CAST</a>
                 <a class="list-group-item list-group-item-action" href="#">BOX OFFICE</a>
-                <a class="list-group-item list-group-item-action" href="#">WHERE TO WATCH</a>
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/stream">WHERE TO WATCH</a>
             </div>
         </div>
         <div class="col col-md-9 card p-3">
             <h1 class="display-4"><%= movie.name.toUpperCase() %></h1>
-            <% actors.forEach((actor)=>{ %>
-                <% actor.movies.forEach((actorMovie)=>{ %>
-                    <% if(actorMovie === movie.name){ %>
-                        <p><a href="/actors/<%= actor._id %>"><%= actor.name %></a></p>
-                    <% } %>
-                <% }); %> 
+            <% movie.actors.forEach((actor)=>{ %>
+                <p><a href="/actors/<%= actor._id %>"><%= actor.name %></a></p>
             <% }); %> 
         </div>
     </div>

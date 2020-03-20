@@ -5,7 +5,12 @@ var actorSchema = {
     image: String,
     dob: Date,
     bio: String,
-    movies: [String],
+    movies: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Movie"
+        }
+    ],
     upcomingMovies: [String]
 }
 

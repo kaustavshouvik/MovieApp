@@ -1,18 +1,21 @@
 <%- include("../partials/header") %>
 <div class="container my-5">
-    <h1>ALL ACTORS</h1>
+    <div class="d-flex justify-content-between align-items-start mb-3">
+        <h1>ALL ACTORS</h1>
+        <a class="btn btn-primary" href="/actors/new">Add actors</a>
+    </div>
     <div class="row">
         <% actors.forEach((actor)=>{ %>
             <div class="col col-lg-12">
                 <div class="card mb-3">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <img src="<%= actor.image %> " class="card-img"  style="width: 200px;">
                         </div>
-                        <div class="col-md-8">
+                        <div class="pl-4 col-md-10">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="/actors/<%= actor._id %>"><%= actor.name %></a></h5>
-                                <p class="card-text"><%= actor.bio %> </p>
+                                <p class="card-text text-justify"><%= actor.bio %> </p>
                                 <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                             </div>
                         </div>
