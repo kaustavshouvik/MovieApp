@@ -37,9 +37,13 @@
                 </form>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Signup</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Signout</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                <% if(!currentUser){ %>
+                    <li class="nav-item"><a class="nav-link" href="/register">Signup</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <% } else { %>
+                    <li class="nav-item"><a class="nav-link" href="#">Signed In As <%= currentUser.username %></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                <% } %>
             </ul>
         </div>
     </nav>

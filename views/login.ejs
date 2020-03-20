@@ -1,0 +1,30 @@
+<%- include("partials/header") %>
+
+<div class="container my-5">
+    <h1 class="display-4 text-center">LOGIN HERE!</h1>
+    <div class="row mt-5">
+        <div class="col col-lg-2">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="/register">Register</a></li>
+                <li class="list-group-item"><a href="/login">Login</a></li>
+                <li class="list-group-item"><a href="/logout">Logout</a></li>
+                <li class="list-group-item"><a href="/dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+        <div class="col col-lg-10">
+            <form class="mx-5" action="/login" method="POST">
+                <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+                </div>
+                <button class="btn btn-large btn-info">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

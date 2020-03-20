@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <div class="row" style="margin-top: 100px;">
+        <div class="col col-lg-3">
+            <ul class="list-group">
+                <li><a class="list-group-item list-group-item-action active" href="#">ABOUT</a></li>
+                <li><a class="list-group-item list-group-item-action" href="#">FULL-PLOT</a></li>
+                <li><a class="list-group-item list-group-item-action" href="#">CAST</a></li>
+                <li><a class="list-group-item list-group-item-action" href="#">BOX OFFICE</a></li>
+                <li><a class="list-group-item list-group-item-action" href="#">WHERE TO WATCH</a></li>
+            </ul>
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-8">
+            <h1 class="display-4"><%= movie.name.toUpperCase() %></h1>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

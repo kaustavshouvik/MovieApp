@@ -1,39 +1,48 @@
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
-var methodOverride = require("method-override");
+const express           = require("express"),
+    bodyParser          = require("body-parser"),
+    mongoose            = require("mongoose"),
+    passport            = require("passport"),
+    LocalStrategy       = require("passport-local"),
+    methodOverride      = require("method-override"),
+    User                = require("./models/user"),
+    Rating              = require("./models/rating"),
+    Movie               = require("./models/movie");
+
+mongoose.connect("mongodb://localhost/movieappv5", {useNewUrlParser: true, useUnifiedTopology: true});
+
+const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("cssFiles"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 
-mongoose.connect("mongodb://localhost/movie_app", {useNewUrlParser: true, useUnifiedTopology: true});
 
-var Rating = require("./models/rating");
+// =====================================================
+//      AUTHENTICATION SETUP
+app.use(require("express-session")({
+    secret: "Bond, James Bond",
+    resave: false,
+    saveUninitialized: false,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+//========================================================
 
-
-var movieSchema = {
-    name: String,
-    image: String,
-    ratingValue: String,
-    ratings: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Rating"
-        }
-    ]
-}
-var Movie = mongoose.model("movie", movieSchema);
-
+app.use((req, res, next)=>{
+    res.locals.currentUser = req.user;
+    next();
+});
 
 app.get("/", function(req, res){
     res.render("home")
 });
 
 //RATING A MOVIE
-app.post("/movies/:id/rating", function(req, res){
+app.post("/movies/:id/rating", isLoggedIn, function(req, res){
     
     var rateIt = {
         rating: req.body.rating 
@@ -70,8 +79,9 @@ function movieFound(str){
             });
             count = foundMovie.ratings.length;
             total = total/count;
-            rateMovie(total, foundMovie.name);
-            console.log(total);
+            var n = total.toFixed(1);
+            rateMovie(n, foundMovie.name);
+            console.log(n);
         }
     });
 }
@@ -86,7 +96,7 @@ app.get("/movies", function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("movies", {movies: movies});
+            res.render("movies/movies", {movies: movies});
         }
     });
 });
@@ -121,12 +131,77 @@ app.delete("/movies/:id", function(req, res){
     })
 });
 
-
-
-
-app.get("/movies/new", function(req, res){
-    res.render("new");
+app.get("/movies/new", isLoggedIn, function(req, res){
+    res.render("movies/new");
 });
+
+app.get("/movies/:name", isLoggedIn, (req, res)=>{
+    var name = req.params.name;
+
+    Movie.findOne({name: name}, (err, foundM)=>{
+        if(err){
+            console.log(err);
+            res.redirect("/");
+        }
+        else{
+            res.render("movies/show", {movie: foundM});
+            console.log(foundM);
+        }
+    });
+});
+
+
+//=============================================================================
+//      AUTHENTICATION ROUTES
+
+app.get("/register", (req, res)=>{
+    res.render("register");
+});
+
+app.post("/register", (req, res)=>{
+    var newUser = new User({
+        name: req.body.name,
+        dob: req.body.dob,
+        email: req.body.email,
+        phone: req.body.phone,
+        username: req.body.username
+    });
+
+    User.register(newUser, req.body.password, (err, user)=>{
+        if(err){
+            console.log(err);
+            return res.redirect("/");
+        }
+        passport.authenticate("local")(req, res, function(){
+            res.redirect("/movies");
+            console.log(user);
+        });
+    });
+});
+
+app.get("/login", (req, res)=>{
+    res.render("login");
+});
+
+app.post("/login", passport.authenticate("local", {
+    successRedirect: "/movies",
+    failureRedirect: "/login"
+}), (req, res)=>{ });
+
+app.get("/logout", (req, res)=>{
+    req.logOut();
+    res.redirect("/movies");
+});
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
+
+//=============================================================================
+
 
 app.listen(3000, function(req, res){
     console.log("SERVER STARTED AT PORT 3000!");
