@@ -8,7 +8,7 @@ const express           = require("express"),
     Rating              = require("./models/rating"),
     Movie               = require("./models/movie");
 
-mongoose.connect("mongodb://localhost/movieappv7", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost/movieappv0", {useNewUrlParser: true, useUnifiedTopology: true});
 
 const app = express();
 
@@ -31,6 +31,46 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 //========================================================
+
+//========================================================
+//USER DEFINED FUNCTIONS
+function title(name){
+    name = name.trim();
+    name = name.replace(/\s\s+/g, ' ');
+    name = name.toLowerCase();
+    newName = name.split("");
+    newName[0] = newName[0].toUpperCase();
+    for(i=1; i<newName.length; i++){
+        if(newName[i-1] === ' '){
+            newName[i] = newName[i].toUpperCase();
+        }
+    }
+    name = newName.join("");
+    return name;
+}
+
+function rateMovie(movieId){
+    Rating.find({movie: movieId}, (err, foundR)=>{
+        if(err){
+            console.log(err);
+        } else {
+            var total = 0, count = foundR.length;
+            foundR.forEach((rating)=>{
+                total = total + Number(rating.rating);
+            });
+            total = total/count;
+            total = total.toFixed(1);
+            Movie.updateOne({_id: movieId}, {$set: {ratingValue: total}}, function(err, updated){
+                if(err){
+                    console.log(err);
+                } else {
+                    console.log(updated);
+                }
+            });
+        }
+    });
+}
+//==========================================================
 
 app.use((req, res, next)=>{
     res.locals.currentUser = req.user;
@@ -60,11 +100,13 @@ app.get("/movies/new", isLoggedIn, function(req, res){
 
 //ADD A MOVIE TO THE DATABASE
 app.post("/movies", isLoggedIn, function(req, res){
+    var genre = req.body.genre.trim();
+    genre = genre.split(", ");
     var newMovie = {
-        name: req.body.name,
+        name: title(req.body.name),
         poster: req.body.poster,
         image: req.body.image,
-        genre: req.body.genre,
+        genres: genre,
         plot: req.body.plot,
         // boxoffice: {
         //     budget: req.body.budget,
@@ -99,17 +141,17 @@ app.post("/movies/:id/rating", isLoggedIn, function(req, res){
         movie: req.params.id
     };
 
-    Rating.create(rateIt, function(err, data){
+    Rating.create(rateIt, function(err, newRating){
         Movie.findById(req.params.id, function(err, foundMovie){
             if(err){
                 console.log(err);
             } else {
-                foundMovie.ratings.push(data);
-                foundMovie.save(function(err, data2){
+                foundMovie.ratings.push(newRating);
+                foundMovie.save(function(err, savedMovie){
                     if(err){
                         console.log(er);
                     } else {
-                        movieFound(data2.name);
+                        rateMovie(newRating.movie);
                         res.redirect("/movies");
                     }
                 });
@@ -118,27 +160,6 @@ app.post("/movies/:id/rating", isLoggedIn, function(req, res){
     });
 });
 
-function movieFound(str){
-    var total = 0, count = 0;
-    Movie.findOne({name: str}).populate({ path: 'ratings', model: Rating }).exec(function(err, foundMovie){
-        if(err){
-            console.log(err);
-        } else {
-            foundMovie.ratings.forEach(function(rating){
-                total = total + Number(rating.rating);
-            });
-            count = foundMovie.ratings.length;
-            total = total/count;
-            var n = total.toFixed(1);
-            rateMovie(n, foundMovie.name);
-        }
-    });
-}
-function rateMovie(num, str){
-    Movie.updateOne({name: str}, {$set: {ratingValue: num}}, function(err, found){
-        console.log(found);
-    });
-}
 
 //DELETE A MOVIE FROM THE DATABASE ALONG WITH THEIR RATINGS FROM RATING MODEL
 app.delete("/movies/:id", isLoggedIn, function(req, res){
@@ -177,15 +198,31 @@ app.get("/movies/:id/reviews", (req, res)=>{
                 if(err){
                     console.log(err);
                 } else {
-                    console.log(rateOb);
                     res.render("movies/reviews", {movie: found, rateOb: rateOb});
                 }
             });
         }
     });
 });
+//==================================================================================
+//SEARCHING FOR A MOVIE
+app.post("/search", (req, res)=>{
+    name = title(req.body.search);
+    Movie.findOne({name: name}, (err, foundMovie)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(!foundMovie){
+                return res.redirect("/movies");
+            }
+            res.redirect("/movies/" + foundMovie._id);
+        }
+    });
+});
+//===================================================================================
 
-//============================================================================
+//===================================================================================
 //RECOMMENDATION ROUTES
 
 app.get("/recommendation", (req, res)=>{

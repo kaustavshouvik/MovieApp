@@ -4,7 +4,7 @@ var movieSchema = {
     name: String,
     poster: String,
     image: String,
-    genre: String,
+    genres: [String],
     // actors:[],
     plot: String,
     boxoffice: {
