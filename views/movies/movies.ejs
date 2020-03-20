@@ -12,22 +12,23 @@
                         <h3><%= movie.name.toUpperCase() %></h3>
                     </div>
                     <div class="card-img-top">
-                        <img style="width: 100%; height: 500px; " src="<%= movie.image %>">
+                        <img style="width: 100%; height: 500px; " src="<%= movie.poster %>">
                     </div>
                     <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
                         <button class="btn btn-primary btn-block">Delete It</button>
                     </form>
                     <form action="/movies/<%= movie._id %>/rating" method="POST">
-                        <input type="number" name="rating" placeholder="rating">
+                        <input type="number" max="10" min="0" name="rating" placeholder="rating" required>
                         <button class="btn btn-primary btn-block">Rate it</button>
                     </form>
                     <div>
                         <h3><%= movie.ratingValue %></h3>
                     </div>
-                    <a href="/movies/<%= movie.name %>" class="btn btn-block btn-lg btn-info">MOREEEEE!</a>
+                    <a href="/movies/<%= movie._id %>" class="btn btn-block btn-lg btn-info">MOREEEEE!</a>
                 </div>
             </div>
         <% }); %>
     </div>
 </div>
+
 <%- include("../partials/footer") %>

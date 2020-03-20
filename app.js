@@ -45,7 +45,12 @@ app.get("/", function(req, res){
 app.post("/movies/:id/rating", isLoggedIn, function(req, res){
     
     var rateIt = {
-        rating: req.body.rating 
+        rating: req.body.rating,
+        reviews: '0',
+        ratedBy:{
+            id: req.user._id,
+            username: req.user.username
+        }
     };
 
     Rating.create(rateIt, function(err, data){
@@ -58,7 +63,6 @@ app.post("/movies/:id/rating", isLoggedIn, function(req, res){
                     if(err){
                         console.log(er);
                     } else {
-                        console.log(data2);
                         movieFound(data2.name);
                         res.redirect("/movies");
                     }
@@ -67,13 +71,13 @@ app.post("/movies/:id/rating", isLoggedIn, function(req, res){
         });
     });
 });
+
 function movieFound(str){
     var total = 0, count = 0;
     Movie.findOne({name: str}).populate({ path: 'ratings', model: Rating }).exec(function(err, foundMovie){
         if(err){
             console.log(err);
         } else {
-            console.log(foundMovie);
             foundMovie.ratings.forEach(function(rating){
                 total = total + Number(rating.rating);
             });
@@ -81,7 +85,6 @@ function movieFound(str){
             total = total/count;
             var n = total.toFixed(1);
             rateMovie(n, foundMovie.name);
-            console.log(n);
         }
     });
 }
@@ -102,26 +105,36 @@ app.get("/movies", function(req, res){
 });
 
 app.post("/movies", function(req, res){
-    var name = req.body.name;
-    var image = req.body.image;
 
     var newMovie = {
-        name: name,
-        image: image,
-        ratingValue: "0"
+        name: req.body.name,
+        poster: req.body.poster,
+        image: req.body.image,
+        genre: req.body.genre,
+        plot: req.body.plot,
+        boxoffice: {
+            budget: req.body.budget,
+            profit: req.body.profit
+        },
+        addedBy:{
+            id: req.user._id,
+            username: req.user.username
+        },
+        ratingValue: '0',
     }
 
     Movie.create(newMovie, function(err, movie){
         if(err){
             console.log(err);
         } else {
-            console.log(movie);
+            console.log(req.user);           
+            console.log(movie);              
             res.redirect("/movies");
         }
     });
 });
 
-app.delete("/movies/:id", function(req, res){
+app.delete("/movies/:id", isLoggedIn, function(req, res){
     Movie.findByIdAndDelete(req.params.id, function(err){
         if(err){
             res.send("ERROR HAPPENED!");
@@ -135,20 +148,43 @@ app.get("/movies/new", isLoggedIn, function(req, res){
     res.render("movies/new");
 });
 
-app.get("/movies/:name", isLoggedIn, (req, res)=>{
-    var name = req.params.name;
+app.get("/movies/:id", isLoggedIn, (req, res)=>{
+    var name = req.params.id;
 
-    Movie.findOne({name: name}, (err, foundM)=>{
+    Movie.findById(name, (err, foundM)=>{
         if(err){
             console.log(err);
             res.redirect("/");
         }
         else{
-            res.render("movies/show", {movie: foundM});
             console.log(foundM);
+            res.render("movies/show", {movie: foundM});
         }
     });
 });
+
+
+app.get("/movies/:id/reviews", (req, res)=>{
+
+    Movie.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        } else {
+            console.log(found);
+            Rating.find({}, (err, rateOb)=>{
+                if(err){
+                    console.log(err);
+                } else {
+                    res.render("movies/reviews", {movie: found, rateOb: rateOb});
+                }
+            });
+        }
+    });
+});
+
+
+
+
 
 
 //=============================================================================

@@ -1,0 +1,49 @@
+<%- include("../partials/header") %>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col col-md-3">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>">ABOUT</a>
+                <a class="list-group-item list-group-item-action active" href="/movies/<%= movie._id %>/reviews">REVIEWS</a>
+                <a class="list-group-item list-group-item-action" href="#">FULL-PLOT</a>
+                <a class="list-group-item list-group-item-action" href="#">CAST</a>
+                <a class="list-group-item list-group-item-action" href="#">BOX OFFICE</a>
+                <a class="list-group-item list-group-item-action" href="#">WHERE TO WATCH</a>
+            </div>
+        </div>
+        <div class="col col-md-9">
+            <h3><%= movie.name.toUpperCase() %> - Rating: <%= movie.ratingValue %></h3>
+            <div class="card p-3">
+                <form>
+                    <div class="form-group my-2">
+                        <label for="rating">Rate Movie:</label>
+                        <input type="number" max="10" min="0" class="form-control" id="rating" required>
+                    </div>
+                    <button class="btn btn-primary btn-md">Submit</button>
+                </form>
+                <form>
+                    <div class="form-group my-2">
+                        <label for="review">Review Movie</label>
+                        <textarea rows="4" class="form-control" id="review"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-md">Submit</button>
+                </form>
+                <!-- Reviews Array with specific revies by various users -->
+            </div>
+            <div>
+                <ol>
+                    <% for(var i=0; i<rateOb.length; i++){ %>
+                        <% for(var j=0; j<movie.ratings.length; j++){ %>
+                            <% if(String(rateOb[i]._id) === String(movie.ratings[j])){ %>
+                                <li><a href="#"><%= rateOb[i].ratedBy.username %></a> - <%= rateOb[i].rating %></li>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

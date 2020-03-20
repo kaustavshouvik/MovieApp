@@ -1,13 +1,51 @@
 <%- include("partials/header") %>
 
 <div class="container">
-    <div class="jumbotron" style="margin-top: 30px;">
+    <div class="jumbotron my-3">
         <div class="container text-center">
             <h1 class="display-4">MOVIE PICKER</h1>
-            <h3>I KNOW YOU'RE OUT MOVIES TO WATCH. WE'LL HELP!</h3>
+            <h3>I KNOW YOU'RE OUT OF MOVIES TO WATCH. WE'LL HELP!</h3>
             <a class="btn btn-primary" href="/movies">VIEW ALL MOVIES</a>
-            <a class="btn btn-primary" href="/movies">VIEW RATINGS</a>
+            <a class="btn btn-primary" href="/recommendation">RECOMMENDATION</a>
         </div>
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.hdwallpapers.in/download/captain_marvel_tony_stark_in_avengers_endgame-1920x1080.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Captain Marvel</h5>
+                <p>Amidst a mission, Vers, a Kree warrior, gets separated from her team and is stranded on Earth. However, her life takes an unusual turn after she teams up with Fury, a S.H.I.E.L.D. agent.</p>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <img src="https://www.hdwallpapers.in/download/hugh_jackman_logan_2017_4k-1920x1080.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Logan</h5>
+                <p>Logan comes out of retirement to escort a young mutant named Laura to a safe place. He meets with other mutants, who run from an evil corporation that has been experimenting with them, along the way.</p>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <img src="https://www.hdwallpapers.in/download/batman_cyberpunk_art-1920x1080.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Batman</h5>
+                <p>The dark knigh of Gotham city possessing genius-level intellect, is a peerless martial artist and his vast wealth affords him an extraordinary arsenal of weaponry and equipment.</p>
+            </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </div>
 
