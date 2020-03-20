@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+<div class="container">
+    <div class="jumbotron" style="margin: 30px 0;">
+        <h1 class="text-center">VIEW MOVIES ALONG WITH RATINGS</h1>
+        <a class="btn btn-primary" href="/movies/new">Add movies</a>
+    </div>
+    <div class="row">
+        <% movies.forEach(function(movie){ %>
+            <div class="col-lg-4 my-3">
+                <div class="card" style="width: 18rem;">
+                    <img id="img2" src="<%= movie.image %>" class="img-fluid">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= movie.name.toUpperCase() %></h5>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<%- include("partials/footer") %>
