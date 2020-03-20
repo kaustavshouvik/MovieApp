@@ -6,11 +6,11 @@
     </div>
     <div class="row">
         <% movies.forEach(function(movie){ %>
-            <div class="col-lg-4 my-3">
+            <div class="col-lg-4">
                 <div class="card" style="width: 18rem;">
-                    <img id="img2" src="<%= movie.image %>" class="img-fluid">
+                    <img src="<%= movie.image %>" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title"><%= movie.name.toUpperCase() %></h5>
+                        <h5 class="card-title"><%= movie.name %></h5>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
