@@ -19,6 +19,7 @@ var movieSchema = {
         username: String
     },
     ratingValue: String,
+    ratingCount: Number,
     ratings: [
         {
             type: mongoose.Schema.Types.ObjectId,

@@ -2,7 +2,9 @@
 <div class="container my-5">
     <div class="d-flex align-items-start justify-content-between">
         <div>
-            <h1><%= actor.name %></h1>
+            <h1 class="display-4"><%= actor.name %></h1>
+            <div style="text-align: justify;" class="lead mr-5"><%= actor.bio %></div><hr>
+            <h1>Movies:</h1> 
             <% actor.movies.forEach((actorMovie)=>{ %>
                 <% movies.forEach((movie)=>{ %>
                     <% if(actorMovie === movie.name){ %>
@@ -15,7 +17,7 @@
             <img src="<%= actor.image %>" style="width: 300px; height: 100%;">
             <h4>Born: <%= actor.dob.toDateString() %> </h4>
         </div>
-    </div> 
+    </div>
 </div>
 
 <%- include("../partials/footer") %>

@@ -1,0 +1,11 @@
+<%- include("../partials/header") %>
+<div class="container my-5">
+        <ol>
+            <% movies.forEach(function(movie){ %>
+                <h2><li><a href="/movies/<%= movie._id %>"><%= movie.name %></a> - <%= movie.ratingValue %>[<%= movie.ratingCount %>]</li></h2>
+            <% }); %>
+        </ol>
+        
+</div>
+
+<%- include("../partials/footer") %>
