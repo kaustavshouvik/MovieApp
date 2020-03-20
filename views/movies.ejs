@@ -1,18 +1,22 @@
 <%- include("partials/header") %>
 <div class="container">
-    <div class="jumbotron" style="margin: 30px 0;">
+    <div class="jumbotron text-center" style="margin: 30px 0;">
         <h1 class="text-center">VIEW MOVIES ALONG WITH RATINGS</h1>
         <a class="btn btn-primary" href="/movies/new">Add movies</a>
     </div>
-    <div class="row">
+    <div class="row my-3">
         <% movies.forEach(function(movie){ %>
             <div class="col-lg-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="<%= movie.image %>" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= movie.name %></h5>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="ui card fluid">
+                    <div class="ui rounded image">
+                        <img src="<%= movie.image %>">
                     </div>
+                    <div class="content">
+                        <a class="header"><%= movie.name.toUpperCase() %></a>
+                    </div>
+                    <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-primary btn-block">Delete It</button>
+                    </form>
                 </div>
             </div>
         <% }); %>

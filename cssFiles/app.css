@@ -6,6 +6,6 @@
     margin: 50px 200px;
 }
 
-/* #img2{
-    
-} */
+div.menu.inverted{
+    border-radius: 0%;
+}

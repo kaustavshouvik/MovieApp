@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+var methodOverride = require("method-override");
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
@@ -10,6 +11,7 @@ mongoose.set('useUnifiedTopology', true);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("cssFiles"));
 app.set("view engine", "ejs");
+app.use(methodOverride("_method"));
 
 mongoose.connect("mongodb://localhost/movie_app");
 
@@ -51,6 +53,16 @@ app.post("/movies", function(req, res){
             res.redirect("/movies");
         }
     });
+});
+
+app.delete("/movies/:id", function(req, res){
+    Movie.findByIdAndDelete(req.params.id, function(err){
+        if(err){
+            res.send("ERROR HAPPENED!");
+        } else {
+            res.redirect("/movies");
+        }
+    })
 });
 
 app.get("/movies/new", function(req, res){
