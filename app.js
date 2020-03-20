@@ -6,6 +6,7 @@ const express           = require("express"),
     methodOverride      = require("method-override"),
     User                = require("./models/user"),
     Rating              = require("./models/rating"),
+    Actor               = require("./models/actor"),
     Movie               = require("./models/movie");
 
 mongoose.connect("mongodb://localhost/movieappv0", {useNewUrlParser: true, useUnifiedTopology: true});
@@ -102,12 +103,15 @@ app.get("/movies/new", isLoggedIn, function(req, res){
 app.post("/movies", isLoggedIn, function(req, res){
     var genre = req.body.genre.trim();
     genre = genre.split(", ");
+    var actors = title(req.body.cast);
+    actors = actors.split(", ");
     var newMovie = {
         name: title(req.body.name),
         poster: req.body.poster,
         image: req.body.image,
         genres: genre,
         plot: req.body.plot,
+        actors: actors,
         // boxoffice: {
         //     budget: req.body.budget,
         //     profit: req.body.profit
@@ -116,17 +120,42 @@ app.post("/movies", isLoggedIn, function(req, res){
             id: req.user._id,
             username: req.user.username
         },
-        ratingValue: '0',
+        ratingValue: 'Unrated',
     }
 
     Movie.create(newMovie, function(err, movie){
         if(err){
             console.log(err);
         } else {
-            console.log(movie);              
-            res.redirect("/movies");
+            console.log(movie);
+            // console.log(movie.actors);
+            movie.actors.forEach((actor)=>{
+                Actor.findOne({"name": actor}, (err, foundActor)=>{
+                    if(err){
+                        console.log(err);
+                    } else {
+                        if(!foundActor){
+                            console.log("no actor found");
+                        } else {
+                            // console.log(foundActor);
+                            foundActor.movies.push(movie.name);
+                            foundActor.save((err, savedActor)=>{
+                                if(err){
+                                    console.log(err);
+                                } else {
+                                    console.log(savedActor);
+                                }
+                            });
+                        }
+                    }
+                });
+            })
+            res.redirect("/movies");    
         }
     });
+
+    // console.log(newMovie);
+    // res.send("Movie added");
 });
 
 //RATING A MOVIE
@@ -160,9 +189,33 @@ app.post("/movies/:id/rating", isLoggedIn, function(req, res){
     });
 });
 
-
 //DELETE A MOVIE FROM THE DATABASE ALONG WITH THEIR RATINGS FROM RATING MODEL
 app.delete("/movies/:id", isLoggedIn, function(req, res){
+
+    Movie.findById(req.params.id, (err, foundMovie)=>{
+        foundMovie.actors.forEach((actor)=>{
+            Actor.findOne({name: actor}, (err, foundActor)=>{
+                if(!foundActor){
+                    console.log("NO ACTOR FOUND!");
+                } else {
+                    var movies = foundActor.movies;
+                    for(i=0; i<movies.length; i++){
+                        if(movies[i] === foundMovie.name){
+                            movies.splice(i, 1);
+                            Actor.findOneAndUpdate({name: actor}, {$set: {movies: movies}}, (err, updated)=>{
+                                if(err){
+                                    console.log(err);
+                                } else {
+                                    console.log(updated);
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        });
+    });
+
     Movie.findByIdAndDelete(req.params.id, function(err){
         if(err){
             res.send("ERROR HAPPENED!");
@@ -204,6 +257,24 @@ app.get("/movies/:id/reviews", (req, res)=>{
         }
     });
 });
+
+
+//SHOW THE CAST OF A MOVIE
+app.get("/movies/:id/cast", (req, res)=>{
+    Movie.findById(req.params.id, (err, found)=>{
+        if(err){
+            console.log(err);
+        } else {
+            Actor.find({}, (err, actors)=>{
+                if(err){
+                    console.log(err);
+                } else {
+                    res.render("movies/cast", {movie: found, actors: actors});
+                }
+            });
+        }
+    });
+});
 //==================================================================================
 //SEARCHING FOR A MOVIE
 app.post("/search", (req, res)=>{
@@ -221,6 +292,55 @@ app.post("/search", (req, res)=>{
     });
 });
 //===================================================================================
+//===================================================================================
+//ACTORS ROUTES
+app.get("/actors", (req, res)=>{
+    Actor.find({}, (err, actors)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.render("actors/actors", {actors: actors});
+        }
+    });
+});
+
+app.get("/actors/new", (req, res)=>{
+    res.render("actors/new");
+});
+
+app.post("/actors", (req, res)=>{
+    var newActor = {
+        name: req.body.name,
+        image: req.body.image,
+        dob: req.body.dob,
+        bio: req.body.bio,
+    }
+    Actor.create(newActor, (err, actor)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.redirect("/actors");
+        }
+    });
+});
+
+app.get("/actors/:id", (req, res)=>{
+    Actor.findById(req.params.id, (err, foundActor)=>{
+        if(err){
+            console.log(err);
+        } else {
+            Movie.find({}, (err, movies)=>{
+                if(err){
+                    console.log(err);
+                } else {
+                    res.render("actors/show", {actor: foundActor, movies: movies});
+                }
+            })
+        }
+    });
+});
+
+
 
 //===================================================================================
 //RECOMMENDATION ROUTES

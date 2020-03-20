@@ -1,0 +1,26 @@
+<%- include("../partials/header") %>
+<div class="container my-5">
+    <h1>ALL ACTORS</h1>
+    <div class="row">
+        <% actors.forEach((actor)=>{ %>
+            <div class="col col-lg-12">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="<%= actor.image %> " class="card-img"  style="width: 200px;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="/actors/<%= actor._id %>"><%= actor.name %></a></h5>
+                                <p class="card-text"><%= actor.bio %> </p>
+                                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

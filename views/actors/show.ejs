@@ -1,0 +1,21 @@
+<%- include("../partials/header") %>
+<div class="container my-5">
+    <div class="d-flex align-items-start justify-content-between">
+        <div>
+            <h1><%= actor.name %></h1>
+            <% actor.movies.forEach((actorMovie)=>{ %>
+                <% movies.forEach((movie)=>{ %>
+                    <% if(actorMovie === movie.name){ %>
+                        <li><a href="/movies/<%= movie._id %>"><%= actorMovie %></a></li>
+                    <% } %>
+                <% }); %> 
+            <% }); %>
+        </div>
+        <div>
+            <img src="<%= actor.image %>" style="width: 300px; height: 100%;">
+            <h4>Born: <%= actor.dob.toDateString() %> </h4>
+        </div>
+    </div> 
+</div>
+
+<%- include("../partials/footer") %>
