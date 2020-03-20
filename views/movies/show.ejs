@@ -12,11 +12,14 @@
                 <a class="list-group-item list-group-item-action" href="#">WHERE TO WATCH</a>
             </div>
         </div>
-        <div class="col col-md-9 card">
+        <div class="col col-md-9 card p-3">
             <h1 class="display-4"><%= movie.name.toUpperCase() %></h1>
             <img class="img-fluid" src="<%= movie.image %>"><hr>
             <h4><strong>Added By: <%= movie.addedBy.username %></strong></h4>
-            <p><%= movie.plot %></p>
+            <p><%= movie.plot %></p><hr>
+            <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-primary btn-block">Delete Movie</button>
+            </form>
         </div>
     </div>
 </div>

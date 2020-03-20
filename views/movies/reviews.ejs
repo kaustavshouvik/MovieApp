@@ -16,7 +16,7 @@
             <h3><%= movie.name.toUpperCase() %> - Rating: <%= movie.ratingValue %></h3>
             <div class="card p-3">
                 <form>
-                    <div class="form-group my-2">
+                    <div class="form-group">
                         <label for="rating">Rate Movie:</label>
                         <input type="number" max="10" min="0" class="form-control" id="rating" required>
                     </div>
@@ -33,13 +33,9 @@
             </div>
             <div>
                 <ol>
-                    <% for(var i=0; i<rateOb.length; i++){ %>
-                        <% for(var j=0; j<movie.ratings.length; j++){ %>
-                            <% if(String(rateOb[i]._id) === String(movie.ratings[j])){ %>
-                                <li><a href="#"><%= rateOb[i].ratedBy.username %></a> - <%= rateOb[i].rating %></li>
-                            <% } %>
-                        <% } %>
-                    <% } %>
+                    <% rateOb.forEach((rated)=>{ %>
+                        <li><a href="#"><%= rated.ratedBy.username %></a> - <%= rated.rating %></li>
+                    <% }); %>
                 </ol>
             </div>
         </div>
