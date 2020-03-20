@@ -10,6 +10,7 @@
                 <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/cast">CAST</a>
                 <a class="list-group-item list-group-item-action" href="#">BOX OFFICE</a>
                 <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/stream">WHERE TO WATCH</a>
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/more">MORE LIKE THIS</a>
             </div>
         </div>
         <div class="col col-md-9">
@@ -23,15 +24,22 @@
                             <label for="rating">Rate Movie:</label>
                             <input type="number" max="10" min="0" class="form-control" id="rating" required>
                         </div>
-                        <button class="btn btn-primary btn-md">Submit</button>
-                    </form>
-                    <form>
                         <div class="form-group my-2">
                             <label for="review">Review Movie</label>
                             <textarea rows="4" class="form-control" id="review"></textarea>
                         </div>
                         <button class="btn btn-primary btn-md">Submit</button>
                     </form>
+                    <div class="card bg-light mt-3">
+                        <div class="card-header">Sample Review</div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title">sampleuser99</h5>
+                                <h5 class="card-title">9</h5>
+                            </div>
+                            <p class="card-text">SAMPLE REVIEW OF A PARTICULAR MOVIE ABOUT HOW DID THIS PARTICULAR USER LIKED IT.</p>
+                        </div>
+                    </div>
                 <% } %> 
             </div>
             <div>

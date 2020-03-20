@@ -10,6 +10,7 @@
                 <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/cast">CAST</a>
                 <a class="list-group-item list-group-item-action" href="#">BOX OFFICE</a>
                 <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/stream">WHERE TO WATCH</a>
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/more">MORE LIKE THIS</a>
             </div>
         </div>
         <div class="col col-md-9 card p-3">
@@ -17,7 +18,10 @@
             <div><img class="card-img" src="<%= movie.image %>" style="width: 100%;"></div>
             <hr>
             <h4><strong>Added By: <%= movie.addedBy.username %></strong></h4>
-            <p><%= movie.plot %></p><hr>
+            <% movie.genres.forEach((genre)=>{ %>
+                <li><%= genre %></li>
+            <% }); %>
+            <p class="my-2"><%= movie.plot %></p>
             <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
                 <button class="btn btn-primary btn-block">Delete Movie</button>
             </form>

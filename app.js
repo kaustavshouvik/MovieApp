@@ -7,9 +7,11 @@ const express           = require("express"),
     User                = require("./models/user"),
     Rating              = require("./models/rating"),
     Actor               = require("./models/actor"),
-    Movie               = require("./models/movie");
+    Movie               = require("./models/movie"),
+    seedActors          = require("./seedActors"),
+    seedMovies          = require("./seedMovies");
 
-mongoose.connect("mongodb://localhost/movieappv12", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect("mongodb://localhost/movieappv3", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 const app = express();
 
@@ -17,7 +19,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("cssFiles"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
-
 
 // =====================================================
 //      AUTHENTICATION SETUP
@@ -32,6 +33,9 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 //========================================================
+
+// seedActors();
+// seedMovies();
 
 //========================================================
 //USER DEFINED FUNCTIONS
@@ -48,6 +52,10 @@ function title(name) {
     name = newName.join("");
     return name;
 }
+
+function removeDuplicates(array) {
+    return array.filter((a, b) => array.indexOf(a) === b)
+  };
 //==========================================================
 
 app.use((req, res, next) => {
@@ -57,7 +65,7 @@ app.use((req, res, next) => {
 
 //SHOW HOMEPAGE
 app.get("/", (req, res)=>{
-    res.render("home")
+    res.render("home");
 });
 
 //SHOW ALL MOVIES
@@ -78,20 +86,23 @@ app.get("/movies/new", isLoggedIn, (req, res)=>{
 
 //ADD A MOVIE TO THE DATABASE
 app.post("/movies", isLoggedIn, (req, res)=>{
-    var releaseDate = new Date(req.body.release);
+    var releaseDate = new Date(req.body.release);           //DATE SETUP
     releaseDate.setHours(releaseDate.getHours() - 5);
     releaseDate.setMinutes(releaseDate.getMinutes() - 30);
-    // var genres = (req.body.genre);
-    // genres = genre.split(", ");
+
+    var genres = title(req.body.genres);    //GENRES SETUP
+    genres = genres.toLowerCase();
+    genres = genres.split(", ");
+
     var movieTitle = title(req.body.name);
     // var actors = title(req.body.cast);
-    var actors = req.body.cast;
+    var actors = title(req.body.cast);
     actorsArr = actors.split(", ");
     var newMovie = {
         name: movieTitle,
         poster: req.body.poster,
         image: req.body.image,
-        // genres: genres,
+        genres: genres,
         plot: req.body.plot,
         // boxoffice: {
         //     budget: req.body.budget,
@@ -101,7 +112,7 @@ app.post("/movies", isLoggedIn, (req, res)=>{
             id: req.user._id,
             username: req.user.username
         },
-        release: req.body.release,
+        release: releaseDate,
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: req.body.link.prime.trim(),
@@ -179,6 +190,10 @@ app.post("/movies/:id/rating", isLoggedIn, function (req, res) {
             if (err) {
                 console.log(err);
             } else if(foundMovie.release > Date.now()){
+                //DELETE THE NEWLY CREATED RATING AS MOVIE IS NOT RELEASED
+                Rating.findByIdAndDelete(newRating._id, (err, deleted)=>{
+                    console.log(deleted);
+                });
                 return res.redirect("/movies");
             } else {
                 foundMovie.ratings.push(newRating);
@@ -195,9 +210,10 @@ app.post("/movies/:id/rating", isLoggedIn, function (req, res) {
     });
 });
 
-//DELETE A MOVIE FROM THE DATABASE ALONG WITH THEIR RATINGS FROM RATING MODEL
+//DELETE A MOVIE ALONG WITH RATINGS AND ACTORS[MOVIES DONE LIST]
 app.delete("/movies/:id", isLoggedIn, function (req, res) {
     Movie.findById(req.params.id, (err, foundMovie)=>{
+        //FOR ALL ACTORS FIND IF THE ACTOR HAS DONE THAT MOVIE, THEN DELETE IT FROM THE ACTOR'S MOVIES LIST
         for(i=0; i<foundMovie.actors.length; i++){
             Actor.findById(foundMovie.actors[i], (err, foundActor)=>{
                 for(j=0; j<foundActor.movies.length; j++){
@@ -215,6 +231,7 @@ app.delete("/movies/:id", isLoggedIn, function (req, res) {
         if (err) {
             res.send("ERROR HAPPENED!");
         } else {
+            //DELETE ALL THE RATINGS BELONGING TO THAT MOVIE
             Rating.deleteMany({movie: req.params.id}, (err) => {
                 if(err){
                     console.log(err);
@@ -250,28 +267,25 @@ app.get("/movies/:id/reviews", (req, res) => {
     });
 });
 
-
 //SHOW THE CAST OF A MOVIE
 app.get("/movies/:id/cast", (req, res) => {
     Movie.findById(req.params.id).populate({path: 'actors', model: Actor}).exec((err, found) => {
         if(err){
             console.log(err);
         } else {
-            console.log(found);
             res.render("movies/cast", {movie: found});
         }
     });
 });
 
-//SHOW THE CAST OF A MOVIE
+//SHOW A PAGE WITH LINKS TO WATCH A MOVIE
 app.get("/movies/:id/stream", (req, res) => {
     Movie.findById(req.params.id, (err, foundMovie)=>{
         res.render("movies/stream", {movie: foundMovie});
     });
 });
-
 //==================================================================================
-//SEARCHING FOR A MOVIE
+//SEARCHING FOR A MOVIE/ACTOR
 app.post("/search", (req, res) => {
     name = title(req.body.search);
     Movie.findOne({name: name}, (err, foundMovie) => {
@@ -306,13 +320,6 @@ app.get("/actors", (req, res) => {
             res.render("actors/actors", {actors: actors});
         }
     });
-    // Actor.find({}).sort({name: 1}).exec((err, actors)=>{
-    //     if(err){
-    //         console.log(err);
-    //     } else {
-    //         res.render("actors/actors", {actors: actors});
-    //     }
-    // });
 });
 
 app.get("/actors/new", (req, res) => {
@@ -341,7 +348,7 @@ app.get("/actors/:id", (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(foundActor);
+            console.log(foundActor.name);
             res.render("actors/show", {actor: foundActor});
         }
     });
@@ -418,8 +425,11 @@ app.get("/mostrated", (req, res) => {
 
 app.get("/upcoming", (req, res)=>{
     Movie.find({}).sort({release: 1}).exec((err, movies)=>{
+        if(!movies){
+            return res.redirect("/movies");
+        }
         var a = Date.now(), i = 0;
-        while (movies[i].release < a) {
+        while (i < movies.length && movies[i].release < a) {
             i++;
         }
         movies.splice(0, i);
@@ -430,13 +440,69 @@ app.get("/upcoming", (req, res)=>{
     });
 });
 
-//=============================================================================
-//      AUTHENTICATION ROUTES
+function intersect(a, b) {
+    var t;
+    if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
+    return a.filter(function (e) {
+        return b.indexOf(e) > -1;
+    });
+}
 
+app.get("/movies/:id/more", (req, res)=>{
+    // var like = 'action', text = '', m = [];
+    // Movie.find({}, (err, movies)=>{
+    //     movies.forEach((movie)=>{
+    //         movie.genres.forEach((genre)=>{
+    //             if(genre === like){
+    //                 text += '\n' + movie.name;
+    //             }
+    //         });
+    //     });
+    //     res.send(text);
+    // });
+    Movie.findById(req.params.id, (err, foundMovie)=>{
+        // res.render("recommendation/more", {movie: foundMovie});
+        var like1 = foundMovie.genres[0], like2 = foundMovie.genres[1], m1 = [], m2 = [];
+        Movie.find({}, (err, movies)=>{
+            movies.forEach((movie)=>{
+                movie.genres.forEach((genre)=>{
+                    if(genre === like1){
+                        m1.push(movie);
+                    }
+                    if(genre === like2){
+                        m2.push(movie);
+                    }
+                });
+            });
+            m = intersect(m1, m2);
+            res.render("recommendation/more", {recommendedMovies: m, movie: foundMovie});
+        });
+    });
+});
+//============================================================================
+//USER PROFILE
+// app.get("/profile/:id", (req, res)=>{
+//     User.findById(req.params.id, (err, foundUser)=>{
+//         person = {
+//             id: foundUser._id,
+//             username: foundUser.username
+//         };
+//         Rating.find({ratedBy: person}, (err, ratings)=>{
+//             res.render("profile", {user: foundUser, ratings: ratings});
+//         });
+//     });
+// });
+//===============================================================================
+
+//=============================================================================
+//AUTHENTICATION ROUTES
+
+//SHOW THE FORM FOR NEW REGISTRATION OF AN USER
 app.get("/register", (req, res) => {
     res.render("register");
 });
 
+//ADD NEW USER TO DATABASE AND ALSO LOG IN
 app.post("/register", (req, res) => {
     var newUser = new User({
         name: req.body.name,
@@ -451,6 +517,7 @@ app.post("/register", (req, res) => {
             console.log(err);
             return res.redirect("/");
         }
+        //LOGIN THE NEWLY REGISTERED USER
         passport.authenticate("local")(req, res, function () {
             res.redirect("/movies");
             console.log(user);
@@ -458,30 +525,36 @@ app.post("/register", (req, res) => {
     });
 });
 
+//SHOW LOGIN FORM
 app.get("/login", (req, res) => {
     res.render("login");
 });
 
+//LOGGING THE USER IN
 app.post("/login", passport.authenticate("local", {
     successRedirect: "/movies",
     failureRedirect: "/login"
 }), (req, res) => {});
 
+//LOGOUT ROUTE
 app.get("/logout", (req, res) => {
     req.logOut();
     res.redirect("/movies");
 });
 
+//FUNCTION TO CHECK IF USER IS LOGGED IN OR NOT[THIS FUNCTION CAN ADDED TO ANY ROUTE]
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
     res.redirect("/login");
 }
-
 //=============================================================================
 
 
-app.listen(3000, function (req, res) {
+//=============================================================================
+//SERVER SETUP
+app.listen(3000, (req, res) => {
     console.log("SERVER STARTED AT PORT 3000!");
 });
+//==============================================================================
