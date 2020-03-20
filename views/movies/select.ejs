@@ -10,7 +10,7 @@
             <% for(i=0; i<movies.length; i++){ %>
                 <tr>
                     <td><h4><%= i + 1 %></h4></td>
-                    <td><h4><a href="/movies/<%= movies[i]._id %>"><%= movies[i].name %></a></h4></td>
+                    <td><h4><a href="/movies/<%= movies[i]._id %>"><%= movies[i].name %>(<%= movies[i].release.getFullYear() %>)</a></h4></td>
                     <td><h4><i style="color: red;" class="fa fa-star pr-1"></i><%= movies[i].ratingValue %>[<%= movies[i].ratingCount %>]</h4></td>
                 </tr>
             <% } %>

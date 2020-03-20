@@ -14,6 +14,7 @@
         </div>
         <div class="col col-md-9 card p-3">
             <h1 class="display-4"><%= movie.name.toUpperCase() %></h1>
+            <% if(movie.release < Date.now()){ %>
             <div class="d-flex justify-content-around align-items-center py-3">
                 <a href="<%= movie.primeLink %>" target="_blank" id="prime"><img style="width: 150px;" src="https://www.brandsvectorlogo.com/content/uploads/images/t_amazon-prime-video.jpg"></a>
                 <a href="<%= movie.netflixLink %>" target="_blank"><img style="width: 120px;" src="https://assets.brand.microsites.netflix.io/assets/493f5bba-81a4-11e9-bf79-066b49664af6_cm_1440w.png?v=16"></a>
@@ -26,6 +27,9 @@
                 <a href="#"><img style="width: 120px;" src="https://images-na.ssl-images-amazon.com/images/I/51D75rDCQXL._SL1280_.jpg"></a>
                 <a href="#"><img style="width: 120px;" src="https://www.denofgeek.com/wp-content/uploads/2020/02/disney-plus-logo.jpeg?resize=768%2C432"></a>
             </div>
+            <% } else { %>
+                <p class="lead">MOVIE NOT RELEASED YET!</p>
+            <% } %>
         </div>
     </div>
 </div>

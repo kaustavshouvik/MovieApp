@@ -9,7 +9,7 @@ const express           = require("express"),
     Actor               = require("./models/actor"),
     Movie               = require("./models/movie");
 
-mongoose.connect("mongodb://localhost/movieappv2", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect("mongodb://localhost/movieappv12", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 const app = express();
 
@@ -78,10 +78,14 @@ app.get("/movies/new", isLoggedIn, (req, res)=>{
 
 //ADD A MOVIE TO THE DATABASE
 app.post("/movies", isLoggedIn, (req, res)=>{
+    var releaseDate = new Date(req.body.release);
+    releaseDate.setHours(releaseDate.getHours() - 5);
+    releaseDate.setMinutes(releaseDate.getMinutes() - 30);
     // var genres = (req.body.genre);
     // genres = genre.split(", ");
     var movieTitle = title(req.body.name);
-    var actors = title(req.body.cast);
+    // var actors = title(req.body.cast);
+    var actors = req.body.cast;
     actorsArr = actors.split(", ");
     var newMovie = {
         name: movieTitle,
@@ -97,6 +101,7 @@ app.post("/movies", isLoggedIn, (req, res)=>{
             id: req.user._id,
             username: req.user.username
         },
+        release: req.body.release,
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: req.body.link.prime.trim(),
@@ -173,6 +178,8 @@ app.post("/movies/:id/rating", isLoggedIn, function (req, res) {
         Movie.findById(req.params.id, function (err, foundMovie) {
             if (err) {
                 console.log(err);
+            } else if(foundMovie.release > Date.now()){
+                return res.redirect("/movies");
             } else {
                 foundMovie.ratings.push(newRating);
                 foundMovie.save((err, savedMovie)=>{
@@ -377,41 +384,51 @@ app.get("/highest", (req, res) => {
     Movie.find({}).sort({ratingValue: -1}).exec((err, found) => {
         if (err) {
             console.log(err);
+        } else if(!found) {
+            return res.redirect("/movies");
         } else {
             //FROM ALL THE MOVIES, REMOVE THE UNRATED MOVIE
             var i = 0;
-            while (found[i].ratingValue === "Unrated") {
+            while (i < found.length && found[i].ratingValue === "Unrated") {
                 i++;
             }
             found.splice(0, i);
-            res.render("movies/highest", {
-                movies: found
-            });
+            res.render("movies/select", {movies: found});
         }
     });
 });
 
 //ROUTE TO SHOW THE MOST RATED MOVIES
 app.get("/mostrated", (req, res) => {
-    Movie.find({}).sort({
-        ratingCount: -1
-    }).exec((err, found) => {
+    Movie.find({}).sort({ratingCount: 1}).exec((err, found) => {
         if (err) {
             console.log(err);
         } else {
             //FROM ALL THE MOVIES, REMOVE THE UNRATED MOVIE
-            var i = found.length - 1;
-            while (found[i].ratingCount === 0) {
-                i--;
+            var i = 0;
+            while (i < found.length && found[i].ratingCount === 0) {
+                i++;
             }
-            found.splice(i+1, found.length-1);
-            res.render("movies/highest", {
-                movies: found
-            });
+            found.splice(0, i);
+            found.reverse();
+            res.render("movies/select", {movies: found});
         }
     });
 });
 
+app.get("/upcoming", (req, res)=>{
+    Movie.find({}).sort({release: 1}).exec((err, movies)=>{
+        var a = Date.now(), i = 0;
+        while (movies[i].release < a) {
+            i++;
+        }
+        movies.splice(0, i);
+        for(i=0; i<movies.length; i++){
+            console.log(a < movies[i].release);
+        }
+        res.render("movies/select", {movies: movies});
+    });
+});
 
 //=============================================================================
 //      AUTHENTICATION ROUTES

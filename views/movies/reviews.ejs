@@ -15,21 +15,24 @@
         <div class="col col-md-9">
             <h3><%= movie.name.toUpperCase() %> - Rating: <%= movie.ratingValue %> [<%= movie.ratingCount %>]</h3>
             <div class="card p-3">
-                <form>
-                    <div class="form-group">
-                        <label for="rating">Rate Movie:</label>
-                        <input type="number" max="10" min="0" class="form-control" id="rating" required>
-                    </div>
-                    <button class="btn btn-primary btn-md">Submit</button>
-                </form>
-                <form>
-                    <div class="form-group my-2">
-                        <label for="review">Review Movie</label>
-                        <textarea rows="4" class="form-control" id="review"></textarea>
-                    </div>
-                    <button class="btn btn-primary btn-md">Submit</button>
-                </form>
-                <!-- Reviews Array with specific revies by various users -->
+                <% if(movie.release > Date.now()){ %>
+                    <p class="lead">MOVIE NOT RELEASED YET</p>
+                <% } else { %>
+                    <form>
+                        <div class="form-group">
+                            <label for="rating">Rate Movie:</label>
+                            <input type="number" max="10" min="0" class="form-control" id="rating" required>
+                        </div>
+                        <button class="btn btn-primary btn-md">Submit</button>
+                    </form>
+                    <form>
+                        <div class="form-group my-2">
+                            <label for="review">Review Movie</label>
+                            <textarea rows="4" class="form-control" id="review"></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-md">Submit</button>
+                    </form>
+                <% } %> 
             </div>
             <div>
                 <ol>

@@ -11,6 +11,7 @@ var movieSchema = {
             ref: "Actor"
         }
     ],
+    release: Date,
     plot: String,
     boxoffice: {
         budget: String,
