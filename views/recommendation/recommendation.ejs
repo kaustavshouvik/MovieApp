@@ -2,9 +2,24 @@
 
 <div class="container">
     <div class="d-flex justify-content-between align-items-start">
-        <a class="rca" href="#">RECOMMEND BY SELECTING MOVIES</a>
-        <a class="rca" href="/recommendation/genres">RECOMMEND BY SELECTING GENRES</a>
+        <a class="rca card text-light" onmouseover="bgChange('a1')" onmouseout="bgBack('a1')" id="a1" href="#">RECOMMEND BY SELECTING MOVIES</a>
+        <a class="rca card text-light" onmouseover="bgChange('a2')" onmouseout="bgBack('a2')" id="a2" href="/recommendation/genres">RECOMMEND BY SELECTING GENRES</a>
     </div>
 </div>
+
+<script type="text/javascript">
+    function bgChange(element){
+        dom = document.getElementById(element);
+        dom.style.backgroundColor = "#0b1321"
+        dom.style.textDecoration = "none"
+        dom.style.fontSize = "1.9em"
+    }
+
+    function bgBack(element){
+        dom = document.getElementById(element);
+        dom.style.backgroundColor = "purple"
+        dom.style.fontSize = "1.5em"
+    }
+</script>
 
 <%- include("../partials/footer") %>

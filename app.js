@@ -7,9 +7,7 @@ const express           = require("express"),
     User                = require("./models/user"),
     Rating              = require("./models/rating"),
     Actor               = require("./models/actor"),
-    Movie               = require("./models/movie"),
-    seedActors          = require("./seedActors"),
-    seedMovies          = require("./seedMovies");
+    Movie               = require("./models/movie");
 
 mongoose.connect("mongodb://localhost/movieappv3", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
@@ -34,8 +32,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 //========================================================
 
-// seedActors();
-// seedMovies();
+// require("./seedActors")();
 
 //========================================================
 //USER DEFINED FUNCTIONS

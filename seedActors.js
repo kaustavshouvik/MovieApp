@@ -7,7 +7,7 @@ actorArray = [
         name: 'Matt Damon',
         image: 'https://www.gstatic.com/tv/thumb/persons/44333/44333_v9_bb.jpg',
         bio: "Matthew Paige Damon (born October 8, 1970) is an American actor, film producer and screenwriter. He is ranked\
-            among Forbes magazine's most bankable stars[4] and is one of the highest-grossing actors of all time.[5][nb 1] Damon\
+            among Forbes magazine's most bankable stars and is one of the highest-grossing actors of all time. Damon\
             has received various accolades, including an Academy Award from five nominations, two Golden Globe Awards from eight\
             nominations, and has been nominated for three British Academy Film Awards and seven Emmy Awards. Born and raised \
             in Cambridge, Massachusetts, Damon began his acting career by appearing in high school theater productions. He made\
@@ -47,8 +47,8 @@ actorArray = [
             and a Screen Actors Guild Award. Freeman has appeared in many other box office hits, including Glory (1989), Robin Hood:\
             Prince of Thieves (1991), Seven (1995), Deep Impact (1998), The Sum of All Fears (2002), Bruce Almighty (2003), The Dark Knight \
             Trilogy (2005–2012), Wanted (2008), Red (2010), Now You See Me (2013), The Lego Movie (2014) and Lucy (2014). He rose to\
-            fame as part of the cast of the 1970s children's program The Electric Company. Noted for his deep voice,[4] Freeman has\
-            served as a narrator, commentator, and voice actor for numerous programs, series and television shows.[5] He is ranked \
+            fame as part of the cast of the 1970s children's program The Electric Company. Noted for his deep voice, Freeman has\
+            served as a narrator, commentator, and voice actor for numerous programs, series and television shows. He is ranked \
             as the seventh-highest box office star since July 2019. He has a combined total box office gross of $4.57 billion, with \
             an average of $71.5 million per film.",
         movies: [],
@@ -98,6 +98,25 @@ actorArray = [
         movies: [],
         upcomingMovies: [],
         dob: new Date('2 September 1964')
+    },
+    {
+        name: 'Sandra Bullock',
+        image: 'https://www.gstatic.com/tv/thumb/persons/57807/57807_v9_bb.jpg',
+        bio : "Sandra Annette Bullock was born in Arlington, a Virginia suburb of Washington, D.C. Her mother, Helga Bullock \
+            (née Helga Mathilde Meyer), was a German opera singer. Her father, John W. Bullock, was an American voice teacher, \
+            who was born in Alabama, of German descent. Sandra grew up on the road with her parents and younger sister, chef \
+            Gesine Bullock-Prado, and spent much of her childhood in Nuremberg, Germany. She often performed in the children's \
+            chorus of whatever production her mother was in. Her family moved back to the Washington area when she was adolescent. \
+            She later enrolled in East Carolina University in North Carolina, where she studied acting. Shortly afterward she moved \
+            to New York to pursue a career on the stage. This led to acting in television programs and then feature films. She gave \
+            memorable performances in Demolition Man (1993) and Wrestling Ernest Hemingway (1993), but did not achieve the stardom \
+            that seemed inevitable for her until her work in the smash hit Speed (1994). She now ranks as one of the most popular \
+            actresses in Hollywood. For her role in The Blind Side (2009) she won the Oscar, and her blockbusters The Proposal \
+            (2009), The Heat (2013) and Gravity (2013) made her a bankable star. With $56,000,000, she was listed in the Guinness \
+            Book Of World Records as the highest-paid actress in the world.",
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('26 July 1964')
     },
     {
         name: 'Michael Caine',
@@ -1213,6 +1232,21 @@ actorArray = [
         dob: new Date('3 April 1969')
     },
     {
+        name: 'Tom Hanks',
+        image: 'https://www.gstatic.com/tv/thumb/persons/62982/62982_v9_bb.jpg',
+        bio : 'Thomas Jeffrey Hanks is an American actor and filmmaker. Known for both his comedic and dramatic roles, Hanks is \
+            one of the most popular and recognizable film stars worldwide, and is widely regarded as an American cultural icon. \
+            Hanks\' films have grossed more than $4.9 billion in North America and more than $9.96 billion worldwide, making \
+            him the fifth-highest-grossing actor in North America. Hanks made his breakthrough with leading roles in the comedies \
+            Splash (1984) and Big (1988). He won two consecutive Academy Awards for Best Actor for starring as a gay lawyer \
+            suffering from AIDS in Philadelphia (1993) and a young man with below-average IQ in Forrest Gump (1994). Hanks \
+            collaborated with film director Steven Spielberg on five films: Saving Private Ryan (1998), Catch Me If You Can \
+            (2002), The Terminal (2004), Bridge of Spies (2015), and The Post (2017).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('9 July 1956')
+    },
+    {
         name: 'Shailene Woodley',
         image: 'https://www.gstatic.com/tv/thumb/persons/286724/286724_v9_ba.jpg',
         bio : 'Shailene Diann Woodley is an American actress, film producer, and activist. Brought up in Simi Valley, \
@@ -1331,7 +1365,6 @@ actorArray = [
 ];
 
 function seedActors(){
-    
     Movie.deleteMany({}, (err, moviesDeleted)=>{
         if(err) console.log(err);
         else{
@@ -1350,6 +1383,9 @@ function seedActors(){
                                     else console.log("Actor Created: "+ createdActor.name);
                                 });
                             });
+                            setTimeout(() => {
+                                require("./seedMovies")()
+                            }, 1000)
                         }
                     });
                 }

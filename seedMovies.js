@@ -259,8 +259,27 @@ moviesArray = [
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
+        netflixLink: 'https://www.netflix.com/in/title/80013762?source=35',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Bad Boys for Life',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMWU0MGYwZWQtMzcwYS00NWVhLTlkZTAtYWVjOTYwZTBhZTBiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BZDFkY2NhN2MtNmZkOC00YThjLTlhMDEtZjQ2OGQyMjFkOTU0XkEyXkFqcGdeQXVyNjczOTE0MzM@._V1_QL50_.jpg',
+        release: new Date('7 January 2020'),
+        plot: 'The Bad Boys Mike Lowrey and Marcus Burnett are back together for one last ride in the highly anticipated Bad Boys for Life.',
+        cast: ['Will Smith'],
+        genres: ['action', 'comedy', 'crime'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
         netflixLink: '',
-        hotstarLink: 'https://www.hotstar.com/in/movies/stuber/1260020833',
+        hotstarLink: '',
         youtubeLink: '',
     },
     {
@@ -279,7 +298,7 @@ moviesArray = [
         ratingCount: 0,
         primeLink: '',
         netflixLink: '',
-        hotstarLink: 'https://www.hotstar.com/in/movies/stuber/1260020833',
+        hotstarLink: '',
         youtubeLink: '',
     },
     {
@@ -308,8 +327,8 @@ moviesArray = [
     {
         name: 'Always Be My Maybe',
         poster: 'https://www.gstatic.com/tv/thumb/v22vodart/15586359/p15586359_v_v8_ab.jpg',
-        image: 'https://m.media-amazon.com/images/M/MV5BZTgwNTY5MjMtZjQ0OC00MTVjLThjNGMtZGU0YTZmZDM0NzlhXkEyXkFqcGdeQXVyNDMzMzI5MjM@._V1_QL50_.jpg',
-        release: new Date('2 May 2019'),
+        image: 'https://m.media-amazon.com/images/M/MV5BZDc0MDE3NWEtYWM1Mi00ZDVjLTk5YzUtNWQzNmNiOTA5NTlmXkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_QL50_SX1777_CR0,0,1777,888_AL_.jpg',
+        release: new Date('29 May 2019'),
         plot: 'Everyone assumed Sasha and Marcus would wind up together except for Sasha and Marcus. Reconnecting after 15 years, the two start to wonder - maybe?',
         cast: ['Ali Wong', 'Randall Park', 'Keanu Reeves'],
         genres: ['comedy', 'romance', 'adventure'],
@@ -383,23 +402,24 @@ moviesArray = [
         youtubeLink: '',
     },
     {
-        name: 'Interstellar',
-        poster: 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL50_SY1000_SX675_AL_.jpg',
-        image: 'https://m.media-amazon.com/images/M/MV5BMTQ0MjQ3NjE1MF5BMl5BanBnXkFtZTgwMzMyODgxMzE@._V1_QL50_SX1500_CR0,0,1500,999_AL_.jpg',
-        release: new Date('7 November 2014'),
-        plot: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',
-        cast: ['Matthew McConaughey', 'Anne Hathaway', 'Michael Caine'],
-        genres: ['adventure', 'drama', 'sci-fi'],
+        name: 'Sully',
+        poster: 'https://m.media-amazon.com/images/M/MV5BY2NmZDAwM2QtZmFiMS00OTJlLTgxMTItZDMyZmVhYjE1MDY3XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL50_SY1000_CR0,0,666,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BN2I2MTJkMzMtZWNmNy00NjE5LWEwMjEtMjkzZTlmYWRhOTU2XkEyXkFqcGdeQXVyMTk5MjkzMjU@._V1_QL50_SX1777_CR0,0,1777,742_AL_.jpg',
+        release: new Date('6 July 1994'),
+        plot: 'The story of Chesley "Sully" Sullenberger (Tom Hanks), an American pilot who became a hero after landing his damaged \
+            plane on the Hudson River in order to save the flight\'s passengers and crew.',
+        cast: ['Tom Hanks'],
+        genres: ['biography', 'drama'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
         ratingCount: 0,
-        primeLink: 'https://www.primevideo.com/detail/0I9WWNH0WX2Q545OV1W8O1SFE1/ref=atv_dp_share_cu_r',
+        primeLink: 'https://www.primevideo.com/detail/0HBS95GS6AU2YJFA3D7VBNX951/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B072358XV2&qid=1584774164',
         netflixLink: '',
-        hotstarLink: '',
-        youtubeLink: 'https://www.youtube.com/watch?v=vrjPsQYHU1c',
+        hotstarLink: 'https://www.hotstar.com/in/movies/sully/1221113337',
+        youtubeLink: 'https://www.youtube.com/watch?v=Nq_li6xlD2o',
     },
 ];
 
