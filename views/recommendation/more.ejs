@@ -14,11 +14,9 @@
             </div>
         </div>
         <div class="col col-md-9 card p-3">
-            <div class="card">
-                <% recommendedMovies.forEach((movie)=>{ %>
-                    <li><%= movie.name %></li>
-                <% }); %> 
-            </div>
+            <% recommendedMovies.forEach((movie)=>{ %>
+                <li><a href="/movies/<%= movie._id %>"><%= movie.name %></a></li>
+            <% }); %> 
         </div>
     </div>
 </div>

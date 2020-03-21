@@ -23,7 +23,7 @@
             <% }); %>
             <p class="my-2"><%= movie.plot %></p>
             <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-primary btn-block">Delete Movie</button>
+                <button class="btn btn-danger btn-block">Delete Movie</button>
             </form>
         </div>
     </div>

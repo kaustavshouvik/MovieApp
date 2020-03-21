@@ -1,5 +1,6 @@
 const Actor = require('./models/actor'),
-    Movie = require('./models/movie');
+    Movie = require('./models/movie'),
+    Rating = require('./models/rating');
 
 actorArray = [
     {
@@ -546,6 +547,29 @@ actorArray = [
         dob: new Date('23 July 1989')
     },
     {
+        name: 'Emma Watson',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Emma_Watson_2013.jpg',
+        bio : "Emma Charlotte Duerre Watson (born 15 April 1990) is an English actress, model and activist. Born in Paris and \
+            brought up in Oxfordshire, Watson attended the Dragon School and trained as an actress at the Oxford branch of \
+            Stagecoach Theatre Arts. As a child, she rose to prominence with her first professional acting role as Hermione \
+            Granger in the Harry Potter film series, having acted only in school plays previously.",
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('15 April 1990')
+    },
+    {
+        name: 'Ezra Miller',
+        image: 'https://www.gstatic.com/tv/thumb/persons/528415/528415_v9_ba.jpg',
+        bio : "Ezra Matthew Miller is an American actor. Miller's feature film debut was in Afterschool (2008). Miller starred \
+            as Kevin in the drama We Need to Talk About Kevin (2011) and co-starred in the film adaptation of The Perks of \
+            Being a Wallflower (2012). In 2015, Miller co-starred in the drama The Stanford Prison Experiment and the comedy \
+            Trainwreck. Miller played Credence Barebone in the Fantastic Beasts films Fantastic Beasts and Where to Find Them \
+            (2016) and Fantastic Beasts: The Crimes of Grindelwald (2018).",
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('30 September 1992')
+    },
+    {
         name: 'Anna Kendrick',
         image: 'https://www.gstatic.com/tv/thumb/persons/298922/298922_v9_bb.jpg',
         bio : "Anna Cooke Kendrick (born August 9, 1985) is an American actress and singer. She began her career as a child actress\
@@ -945,6 +969,20 @@ actorArray = [
         dob: new Date('3 June 1971')
     },
     {
+        name: 'Jackie Chan',
+        image: 'https://www.gstatic.com/tv/thumb/persons/28555/28555_v9_ba.jpg',
+        bio : 'Chan Kong-sang SBS MBE PMW(Chinese: 陳港生; born 7 April 1954) known professionally as Jackie Chan, is a Hong Kongese \
+            martial artist, actor, film director, producer, stuntman, and singer. He is known in the cinematic world for his \
+            acrobatic fighting style, comic timing, use of improvised weapons, and innovative stunts, which he typically \
+            performs himself. He has trained in Wushu or Kung Fu and Hapkido, and has been acting since the 1960s, appearing \
+            in over 150 films. Chan is one of the most recognisable and influential cinematic personalities in the world, gaining \
+            a widespread following in both the Eastern and Western hemispheres, and has received stars on the Hong Kong Avenue of \
+            Stars and the Hollywood Walk of Fame. He has been referenced in various pop songs, cartoons, and video games.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('7 April 1954')
+    },
+    {
         name: 'Michael Peña',
         image: 'https://upload.wikimedia.org/wikipedia/commons/1/14/Michael_Pe%C3%B1a_TIFF_2015.jpg',
         bio : 'Michael Peña was born and raised in Chicago, to Nicolasa, a social worker, and Eleuterio Peña, who worked at a \
@@ -1068,24 +1106,256 @@ actorArray = [
         upcomingMovies: [],
         dob: new Date('19 June 1978')
     },
+    {
+        name: 'Dave Bautista',
+        image: 'https://www.gstatic.com/tv/thumb/persons/566644/566644_v9_bb.jpg',
+        bio : 'David Michael Bautista, Jr. was born on January 18, 1969 in Washington, D.C., to Donna Raye (Mullins) and David \
+            Michael Bautista, a hairdresser. His father is Filipino, and his mother has Greek ancestry.When WCW officials told him \
+            he\'d never make it in sports entertainment, Bautista pushed himself to achieve his dream of being a Superstar. In \
+            May 2002, he made his debut on SmackDown using the ring name Batista, but it wasn\'t until a move to Raw and two \
+            victories over Kane that "The Animal" began to make noise in the WWE Universe. The wins impressed Ric Flair and \
+            Triple H, who were looking to align themselves with the industry\'s brightest new stars. After a lengthy search, \
+            they identified Randy Orton and Batista. Collectively the four Superstars became known as Evolution.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('18 January 1969')
+    },
+    {
+        name: 'Kumail Nanjiani',
+        image: 'https://www.gstatic.com/tv/thumb/persons/543607/543607_v9_ba.jpg',
+        bio : 'Kumail Ali Nanjiani is a Pakistani-American stand-up comedian, actor, podcast host and writer best known for \
+            writing and starring in the romantic comedy The Big Sick (2017) and for being a main cast member on HBO\'s comedy \
+            series Silicon Valley (2014–2019). For writing the former with his wife Emily V. Gordon, Nanjiani was nominated for \
+            the Academy Award for Best Original Screenplay. In 2018, Time named him one of the 100 most influential people in the \
+            world.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('21 February 1978')
+    },
+    {
+        name: 'Karen Gillan',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTQwMDQ0NDk1OV5BMl5BanBnXkFtZTcwNDcxOTExNg@@._V1_.jpg',
+        bio : 'Karen Sheila Gillan is a Scottish actress and filmmaker. She first became known for playing Amy Pond, a primary \
+            companion to the Eleventh Doctor, in the BBC One series Doctor Who (2010–2013). She received international \
+            recognition for playing Nebula in the Marvel Cinematic Universe films Guardians of the Galaxy (2014), Guardians \
+            of the Galaxy Vol. 2 (2017), Avengers: Infinity War (2018), and Avengers: Endgame (2019), and for her starring role \
+            in Jumanji: Welcome to the Jungle (2017) and Jumanji: The Next Level (2019).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('28 November 1987')
+    },
+    {
+        name: 'Lance Reddick',
+        image: 'https://www.gstatic.com/tv/thumb/persons/158649/158649_v9_bb.jpg',
+        bio : 'Lance Reddick (born December 31, 1962) is an American actor and musician. He is best known for playing Cedric \
+            Daniels in The Wire and Phillip Broyles in Fringe. He is also known for portraying Detective Johnny Basil on Oz, \
+            Matthew Abaddon in Lost and Charon from the John Wick franchise. He has provided the voice and likeness for video \
+            game characters Martin Hatch in Quantum Break, Sylens in Horizon Zero Dawn and Commander Zavala in the Destiny \
+            franchise. He currently plays Chief Irvin Irving on Amazon Prime\'s Bosch.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('31 December 1962')
+    },
+    {
+        name: 'J.K. Simmons',
+        image: 'https://www.gstatic.com/tv/thumb/persons/72076/72076_v9_ba.jpg',
+        bio : 'Jonathan Kimble Simmons (born January 9, 1955) is an American television, film, and voice actor. In television, \
+            he has played Dr. Emil Skoda on the NBC series Law & Order, Vernon Schillinger on the HBO series Oz, and Assistant \
+            Police Chief Will Pope on TNT\'s The Closer. From 2017 to 2019, he starred as Howard Silk in the Starz series Counterpart.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('9 January 1955')
+    },
+    {
+        name: 'Arnold Schwarzenegger',
+        image: 'https://www.gstatic.com/tv/thumb/persons/1570/1570_v9_bb.jpg',
+        bio : 'Arnold Alois Schwarzenegger is an Austrian-American actor, filmmaker, businessman, author, and former politician \
+            and professional bodybuilder. He served as the 38th Governor of California from 2003 to 2011. As of 2020, he is the \
+            most recent Republican governor of California.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('30 July 1947')
+    },
+    {
+        name: 'Emilia Clarke',
+        image: 'https://www.gstatic.com/tv/thumb/persons/613075/613075_v9_bb.jpg',
+        bio : 'Emilia Isobel Euphemia Rose Clarke (born 23 October 1986) is an English actress. She studied at the Drama Centre \
+            London, appearing in a number of stage productions, including one by the Company of Angels. After making her screen \
+            debut in a short film, her television debut came with a guest appearance in an episode of the British medical soap \
+            opera Doctors in 2009. The following year, she was named as one of the UK Stars of Tomorrow by Screen International \
+            magazine for her role in the Syfy film Triassic Attack (2010).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('23 October 1986')
+    },
+    {
+        name: 'Idris Elba',
+        image: 'https://www.gstatic.com/tv/thumb/persons/178333/178333_v9_bc.jpg',
+        bio : 'Idrissa Akuna Elba OBE is an English actor, writer, producer, musician, DJ, rapper, and singer. He is known for \
+            roles including Stringer Bell in the HBO series The Wire,[4] DCI John Luther in the BBC One series Luther, and Nelson \
+            Mandela in the biographical film Mandela: Long Walk to Freedom (2013). He has been nominated four times for a Golden \
+            Globe Award for Best Actor – Miniseries or Television Film, winning one, and was nominated five times for a Primetime \
+            Emmy Award.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('6 September 1972')
+    },
+    {
+        name: 'Ben Mendelsohn',
+        image: 'https://www.gstatic.com/tv/thumb/persons/77856/77856_v9_ba.jpg',
+        bio : 'Paul Benjamin Mendelsohn (born 3 April 1969) is an Australian actor, who first rose to prominence in Australia \
+            for his breakout role in The Year My Voice Broke (1987). Since then he has had roles in films such as The Dark \
+            Knight Rises (2012), Starred Up (2013), Mississippi Grind (2015), Rogue One (2016), Darkest Hour (2017) and \
+            Steven Spielberg\'s Ready Player One (2018). In 2017, he joined the Marvel Cinematic Universe as Talos in Captain \
+            Marvel (2019) and Spider-Man: Far From Home (2019).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('3 April 1969')
+    },
+    {
+        name: 'Shailene Woodley',
+        image: 'https://www.gstatic.com/tv/thumb/persons/286724/286724_v9_ba.jpg',
+        bio : 'Shailene Diann Woodley is an American actress, film producer, and activist. Brought up in Simi Valley, \
+            California, Woodley began modeling at the age of four and began acting professionally in minor television roles. \
+            She first gained prominence for her starring role as Amy Juergens in the ABC Family drama series The Secret Life \
+            of the American Teenager (2008–2013).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('15 November 1991')
+    },
+    {
+        name: 'Ansel Elgort',
+        image: 'https://www.gstatic.com/tv/thumb/persons/679374/679374_v9_bb.jpg',
+        bio : 'Ansel Elgort is an American actor, known for playing Augustus Waters in the romance The Fault in Our Stars \
+            (2014) and the title character in the action thriller Baby Driver (2017). He was born in New York City to photographer \
+            Arthur Elgort and opera director Grethe Holby. His father is of Russian-Jewish heritage, while his mother has Norwegian \
+            and British Isles ancestry.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('14 March 1994')
+    },
+    {
+        name: 'Jon Hamm',
+        image: 'https://www.gstatic.com/tv/thumb/persons/217907/217907_v9_bb.jpg',
+        bio : 'Jonathan Daniel Hamm is an American actor and producer best known for playing advertising executive Don Draper \
+            in the AMC television drama series Mad Men (2007–2015). For much of the mid-1990s, he lived in Los Angeles, making \
+            appearances in television series Providence, The Division, What About Brian, and Related. In 2000, he made his feature \
+            film debut in the space adventure film Space Cowboys. The next year, he had a minor role in the independent comedy \
+            Kissing Jessica Stein (2001).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('10 March 1971')
+    },
+    {
+        name: 'Logan Lerman',
+        image: 'https://www.gstatic.com/tv/thumb/persons/298784/298784_v9_bb.jpg',
+        bio : 'Logan Wade Lerman (born January 19, 1992) is an American actor, known for playing the title role in the \
+            fantasy-adventure Percy Jackson films. He appeared in commercials in the mid-1990s, before starring in the series \
+            Jack & Bobby (2004–2005) and the movies The Butterfly Effect (2004) and Hoot (2006). Lerman gained further recognition \
+            for his roles in the western 3:10 to Yuma, the thriller The Number 23, the comedy Meet Bill, and 2009\'s Gamer \
+            and My One and Only.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('19 January 1992')
+    },
+    {
+        name: 'Charlize Theron',
+        image: 'https://www.gstatic.com/tv/thumb/persons/68310/68310_v9_bb.jpg',
+        bio : 'Charlize Theron is a South African[4] and American actress and producer. She is the recipient of several accolades, \
+            including an Academy Award, a Golden Globe Award, an American Cinematheque Award, and the Silver Bear for Best Actress. \
+            Time magazine named her one of the 100 most influential people in the world in 2016, and she is one of the world\'s \
+            highest-paid actresses, as of 2019.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('7 August 1975')
+    },
+    {
+        name: 'Seth Rogen',
+        image: 'https://www.gstatic.com/tv/thumb/persons/167023/167023_v9_ba.jpg',
+        bio : 'Seth Aaron Rogen is a Canadian-American actor, comedian, writer, producer, and director. He began his career \
+            performing stand-up comedy during his teenage years. While still living in his hometown Vancouver, he landed a supporting \
+            role in Judd Apatow\'s series Freaks and Geeks. Shortly after he moved to Los Angeles for his role, Freaks and Geeks was \
+            officially cancelled after one season due to low viewership. Rogen later got a part on sitcom Undeclared, which also \
+            hired him as a writer.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('15 April 1982')
+    },
+    {
+        name: 'Randall Park',
+        image: 'https://m.media-amazon.com/images/M/MV5BN2JjMzMyMTgtZmUzNy00OTExLTljYjYtZGIwMmQzYTdiZTUzXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg',
+        bio : 'Randall Park is an American actor, comedian and writer. He is best known for portraying Kim Jong-un in the 2014 \
+            film The Interview and Eddie Huang\'s father, American restaurateur Louis Huang, in Fresh Off the Boat, for which he was\
+            nominated for the Critics\' Choice Television Award for Best Actor in a Comedy Series in 2016. In 2012, he gained \
+            popularity playing Steve, a prank replacement of Jim Halpert in an episode of The Office.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('23 March 1974')
+    },
+    {
+        name: 'Ali Wong',
+        image: 'https://www.gstatic.com/tv/thumb/persons/617492/617492_v9_bb.jpg',
+        bio : 'Alexandra Wong (born April 19, 1982) is an American stand-up comedian, actress, and writer. She is noted for her \
+            Netflix stand-up specials Baby Cobra and Hard Knock Wife, both of which received critical acclaim. She is also known \
+            for her leading film role in the 2019 film Always Be My Maybe, which she produced and wrote with her co-star Randall \
+            Park. She is currently a main cast member on the ABC television show American Housewife.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('19 April 1982')
+    },
+    {
+        name: 'Ginnifer Goodwin',
+        image: 'https://www.gstatic.com/tv/thumb/persons/302764/302764_v9_ba.jpg',
+        bio : 'Jennifer Michelle "Ginnifer" Goodwin (born May 22, 1978) is an American actress. She is known for her starring role \
+            as Margene Heffman in the HBO drama series Big Love (2006–2011) and Snow White / Mary Margaret Blanchard in the ABC \
+            fantasy series Once Upon a Time (2011–2018). Goodwin has appeared in various films, including the drama Mona Lisa \
+            Smile (2003), the musical biopic Walk the Line (2005), the romantic comedy He\'s Just Not That into You (2009), the \
+            family comedy Ramona and Beezus (2010), the romantic comedy Something Borrowed (2011), and the biopic Killing Kennedy \
+            (2013). She also voiced the lead role of Fawn in the Disney animated fantasy film Tinker Bell and the Legend of the \
+            Neverbeast (2014) and Judy Hopps in the Disney animated fantasy comedy film Zootopia (2016).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('22 May 1978')
+    },
+    {
+        name: 'David Harbour',
+        image: 'https://www.gstatic.com/tv/thumb/persons/277640/277640_v9_ba.jpg',
+        bio : 'David Harbour is an American actor who has performed in film, television, and the theater. He is known for his role \
+            as CIA agent Gregg Beam in Quantum of Solace (2008), Shep Campbell in Revolutionary Road (2008), Van Hauser in End of \
+            Watch (2012) and Dexter Tolliver in Suicide Squad (2016). He also plays Chief Jim Hopper on the Netflix original series, \
+            Stranger Things (2016).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('10 April 1975')
+    },
 ];
 
 function seedActors(){
-    Actor.deleteMany({}, (err, deletedActors)=>{
+    
+    Movie.deleteMany({}, (err, moviesDeleted)=>{
         if(err) console.log(err);
-        else {
-            console.log("ACTORS DELETED");
-            actorArray.forEach((actor)=>{
-                Actor.create(actor, (err, createdActor)=>{
-                    if(err) console.log(err);
-                    else console.log("Actor Created: "+ createdActor.name);
-                });
+        else{
+            console.log("All Movies Deleted");
+            Rating.deleteMany({}, (err, moviesDeleted)=>{
+                if(err) console.log(err);
+                else{
+                    console.log("All Ratings Deleted");
+                    Actor.deleteMany({}, (err, deletedActors)=>{
+                        if(err) console.log(err);
+                        else {
+                            console.log("All Actors Deleted");
+                            actorArray.forEach((actor)=>{
+                                Actor.create(actor, (err, createdActor)=>{
+                                    if(err) console.log(err);
+                                    else console.log("Actor Created: "+ createdActor.name);
+                                });
+                            });
+                        }
+                    });
+                }
             });
         }
     });
-    Movie.deleteMany({}, (err, moviesDeleted)=>{
-        console.log("All Movies Deleted");
-    })
 }
 
 module.exports = seedActors;

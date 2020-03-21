@@ -11,7 +11,12 @@ var actorSchema = {
             ref: "Movie"
         }
     ],
-    upcomingMovies: [String]
+    upcomingMovies: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Movie"
+        }
+    ]
 }
 
 module.exports = mongoose.model("Actor", actorSchema);

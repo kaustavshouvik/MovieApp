@@ -16,7 +16,7 @@ mongoose.connect("mongodb://localhost/movieappv3", {useNewUrlParser: true, useUn
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("cssFiles"));
+app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 
@@ -312,6 +312,8 @@ app.post("/search", (req, res) => {
 //===================================================================================
 //===================================================================================
 //ACTORS ROUTES
+
+//SHOW ALL ACTORS
 app.get("/actors", (req, res) => {
     Actor.find({}, (err, actors) => {
         if (err) {
@@ -322,10 +324,12 @@ app.get("/actors", (req, res) => {
     });
 });
 
+//SHOW FORM TO ADD NEW ACTORS
 app.get("/actors/new", (req, res) => {
     res.render("actors/new");
 });
 
+//ADD A NEW ACTOR TO DATABASE
 app.post("/actors", (req, res) => {
     var newActor = {
         name: title(req.body.name),
@@ -343,8 +347,9 @@ app.post("/actors", (req, res) => {
     });
 });
 
+//SHOW ALL DETAILS ABOUT AN ACTOR
 app.get("/actors/:id", (req, res) => {
-    Actor.findById(req.params.id).populate({path: 'movies', model: Movie}).exec((err, foundActor) => {
+    Actor.findById(req.params.id).populate({path: 'movies', model: Movie}).populate({path: 'upcomingMovies', model: Movie}).exec((err, foundActor) => {
         if (err) {
             console.log(err);
         } else {
@@ -354,8 +359,10 @@ app.get("/actors/:id", (req, res) => {
     });
 });
 
+//DELETE AN ACTOR FROM THE DATABASE
 app.delete("/actors/:id", (req, res)=>{
     Actor.findOne({_id: req.params.id}, (err, foundActor)=>{
+        //FOR ALL THE MOVIES THE ACTOR HAS DONE REMOVE THAT ACTOR FROM THE MOVIE'S ACTORS LIST
         foundActor.movies.forEach((movie)=>{
             Movie.findOne({_id: movie}, (err, foundMovie)=>{
                 for(i=0; i<foundMovie.actors.length; i++){
@@ -377,13 +384,13 @@ app.delete("/actors/:id", (req, res)=>{
             res.redirect("/actors");
         }
     });
-})
+});
 
 //===================================================================================
 //RECOMMENDATION ROUTES
 
 app.get("/recommendation", (req, res) => {
-    res.send("THERE WILL BE BLOOOD!");
+    res.render("recommendation/recommendation")
 });
 
 //ROUTE TO SHOW THE HIGHEST RATED MOVIES
@@ -448,20 +455,9 @@ function intersect(a, b) {
     });
 }
 
+//SHOW MORE MOVIES WITH RESPECT TO THE SELECTED MOVIE
 app.get("/movies/:id/more", (req, res)=>{
-    // var like = 'action', text = '', m = [];
-    // Movie.find({}, (err, movies)=>{
-    //     movies.forEach((movie)=>{
-    //         movie.genres.forEach((genre)=>{
-    //             if(genre === like){
-    //                 text += '\n' + movie.name;
-    //             }
-    //         });
-    //     });
-    //     res.send(text);
-    // });
     Movie.findById(req.params.id, (err, foundMovie)=>{
-        // res.render("recommendation/more", {movie: foundMovie});
         var like1 = foundMovie.genres[0], like2 = foundMovie.genres[1], m1 = [], m2 = [];
         Movie.find({}, (err, movies)=>{
             movies.forEach((movie)=>{
@@ -475,10 +471,49 @@ app.get("/movies/:id/more", (req, res)=>{
                 });
             });
             m = intersect(m1, m2);
+            for(i=0; i<m.length; i++){
+                if(String(foundMovie._id) === String(m[i]._id)){
+                    break;
+                }
+            }
+            m.splice(i, 1);
             res.render("recommendation/more", {recommendedMovies: m, movie: foundMovie});
         });
     });
 });
+
+app.get("/recommendation/genres", (req, res)=>{
+    genres = ['Action', 'Adventure', 'Thriller', 'Comedy', 'Mystery', 'Drama', 'Crime', 'Romance', 'Animated', 'Western', 'Superhero', 
+        'Fantasy', 'Science-Fiction', 'Horror', 'Heist', 'Documentry', 'War', 'Disaster', 'Sports', 'History']
+    res.render("recommendation/genres", {genres: genres})
+})
+
+app.get("/recommendation/genres/:genre", (req, res)=>{
+    if(req.params.genre === 'Science-Fiction'){
+        reqGenre = 'sci-fi'
+    } else {
+        reqGenre = req.params.genre;
+    }
+    reqGenre = reqGenre.toLowerCase();
+    console.log(reqGenre)
+    recommendedMovies = []
+    // console.log(genre)
+    Movie.find({}, (err, movies)=>{
+        if(err) console.log(err);
+        else {
+            movies.forEach((movie)=>{
+                movie.genres.forEach((genre)=>{
+                    if(genre == reqGenre){
+                        recommendedMovies.push(movie);
+                    }
+                })
+            })
+            res.render("movies/select", {movies: recommendedMovies})
+        }  
+    })
+})
+
+
 //============================================================================
 //USER PROFILE
 // app.get("/profile/:id", (req, res)=>{

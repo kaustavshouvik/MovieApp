@@ -1,0 +1,16 @@
+<%- include("../partials/header") %>
+
+<div class="container mt-3">
+    <h2>WHAT ARE YOU IN THE MOOD FOR TODAY?</h2>
+    <div class="row">
+        <% genres.forEach((genre)=>{ %>
+            <div class="text-center col col-lg-3 my-3">
+                <div class="card bg-dark" id="genreDiv">
+                    <a class="text-white" href="/recommendation/genres/<%= genre %>"><%= genre %></a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
