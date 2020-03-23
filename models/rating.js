@@ -12,7 +12,8 @@ var ratingSchema = {
     movie: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Movie"
-    }
+    },
+    content: String
 };
 var Rating = mongoose.model("rating", ratingSchema);
 

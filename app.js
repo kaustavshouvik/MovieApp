@@ -52,7 +52,7 @@ function title(name) {
 
 function removeDuplicates(array) {
     return array.filter((a, b) => array.indexOf(a) === b)
-  };
+};
 //==========================================================
 
 app.use((req, res, next) => {
@@ -61,7 +61,7 @@ app.use((req, res, next) => {
 });
 
 //SHOW HOMEPAGE
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
     res.render("home");
 });
 
@@ -145,14 +145,14 @@ app.post("/movies", isLoggedIn, (req, res)=>{
 });
 
 //RATING A MOVIE  
-app.post("/movies/:id/rating", isLoggedIn, function (req, res) {
-
+app.post("/movies/:id/rating", isLoggedIn, (req, res) => {
     var rateIt = {
         rating: req.body.rating,
         ratedBy: {
             id: req.user._id,
             username: req.user.username
         },
+        content: req.body.content,
         movie: req.params.id
     };
 
@@ -175,7 +175,7 @@ app.post("/movies/:id/rating", isLoggedIn, function (req, res) {
                         Movie.findById(id, (err, f)=>{
                             console.log(f);
                         });
-                        res.redirect("/movies");
+                        res.redirect("/movies/"+ id +"/reviews");
                     }
                 });
             }
@@ -258,7 +258,7 @@ app.get("/movies/:id/reviews", (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(found);
+            console.log(found.name);
             res.render("movies/reviews", {movie: found});
         }
     });
@@ -395,8 +395,8 @@ app.get("/highest", (req, res) => {
     Movie.aggregate([{$sort: {ratingValue: -1}}, {$match: {ratingValue: {$ne: 'Unrated'}}}], (err, found) => {
         if(err) {
             console.log(err);
-        } else if(!found) {
-            return res.redirect("/movies");
+        } else if(found.length === 0) {
+            res.render("movies/select", {movies: found});
         } else {
             n = found.length - 1;
             while(found[n].ratingValue === '10.0'){
@@ -443,37 +443,16 @@ app.get("/upcoming", (req, res)=>{
     })
 });
 
-function intersect(a, b) {
-    var t;
-    if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
-    return a.filter(function (e) {
-        return b.indexOf(e) > -1;
-    });
-}
-
 //SHOW MORE MOVIES WITH RESPECT TO THE SELECTED MOVIE
 app.get("/movies/:id/more", (req, res)=>{
     Movie.findById(req.params.id, (err, foundMovie)=>{
-        var like1 = foundMovie.genres[0], like2 = foundMovie.genres[1], m1 = [], m2 = [];
-        Movie.find({}, (err, movies)=>{
-            movies.forEach((movie)=>{
-                movie.genres.forEach((genre)=>{
-                    if(genre === like1){
-                        m1.push(movie);
-                    }
-                    if(genre === like2){
-                        m2.push(movie);
-                    }
-                });
-            });
-            m = intersect(m1, m2);
-            for(i=0; i<m.length; i++){
-                if(String(foundMovie._id) === String(m[i]._id)){
-                    break;
-                }
+        var like1 = foundMovie.genres[0], like2 = foundMovie.genres[1];
+        Movie.find({$and: [{genres: {$eq: like1}}, {genres: {$eq: like2}}]}, (err, found) => {
+            for(i=0; i<found.length; i++){
+                if(String(found[i]._id) == String(foundMovie._id)) break;
             }
-            m.splice(i, 1);
-            res.render("recommendation/more", {recommendedMovies: m, movie: foundMovie});
+            found.splice(i, 1);
+            res.render("recommendation/more", {recommendedMovies: found, movie: foundMovie});
         });
     });
 });
@@ -492,20 +471,9 @@ app.get("/recommendation/genres/:genre", (req, res)=>{
     }
     reqGenre = reqGenre.toLowerCase();
     console.log(reqGenre)
-    recommendedMovies = []
-    // console.log(genre)
-    Movie.find({}, (err, movies)=>{
-        if(err) console.log(err);
-        else {
-            movies.forEach((movie)=>{
-                movie.genres.forEach((genre)=>{
-                    if(genre == reqGenre){
-                        recommendedMovies.push(movie);
-                    }
-                })
-            })
-            res.render("movies/select", {movies: recommendedMovies})
-        }  
+
+    Movie.aggregate([{$unwind : "$genres"}, {$match: {genres: {$eq: reqGenre}}}], (err, movies) => {
+        res.render("movies/select", {movies: movies})
     })
 })
 
