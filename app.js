@@ -392,56 +392,55 @@ app.get("/recommendation", (req, res) => {
 
 //ROUTE TO SHOW THE HIGHEST RATED MOVIES
 app.get("/highest", (req, res) => {
-    Movie.find({}).sort({ratingValue: -1}).exec((err, found) => {
-        if (err) {
+    Movie.aggregate([{$sort: {ratingValue: -1}}, {$match: {ratingValue: {$ne: 'Unrated'}}}], (err, found) => {
+        if(err) {
             console.log(err);
         } else if(!found) {
             return res.redirect("/movies");
         } else {
-            //FROM ALL THE MOVIES, REMOVE THE UNRATED MOVIE
-            var i = 0;
-            while (i < found.length && found[i].ratingValue === "Unrated") {
-                i++;
+            n = found.length - 1;
+            while(found[n].ratingValue === '10.0'){
+                n--;
             }
-            found.splice(0, i);
+
+            a = found.splice(n+1, found.length - 1);
+            a.forEach((movie) => {
+                found.unshift(movie);
+            });
+
             res.render("movies/select", {movies: found});
         }
-    });
+    })
 });
 
 //ROUTE TO SHOW THE MOST RATED MOVIES
 app.get("/mostrated", (req, res) => {
-    Movie.find({}).sort({ratingCount: 1}).exec((err, found) => {
-        if (err) {
+    Movie.aggregate([{$match: {ratingCount: {$gt: 0}}}, {$sort: {ratingCount: -1}}], (err, found) => {
+        if(err) {
             console.log(err);
+        } else if(!found) {
+            return res.redirect("/movies");
         } else {
-            //FROM ALL THE MOVIES, REMOVE THE UNRATED MOVIE
-            var i = 0;
-            while (i < found.length && found[i].ratingCount === 0) {
-                i++;
-            }
-            found.splice(0, i);
-            found.reverse();
             res.render("movies/select", {movies: found});
         }
-    });
+    })
 });
 
+//ROUTE TO SHOW THE UPCOMING MOVIES
 app.get("/upcoming", (req, res)=>{
-    Movie.find({}).sort({release: 1}).exec((err, movies)=>{
-        if(!movies){
+    nowDate = new Date()
+    nowDate.setHours(nowDate.getHours() + 5)
+    nowDate.setMinutes(nowDate.getMinutes() + 30)
+
+    Movie.aggregate([{$match: {release: {$gt: nowDate}}}, {$sort: {release: 1}}], (err, found) => {
+        if(err) {
+            console.log(err);
+        } else if(!found) {
             return res.redirect("/movies");
+        } else {
+            res.render("movies/select", {movies: found});
         }
-        var a = Date.now(), i = 0;
-        while (i < movies.length && movies[i].release < a) {
-            i++;
-        }
-        movies.splice(0, i);
-        for(i=0; i<movies.length; i++){
-            console.log(a < movies[i].release);
-        }
-        res.render("movies/select", {movies: movies});
-    });
+    })
 });
 
 function intersect(a, b) {
