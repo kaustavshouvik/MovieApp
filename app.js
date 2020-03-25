@@ -1,27 +1,27 @@
-const express           = require("express"),
-    bodyParser          = require("body-parser"),
-    mongoose            = require("mongoose"),
-    passport            = require("passport"),
-    LocalStrategy       = require("passport-local"),
-    methodOverride      = require("method-override"),
-    User                = require("./models/user"),
-    Rating              = require("./models/rating"),
-    Actor               = require("./models/actor"),
-    Movie               = require("./models/movie");
+const express           = require('express'),
+    bodyParser          = require('body-parser'),
+    mongoose            = require('mongoose'),
+    passport            = require('passport'),
+    LocalStrategy       = require('passport-local'),
+    methodOverride      = require('method-override'),
+    User                = require('./models/user'),
+    Rating              = require('./models/rating'),
+    Actor               = require('./models/actor'),
+    Movie               = require('./models/movie');
 
-mongoose.connect("mongodb://localhost/movieappv3", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect('mongodb://localhost/movieappv3', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
-app.set("view engine", "ejs");
-app.use(methodOverride("_method"));
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
 
 // =====================================================
 //      AUTHENTICATION SETUP
-app.use(require("express-session")({
-    secret: "Bond, James Bond",
+app.use(require('express-session')({
+    secret: 'Bond, James Bond',
     resave: false,
     saveUninitialized: false,
 }));
@@ -32,7 +32,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 //========================================================
 
-// require("./seedActors")();
+// require('./seedActors')()
+// require('./seedMovies')()
 
 //========================================================
 //USER DEFINED FUNCTIONS
@@ -61,40 +62,40 @@ app.use((req, res, next) => {
 });
 
 //SHOW HOMEPAGE
-app.get("/", (req, res) => {
-    res.render("home");
+app.get('/', (req, res) => {
+    res.render('home');
 });
 
 //SHOW ALL MOVIES
-app.get("/movies", (req, res)=>{
+app.get('/movies', (req, res)=>{
     Movie.find({}, (err, movies)=>{
         if (err) {
             console.log(err);
         } else {
-            res.render("movies/movies", {movies: movies});
+            res.render('movies/movies', {movies: movies});
         }
     });
 });
 
 //SHOW A PAGE TO ADD NEW MOVIES TO THE DATABASE
-app.get("/movies/new", isLoggedIn, (req, res)=>{
-    res.render("movies/new");
+app.get('/movies/new', isLoggedIn, (req, res)=>{
+    res.render('movies/new');
 });
 
 //ADD A MOVIE TO THE DATABASE
-app.post("/movies", isLoggedIn, (req, res)=>{
+app.post('/movies', isLoggedIn, (req, res)=>{
     var releaseDate = new Date(req.body.release);           //DATE SETUP
     releaseDate.setHours(releaseDate.getHours() - 5);
     releaseDate.setMinutes(releaseDate.getMinutes() - 30);
 
     var genres = title(req.body.genres);    //GENRES SETUP
     genres = genres.toLowerCase();
-    genres = genres.split(", ");
+    genres = genres.split(', ');
 
     var movieTitle = title(req.body.name);
-    // var actors = title(req.body.cast);
+
     var actors = title(req.body.cast);
-    actorsArr = actors.split(", ");
+    actorsArr = actors.split(', ');
     var newMovie = {
         name: movieTitle,
         poster: req.body.poster,
@@ -121,31 +122,29 @@ app.post("/movies", isLoggedIn, (req, res)=>{
     Movie.create(newMovie, (err, createdMovie)=>{
         if(err){
             console.log(err);
-            return res.redirect("/movies/new");
+            return res.redirect('/movies/new');
         } else {
             actorsArr.forEach((actor)=>{
-                Actor.findOne({"name": actor}, (err, foundActor)=>{
+                Actor.findOne({name: actor}, (err, foundActor)=>{
                     if(!foundActor){
-                        console.log("no actor found");
+                        console.log('No Actor Found To Add Movie To');
                     } else {
                         foundActor.movies.push(createdMovie);
-                        // createdMovie.actors.push(foundActor);
                         foundActor.save();
-                        // console.log(foundActor);
-                        Movie.findOne({"name": movieTitle}, (err, foundMovie)=>{
+                        Movie.findOne({name: movieTitle}, (err, foundMovie)=>{
                             foundMovie.actors.push(foundActor);
                             foundMovie.save();
                         });
                     }
                 });
             });
-            res.redirect("/movies");
+            res.redirect('/movies');
         }
     });
 });
 
 //RATING A MOVIE  
-app.post("/movies/:id/rating", isLoggedIn, (req, res) => {
+app.post('/movies/:id/rating', isLoggedIn, (req, res) => {
     var rateIt = {
         rating: req.body.rating,
         ratedBy: {
@@ -175,7 +174,7 @@ app.post("/movies/:id/rating", isLoggedIn, (req, res) => {
                         Movie.findById(id, (err, f)=>{
                             console.log(f);
                         });
-                        res.redirect("/movies/"+ id +"/reviews");
+                        res.redirect('/movies/' + id + '/reviews');
                     }
                 });
             }
@@ -191,7 +190,7 @@ app.post("/movies/:id/rating", isLoggedIn, (req, res) => {
                 Rating.findByIdAndDelete(newRating._id, (err, deleted)=>{
                     console.log(deleted);
                 });
-                return res.redirect("/movies");
+                return res.redirect('/movies');
             } else {
                 foundMovie.ratings.push(newRating);
                 foundMovie.save((err, savedMovie)=>{
@@ -208,7 +207,7 @@ app.post("/movies/:id/rating", isLoggedIn, (req, res) => {
 });
 
 //DELETE A MOVIE ALONG WITH RATINGS AND ACTORS[MOVIES DONE LIST]
-app.delete("/movies/:id", isLoggedIn, function (req, res) {
+app.delete('/movies/:id', isLoggedIn, function (req, res) {
     Movie.findById(req.params.id, (err, foundMovie)=>{
         //FOR ALL ACTORS FIND IF THE ACTOR HAS DONE THAT MOVIE, THEN DELETE IT FROM THE ACTOR'S MOVIES LIST
         for(i=0; i<foundMovie.actors.length; i++){
@@ -226,7 +225,7 @@ app.delete("/movies/:id", isLoggedIn, function (req, res) {
 
     Movie.findByIdAndDelete(req.params.id, function (err) {
         if (err) {
-            res.send("ERROR HAPPENED!");
+            res.send('ERROR HAPPENED!');
         } else {
             //DELETE ALL THE RATINGS BELONGING TO THAT MOVIE
             Rating.deleteMany({movie: req.params.id}, (err) => {
@@ -234,56 +233,55 @@ app.delete("/movies/:id", isLoggedIn, function (req, res) {
                     console.log(err);
                 }
             });
-            console.log("Movie deleted");
-            res.redirect("/movies");
+            console.log('Movie deleted');
+            res.redirect('/movies');
         }
     });
 });
 
 //SHOW MORE DETAILS ABOUT A MOVIE
-app.get("/movies/:id", isLoggedIn, (req, res) => {
+app.get('/movies/:id', isLoggedIn, (req, res) => {
     Movie.findById(req.params.id, (err, foundM) => {
         if (err) {
             console.log(err);
-            res.redirect("/");
+            res.redirect('/');
         } else {
-            res.render("movies/show", {movie: foundM});
+            res.render('movies/show', {movie: foundM});
         }
     });
 });
 
 //SHOW THE REVIEWS OF A MOVIE
-app.get("/movies/:id/reviews", (req, res) => {
+app.get('/movies/:id/reviews', (req, res) => {
     Movie.findById(req.params.id).populate({path: 'ratings', model: Rating}).exec((err, found) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(found.name);
-            res.render("movies/reviews", {movie: found});
+            res.render('movies/reviews', {movie: found});
         }
     });
 });
 
 //SHOW THE CAST OF A MOVIE
-app.get("/movies/:id/cast", (req, res) => {
+app.get('/movies/:id/cast', (req, res) => {
     Movie.findById(req.params.id).populate({path: 'actors', model: Actor}).exec((err, found) => {
         if(err){
             console.log(err);
         } else {
-            res.render("movies/cast", {movie: found});
+            res.render('movies/cast', {movie: found});
         }
     });
 });
 
 //SHOW A PAGE WITH LINKS TO WATCH A MOVIE
-app.get("/movies/:id/stream", (req, res) => {
+app.get('/movies/:id/stream', (req, res) => {
     Movie.findById(req.params.id, (err, foundMovie)=>{
-        res.render("movies/stream", {movie: foundMovie});
+        res.render('movies/stream', {movie: foundMovie});
     });
 });
 //==================================================================================
 //SEARCHING FOR A MOVIE/ACTOR
-app.post("/search", (req, res) => {
+app.post('/search', (req, res) => {
     name = title(req.body.search);
     Movie.findOne({name: name}, (err, foundMovie) => {
         if (err) {
@@ -295,13 +293,13 @@ app.post("/search", (req, res) => {
                         console.log(err);
                     } else {
                         if (!foundActor) {
-                            return res.redirect("/movies");
+                            return res.redirect('/movies');
                         }
-                        res.redirect("/actors/" + foundActor._id);
+                        res.redirect('/actors/' + foundActor._id);
                     }
                 });
             } else {
-                res.redirect("/movies/" + foundMovie._id);
+                res.redirect('/movies/' + foundMovie._id);
             }
         }
     });
@@ -311,23 +309,23 @@ app.post("/search", (req, res) => {
 //ACTORS ROUTES
 
 //SHOW ALL ACTORS
-app.get("/actors", (req, res) => {
+app.get('/actors', (req, res) => {
     Actor.find({}, (err, actors) => {
         if (err) {
             console.log(err);
         } else {
-            res.render("actors/actors", {actors: actors});
+            res.render('actors/actors', {actors: actors});
         }
     });
 });
 
 //SHOW FORM TO ADD NEW ACTORS
-app.get("/actors/new", (req, res) => {
-    res.render("actors/new");
+app.get('/actors/new', (req, res) => {
+    res.render('actors/new');
 });
 
 //ADD A NEW ACTOR TO DATABASE
-app.post("/actors", (req, res) => {
+app.post('/actors', (req, res) => {
     var newActor = {
         name: title(req.body.name),
         image: req.body.image,
@@ -339,25 +337,25 @@ app.post("/actors", (req, res) => {
             console.log(err);
         } else {
             console.log(actor);
-            res.redirect("/actors");
+            res.redirect('/actors');
         }
     });
 });
 
 //SHOW ALL DETAILS ABOUT AN ACTOR
-app.get("/actors/:id", (req, res) => {
+app.get('/actors/:id', (req, res) => {
     Actor.findById(req.params.id).populate({path: 'movies', model: Movie}).populate({path: 'upcomingMovies', model: Movie}).exec((err, foundActor) => {
         if (err) {
             console.log(err);
         } else {
             console.log(foundActor.name);
-            res.render("actors/show", {actor: foundActor});
+            res.render('actors/show', {actor: foundActor});
         }
     });
 });
 
 //DELETE AN ACTOR FROM THE DATABASE
-app.delete("/actors/:id", (req, res)=>{
+app.delete('/actors/:id', (req, res)=>{
     Actor.findOne({_id: req.params.id}, (err, foundActor)=>{
         //FOR ALL THE MOVIES THE ACTOR HAS DONE REMOVE THAT ACTOR FROM THE MOVIE'S ACTORS LIST
         foundActor.movies.forEach((movie)=>{
@@ -377,8 +375,8 @@ app.delete("/actors/:id", (req, res)=>{
         if(err){
             console.log(err);
         } else {
-            console.log("Actor deleted");
-            res.redirect("/actors");
+            console.log('Actor deleted');
+            res.redirect('/actors');
         }
     });
 });
@@ -386,48 +384,44 @@ app.delete("/actors/:id", (req, res)=>{
 //===================================================================================
 //RECOMMENDATION ROUTES
 
-app.get("/recommendation", (req, res) => {
-    res.render("recommendation/recommendation")
+//SELECTION OF RECOMMENDATION TYPE
+app.get('/recommendation', (req, res) => {
+    res.render('recommendation/recommendation')
 });
 
 //ROUTE TO SHOW THE HIGHEST RATED MOVIES
-app.get("/highest", (req, res) => {
-    Movie.aggregate([{$sort: {ratingValue: -1}}, {$match: {ratingValue: {$ne: 'Unrated'}}}], (err, found) => {
+app.get('/highest', (req, res) => {
+    Movie.aggregate([{$sort: {ratingValue: -1}}, {$match: {$and: [{ratingValue: {$ne: 'Unrated'}}, {ratingValue: {$ne: '10.0'}}]}}], (err, found) => {
         if(err) {
             console.log(err);
         } else if(found.length === 0) {
-            res.render("movies/select", {movies: found});
+            res.render('movies/select', {movies: found});
         } else {
-            n = found.length - 1;
-            while(found[n].ratingValue === '10.0'){
-                n--;
-            }
-
-            a = found.splice(n+1, found.length - 1);
-            a.forEach((movie) => {
-                found.unshift(movie);
-            });
-
-            res.render("movies/select", {movies: found});
+            Movie.find({ratingValue: {$eq: '10.0'}}, (err, movies) => {
+                movies.forEach((movie) => {
+                    found.unshift(movie);
+                })
+                res.render('movies/select', {movies: found});
+            })
         }
     })
 });
 
 //ROUTE TO SHOW THE MOST RATED MOVIES
-app.get("/mostrated", (req, res) => {
+app.get('/mostrated', (req, res) => {
     Movie.aggregate([{$match: {ratingCount: {$gt: 0}}}, {$sort: {ratingCount: -1}}], (err, found) => {
         if(err) {
             console.log(err);
         } else if(!found) {
-            return res.redirect("/movies");
+            return res.redirect('/movies');
         } else {
-            res.render("movies/select", {movies: found});
+            res.render('movies/select', {movies: found});
         }
     })
 });
 
 //ROUTE TO SHOW THE UPCOMING MOVIES
-app.get("/upcoming", (req, res)=>{
+app.get('/upcoming', (req, res)=>{
     nowDate = new Date()
     nowDate.setHours(nowDate.getHours() + 5)
     nowDate.setMinutes(nowDate.getMinutes() + 30)
@@ -436,34 +430,30 @@ app.get("/upcoming", (req, res)=>{
         if(err) {
             console.log(err);
         } else if(!found) {
-            return res.redirect("/movies");
+            return res.redirect('/movies');
         } else {
-            res.render("movies/select", {movies: found});
+            res.render('movies/select', {movies: found});
         }
     })
 });
 
 //SHOW MORE MOVIES WITH RESPECT TO THE SELECTED MOVIE
-app.get("/movies/:id/more", (req, res)=>{
+app.get('/movies/:id/more', (req, res)=>{
     Movie.findById(req.params.id, (err, foundMovie)=>{
         var like1 = foundMovie.genres[0], like2 = foundMovie.genres[1];
-        Movie.find({$and: [{genres: {$eq: like1}}, {genres: {$eq: like2}}]}, (err, found) => {
-            for(i=0; i<found.length; i++){
-                if(String(found[i]._id) == String(foundMovie._id)) break;
-            }
-            found.splice(i, 1);
-            res.render("recommendation/more", {recommendedMovies: found, movie: foundMovie});
+        Movie.find({$and: [{genres: {$eq: like1}}, {genres: {$eq: like2}}, {name: {$ne: foundMovie.name}}]}, (err, found) => {
+            res.render('recommendation/more', {recommendedMovies: found, movie: foundMovie});
         });
     });
 });
 
-app.get("/recommendation/genres", (req, res)=>{
+app.get('/recommendation/genres', (req, res)=>{
     genres = ['Action', 'Adventure', 'Thriller', 'Comedy', 'Mystery', 'Drama', 'Crime', 'Romance', 'Animated', 'Western', 'Superhero', 
-        'Fantasy', 'Science-Fiction', 'Horror', 'Heist', 'Documentry', 'War', 'Disaster', 'Sports', 'History']
-    res.render("recommendation/genres", {genres: genres})
+        'Zombie', 'Science-Fiction', 'Horror', 'Heist', 'Documentry', 'War', 'Disaster', 'Sports', 'History']
+    res.render('recommendation/genres', {genres: genres})
 })
 
-app.get("/recommendation/genres/:genre", (req, res)=>{
+app.get('/recommendation/genres/:genre', (req, res)=>{
     if(req.params.genre === 'Science-Fiction'){
         reqGenre = 'sci-fi'
     } else {
@@ -472,12 +462,10 @@ app.get("/recommendation/genres/:genre", (req, res)=>{
     reqGenre = reqGenre.toLowerCase();
     console.log(reqGenre)
 
-    Movie.aggregate([{$unwind : "$genres"}, {$match: {genres: {$eq: reqGenre}}}], (err, movies) => {
-        res.render("movies/select", {movies: movies})
+    Movie.aggregate([{$unwind : '$genres'}, {$match: {genres: {$eq: reqGenre}}}], (err, movies) => {
+        res.render('movies/select', {movies: movies})
     })
 })
-
-
 //============================================================================
 //USER PROFILE
 // app.get("/profile/:id", (req, res)=>{
@@ -497,12 +485,12 @@ app.get("/recommendation/genres/:genre", (req, res)=>{
 //AUTHENTICATION ROUTES
 
 //SHOW THE FORM FOR NEW REGISTRATION OF AN USER
-app.get("/register", (req, res) => {
-    res.render("register");
+app.get('/register', (req, res) => {
+    res.render('register');
 });
 
 //ADD NEW USER TO DATABASE AND ALSO LOG IN
-app.post("/register", (req, res) => {
+app.post('/register', (req, res) => {
     var newUser = new User({
         name: req.body.name,
         dob: req.body.dob,
@@ -514,31 +502,31 @@ app.post("/register", (req, res) => {
     User.register(newUser, req.body.password, (err, user) => {
         if (err) {
             console.log(err);
-            return res.redirect("/");
+            return res.redirect('/');
         }
         //LOGIN THE NEWLY REGISTERED USER
-        passport.authenticate("local")(req, res, function () {
-            res.redirect("/movies");
+        passport.authenticate('local')(req, res, function () {
+            res.redirect('/movies');
             console.log(user);
         });
     });
 });
 
 //SHOW LOGIN FORM
-app.get("/login", (req, res) => {
-    res.render("login");
+app.get('/login', (req, res) => {
+    res.render('login');
 });
 
 //LOGGING THE USER IN
-app.post("/login", passport.authenticate("local", {
-    successRedirect: "/movies",
-    failureRedirect: "/login"
+app.post('/login', passport.authenticate('local', {
+    successRedirect: '/movies',
+    failureRedirect: '/login'
 }), (req, res) => {});
 
 //LOGOUT ROUTE
-app.get("/logout", (req, res) => {
+app.get('/logout', (req, res) => {
     req.logOut();
-    res.redirect("/movies");
+    res.redirect('/movies');
 });
 
 //FUNCTION TO CHECK IF USER IS LOGGED IN OR NOT[THIS FUNCTION CAN ADDED TO ANY ROUTE]
@@ -546,7 +534,7 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
-    res.redirect("/login");
+    res.redirect('/login');
 }
 //=============================================================================
 
@@ -554,6 +542,6 @@ function isLoggedIn(req, res, next) {
 //=============================================================================
 //SERVER SETUP
 app.listen(3000, (req, res) => {
-    console.log("SERVER STARTED AT PORT 3000!");
+    console.log('SERVER STARTED AT PORT 3000!');
 });
 //==============================================================================

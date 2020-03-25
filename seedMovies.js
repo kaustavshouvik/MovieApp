@@ -31,7 +31,7 @@ moviesArray = [
         plot: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the\
             greatest psychological and physical tests of his ability to fight injustice.',
         cast: ['Christian Bale', 'Heath Ledger', 'Michael Caine', 'Gary Oldman', 'Morgan Freeman'],
-        genres: ['action', 'drama', 'crime', 'superhero'],
+        genres: ['crime', 'thriller', 'action', 'drama', 'superhero'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
             username: 'kaustav007'
@@ -124,6 +124,46 @@ moviesArray = [
         youtubeLink: 'https://www.youtube.com/watch?v=-m8pmVU4pDs',
     },
     {
+        name: 'Inception',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_QL50_SY1000_CR0,0,675,1000_AL_.jpg',
+        image: 'https://wallpapercave.com/wp/1rj6nGA.jpg',
+        release: new Date('16 July 2010'),
+        plot: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of \
+            planting an idea into the mind of a C.E.O.',
+        cast: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Ellen Page', 'Tom Hardy', 'Michael Caine'],
+        genres: ['sci-fi', 'thriller', 'adventure', 'action', 'heist'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0JTBVK6L41AABWSV8DK605AI0U/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B07D7PLJWR&qid=1584536395',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'No Time to Die',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNGEwMDU2ZDQtZmE5Zi00YjFiLWIwYWItOGMyMzY5MzljOWU3XkEyXkFqcGdeQXVyODk2NDQ3MTA@._V1_QL50_SY1000_CR0,0,685,1000_AL_.jpg',
+        image: 'https://cdn.vox-cdn.com/thumbor/TjznfeLituF6nA7Ei46RDIE7SPE=/0x0:3000x2000/1200x800/filters:focal(1402x508:1882x988)/cdn.vox-cdn.com/uploads/chorus_image/image/66435782/1210236313.jpg.5.jpg',
+        release: new Date('25 November 2020'),
+        plot: 'James Bond has left active service. His peace is short-lived when Felix Leiter, an old friend from the CIA, \
+            turns up asking for help, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.',
+        cast: ['Daniel Craig', 'Naomie Harris'],
+        genres: ['action', 'adventure', 'thriller'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
         name: 'Star Trek Into Darkness',
         poster: 'https://m.media-amazon.com/images/M/MV5BMTk2NzczOTgxNF5BMl5BanBnXkFtZTcwODQ5ODczOQ@@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
         image: 'https://m.media-amazon.com/images/M/MV5BMjAwOTcwMjg0NV5BMl5BanBnXkFtZTcwNDE0MzMxOQ@@._V1_QL50_SY1000_CR0,0,1776,1000_AL_.jpg',
@@ -184,34 +224,13 @@ moviesArray = [
         youtubeLink: 'https://www.youtube.com/watch?v=Ew-PN7e90RE',
     },
     {
-        name: 'Inception',
-        poster: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_QL50_SY1000_CR0,0,675,1000_AL_.jpg',
-        image: 'https://wallpapercave.com/wp/1rj6nGA.jpg',
-        release: new Date('16 July 2010'),
-        plot: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of \
-            planting an idea into the mind of a C.E.O.',
-        cast: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Ellen Page', 'Tom Hardy', 'Michael Caine'],
-        genres: ['sci-fi', 'thriller', 'adventure', 'action', 'heist'],
-        addedBy :{
-            id: '5e704f47d93ca1214470756d',
-            username: 'kaustav007'
-        },
-        ratingValue: 'Unrated',
-        ratingCount: 0,
-        primeLink: 'https://www.primevideo.com/detail/0JTBVK6L41AABWSV8DK605AI0U/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B07D7PLJWR&qid=1584536395',
-        netflixLink: '',
-        hotstarLink: '',
-        youtubeLink: '',
-    },
-    {
-        name: 'No Time to Die',
-        poster: 'https://m.media-amazon.com/images/M/MV5BNGEwMDU2ZDQtZmE5Zi00YjFiLWIwYWItOGMyMzY5MzljOWU3XkEyXkFqcGdeQXVyODk2NDQ3MTA@._V1_QL50_SY1000_CR0,0,685,1000_AL_.jpg',
-        image: 'https://cdn.vox-cdn.com/thumbor/TjznfeLituF6nA7Ei46RDIE7SPE=/0x0:3000x2000/1200x800/filters:focal(1402x508:1882x988)/cdn.vox-cdn.com/uploads/chorus_image/image/66435782/1210236313.jpg.5.jpg',
-        release: new Date('25 November 2020'),
-        plot: 'James Bond has left active service. His peace is short-lived when Felix Leiter, an old friend from the CIA, \
-            turns up asking for help, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.',
-        cast: ['Daniel Craig', 'Naomie Harris'],
-        genres: ['action', 'adventure', 'thriller'],
+        name: 'The Fault In Our Stars',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjA4NzkxNzc5Ml5BMl5BanBnXkFtZTgwNzQ3OTMxMTE@._V1_QL50_SY1000_CR0,0,675,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTYwMjE4NDM1M15BMl5BanBnXkFtZTgwNzA5OTA4MTE@._V1_QL50_SY1000_CR0,0,1380,1000_AL_.jpg',
+        release: new Date('14 July 2014'),
+        plot: 'Two teenage cancer patients begin a life-affirming journey to visit a reclusive author in Amsterdam.',
+        cast: ['Shailene Woodley', 'Ansel Elgort', 'Willem Dafoe'],
+        genres: ['romance', 'drama'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
             username: 'kaustav007'
@@ -220,7 +239,7 @@ moviesArray = [
         ratingCount: 0,
         primeLink: '',
         netflixLink: '',
-        hotstarLink: '',
+        hotstarLink: 'https://www.hotstar.com/in/movies/the-fault-in-our-stars/1770000333',
         youtubeLink: '',
     },
     {
@@ -242,6 +261,26 @@ moviesArray = [
         primeLink: '',
         netflixLink: '',
         hotstarLink: 'https://www.hotstar.com/in/movies/stuber/1260020833',
+        youtubeLink: '',
+    },
+    {
+        name: '1917',
+        poster: 'https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_QL50_SY1000_CR0,0,631,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BY2ZhMjI5MWEtOTVkYi00MjU1LWExOTgtYzIzZWY1YzQyZDM0XkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_QL50_SY1000_CR0,0,1500,1000_AL_.jpg',
+        release: new Date('10 January 2020'),
+        plot: 'April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and \
+            deliver a message that will stop 1,600 men from walking straight into a deadly trap.',
+        cast: ['Colin Firth', 'Mark Strong', 'George MacKay', 'Dean-Charles Chapman'],
+        genres: ['drama', 'war'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
         youtubeLink: '',
     },
     {
@@ -269,7 +308,7 @@ moviesArray = [
         image: 'https://m.media-amazon.com/images/M/MV5BZDFkY2NhN2MtNmZkOC00YThjLTlhMDEtZjQ2OGQyMjFkOTU0XkEyXkFqcGdeQXVyNjczOTE0MzM@._V1_QL50_.jpg',
         release: new Date('7 January 2020'),
         plot: 'The Bad Boys Mike Lowrey and Marcus Burnett are back together for one last ride in the highly anticipated Bad Boys for Life.',
-        cast: ['Will Smith'],
+        cast: ['Will Smith', 'Martin Lawrence'],
         genres: ['action', 'comedy', 'crime'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
@@ -344,25 +383,6 @@ moviesArray = [
         youtubeLink: '',
     },
     {
-        name: 'The Fault In Our Stars',
-        poster: 'https://m.media-amazon.com/images/M/MV5BMjA4NzkxNzc5Ml5BMl5BanBnXkFtZTgwNzQ3OTMxMTE@._V1_QL50_SY1000_CR0,0,675,1000_AL_.jpg',
-        image: 'https://m.media-amazon.com/images/M/MV5BMTYwMjE4NDM1M15BMl5BanBnXkFtZTgwNzA5OTA4MTE@._V1_QL50_SY1000_CR0,0,1380,1000_AL_.jpg',
-        release: new Date('14 July 2014'),
-        plot: 'Two teenage cancer patients begin a life-affirming journey to visit a reclusive author in Amsterdam.',
-        cast: ['Shailene Woodley', 'Ansel Elgort', 'Willem Dafoe'],
-        genres: ['romance', 'drama'],
-        addedBy :{
-            id: '5e704f47d93ca1214470756d',
-            username: 'kaustav007'
-        },
-        ratingValue: 'Unrated',
-        ratingCount: 0,
-        primeLink: '',
-        netflixLink: '',
-        hotstarLink: 'https://www.hotstar.com/in/movies/the-fault-in-our-stars/1770000333',
-        youtubeLink: '',
-    },
-    {
         name: 'Zootopia',
         poster: 'https://m.media-amazon.com/images/M/MV5BOTMyMjEyNzIzMV5BMl5BanBnXkFtZTgwNzIyNjU0NzE@._V1_QL50_SY1000_SX675_AL_.jpg',
         image: 'https://www.rollingstone.com/wp-content/uploads/2018/06/rs-230396-zootopia.jpg',
@@ -420,6 +440,244 @@ moviesArray = [
         netflixLink: '',
         hotstarLink: 'https://www.hotstar.com/in/movies/sully/1221113337',
         youtubeLink: 'https://www.youtube.com/watch?v=Nq_li6xlD2o',
+    },
+    {
+        name: 'Lucy',
+        poster: 'https://m.media-amazon.com/images/M/MV5BODcxMzY3ODY1NF5BMl5BanBnXkFtZTgwNzg1NDY4MTE@._V1_QL50_SY1000_CR0,0,631,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTUyMDEwNjYzMV5BMl5BanBnXkFtZTgwMzAyNDI1MTE@._V1_QL50_SX1500_CR0,0,1500,999_AL_.jpg',
+        release: new Date('25 July 2014'),
+        plot: 'A woman, accidentally caught in a dark deal, turns the tables on her captors and transforms into a merciless warrior \
+            evolved beyond human logic.',
+        cast: ['Scarlett Johansson', 'Morgan Freeman'],
+        genres: ['action', 'thriller', 'sci-fi'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0ND7Y71UEBCZB0EV0P5ZAWWZBD/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B07K4DHVL5&qid=1584963725',
+        netflixLink: 'https://www.netflix.com/in/title/70307658?source=35',
+        hotstarLink: '',
+        youtubeLink: 'https://www.youtube.com/watch?v=QTFGybLMohc',
+    },
+    {
+        name: 'The Hurt Locker',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYWYxZjU2MmQtMmMzYi00ZWUwLTg2ZWQtMDExZTVlYjM3ZWM1XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL50_SY1000_CR0,0,666,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTI3MzQzMTc3Nl5BMl5BanBnXkFtZTcwMzc2MzIzMw@@._V1_QL50_SX1777_CR0,0,1777,999_AL_.jpg',
+        release: new Date('31 July 2009'),
+        plot: 'During the Iraq War, a Sergeant recently assigned to an army bomb squad is put at odds with his squad mates due to his maverick way of handling his work.',
+        cast: ['Jeremy Renner', 'Anthony Mackie'],
+        genres: ["drama", "war", "thriller"],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0J3SVA2ER7XK58BHO6KF6YAV4Y/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B082LLT7BQ&qid=1584968375',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/C_VrM22cUo0',
+    },
+    {
+        name: 'Speed',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYjc0MjYyN2EtZGRhMy00NzJiLWI2Y2QtYzhiYTU3NzAxNzg4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL50_SY1000_CR0,0,675,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTg3NjA5NzcxNF5BMl5BanBnXkFtZTgwNjM3NjEzMDI@._V1_QL50_SX1777_CR0,0,1777,999_AL_.jpg',
+        release: new Date('10 June 1994'),
+        plot: 'A young police officer must prevent a bomb exploding aboard a city bus by keeping its speed above 50 mph.',
+        cast: ['Keanu Reeves', 'Sandra Bullock'],
+        genres: ["thriller", "action", "adventure"],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://www.youtube.com/watch?v=s1f_1vWf_Z0',
+    },
+    {
+        name: 'Spies In Disguise',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNzg1MzM3OWUtNjgzZC00NjMzLWE1NzAtOThiMDgyMjhhZDBhXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_QL50_SY1000_SX675_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BYWY1MjZiMzctOTZlZS00MTdkLWE3ZmMtOWI5Y2IxYWUxMDY4XkEyXkFqcGdeQXVyODEwMTc2ODQ@._V1_QL50_SX1777_CR0,0,1777,744_AL_.jpg',
+        release: new Date('27 December 2019'),
+        plot: 'When the world\'s best spy is turned into a pigeon, he must rely on his nerdy tech officer to save the world.',
+        cast: ['Will Smith', 'Tom Holland', 'Karen Gillan', 'Ben Mendelsohn'],
+        genres: ["animated", "action", "adventure"],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Fury',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjA4MDU0NTUyN15BMl5BanBnXkFtZTgwMzQxMzY4MjE@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjM1ODA1NjQ4MF5BMl5BanBnXkFtZTgwOTQyNTY4MjE@._V1_QL50_SX1500_CR0,0,1500,999_AL_.jpg',
+        release: new Date('17 October 2014'),
+        plot: 'A grizzled tank commander makes tough decisions as he and his crew fight their way across Germany in April, 1945.',
+        cast: ['Brad Pitt', 'Logan Lerman', 'Michael Peña', 'Jon Bernthal'],
+        genres: ["action", "war", "drama"],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: 'https://www.netflix.com/in/title/70305907?source=35',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/mHezgC3Hhao',
+    },
+    {
+        name: 'Hacksaw Ridge',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjQ1NjM3MTUxNV5BMl5BanBnXkFtZTgwMDc5MTY5OTE@._V1_QL50_SY1000_CR0,0,647,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTk1NjAyNzc5NF5BMl5BanBnXkFtZTgwMjQ0MTc5OTE@._V1_QL50_SY1000_CR0,0,1400,1000_AL_.jpg',
+        release: new Date('4 November 2016'),
+        plot: 'World War II American Army Medic Desmond T. Doss, who served during the Battle of Okinawa, refuses to kill people, and \
+            becomes the first man in American history to receive the Medal of Honor without firing a shot.',
+        cast: ['Andrew Garfield'],
+        genres: ["biography", "war", "drama"],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Tenet',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNmMwYzFlNTEtYTc0NC00NGY4LTgzNzItZGFiYTViY2QzNzU1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMmZjZmY1ZTEtNTkwZC00ZGNmLTllMmEtMDcyYWY4MGQ4YTlhXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_QL50_.jpg',
+        release: new Date('17 July 2020'),
+        plot: 'An action epic revolving around international espionage, time travel, and evolution. Possibly about a man trying to prevent World War 3 through \
+            time travel and rebirth.',
+        cast: ['Robert Pattinson', 'Michael Caine', 'Himesh Patel', 'John David Washington'],
+        genres: ['action', 'thriller', 'drama'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Knives Out',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_QL50_SY1000_SX675_AL_.jpg',
+        image: 'https://syn.org.au/app/uploads/Knives-Out-detectives.jpg',
+        release: new Date('27 November 2019'),
+        plot: 'A detective investigates the death of a patriarch of an eccentric, combative family.',
+        cast: ['Daniel Craig', 'Chris Evans', 'Ana De Armas'],
+        genres: ['drama', 'thriller', 'crime', 'mystery'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Thor: Ragnarok',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTAwMDcwOTAyNjReQTJeQWpwZ15BbWU4MDgyMTI4MDQy._V1_QL50_SX1777_CR0,0,1777,744_AL_.jpg',
+        release: new Date('3 November 2017'),
+        plot: 'Deprived of his mighty hammer Mjolnir, Thor must escape the other side of the universe to save his home, Asgard, from Hela, \
+            the goddess of death.',
+        cast: ['Chris Hemsworth', 'Tom Hiddleston', 'Idris Elba', 'Benedict Cumberbatch', 'Mark Ruffalo', 'Taika Waititi'],
+        genres: ['action', 'adventure', 'comedy', 'superhero'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: 'https://www.hotstar.com/in/movies/thor-ragnarok/1660010577',
+        youtubeLink: '',
+    },
+    {
+        name: 'Shazam!',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYTE0Yjc1NzUtMjFjMC00Y2I3LTg3NGYtNGRlMGJhYThjMTJmXkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BZDAyZTRlMzItZTMzOC00ODU4LWI5MWEtZDhmMTJlMzY2MTVjXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_QL50_SX1777_CR0,0,1777,999_AL_.jpg',
+        release: new Date('5 April 2019'),
+        plot: 'After being abandoned at a fair, Billy constantly searches for his mother. His life, however, takes a huge turn when \
+            he inherits the superpowers of a powerful wizard.',
+        cast: ['Zachary Levi', 'Mark Strong'],
+        genres: ['action', 'adventure', 'comedy'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0RQYUONU1AQ7S0Z9OVM6BI9X71/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B081RLMBPJ&qid=1585127991',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/GfFgv_Wo3dE',
+    },
+    {
+        name: 'Avengers: Infinity War',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjA5Njg2NjcyOF5BMl5BanBnXkFtZTgwODY4MjkzNTM@._V1_QL50_SX1777_CR0,0,1777,937_AL_.jpg',
+        release: new Date('27 April 2018'),
+        plot: 'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his \
+            blitz of devastation and ruin puts an end to the universe.',
+        cast: ['Robert Downey Jr.', 'Benedict Cumberbatch', 'Chris Hemsworth', 'Mark Ruffalo', 'Chris Evans', 'Scarlett Johansson', 
+            'Don Cheadle', 'Tom Holland', 'Chadwick Boseman', 'Karen Gillan', 'Tom Hiddleston', 'Elizabeth Olsen', 'Anthony Mackie',
+            'Sebastian Stan', 'Idris Elba', 'Peter Dinklage', 'Benedict Wong', 'Dave Bautista', 'Vin Diesel', 'Bradley Cooper',
+            'Josh Brolin', 'Chris Pratt'],
+        genres: ['action', 'adventure', 'sci-fi', 'superhero'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: 'https://www.hotstar.com/in/movies/avengers-endgame/1260013556',
+        youtubeLink: '',
+    },
+    {
+        name: 'Spider-Man: Far From Home',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMGZlNTY1ZWUtYTMzNC00ZjUyLWE0MjQtMTMxN2E3ODYxMWVmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BN2I1MDE3Y2EtZDdlOS00MjVmLWJmNTctOTNmYWY3ZmYzOWQ4XkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_QL50_SX1777_CR0,0,1777,936_AL_.jpg',
+        release: new Date('28 June 2019'),
+        plot: 'As Spider-Man, a beloved superhero, Peter Parker faces four destructive elemental monsters while on holiday in Europe. \
+            Soon, he receives help from Mysterio, a fellow hero with mysterious origins.',
+        cast: ['Tom Holland', 'Samuel L. Jackson', 'Jake Gyllenhaal', 'Zendaya', 'Cobie Smulders'],
+        genres: ['action', 'adventure', 'sci-fi', 'superhero'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0KRH21HZEEX3FGTRXV0D3O3R61/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B07ZF9ZKBT&qid=1585146912',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/pW3cU6EgGWA',
     },
 ];
 

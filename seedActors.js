@@ -714,12 +714,24 @@ actorArray = [
             he was nominated for a BAFTA Award, Shakespeare in Love, and Love Actually. In 2009, Firth received widespread critical\
             acclaim for his leading role in A Single Man, for which he gained his first Academy Award nomination, and won a BAFTA\
             Award. Firth played secret agent Harry Hart in the 2014 film Kingsman: The Secret Service and the 2017 sequel Kingsman\
-            : The Golden Circle. In 2018, he co-starred in the musical fantasy Mary Poppins Returns and the following year he \
-            appeared in the war film 1917. Firth's films have grossed more than $3 billion from 42 releases worldwide. In 2011,\
-            he received a star on the Hollywood Walk of Fame, and was also selected as one of the Time 100.",
+            : The Golden Circle. Firth's films have grossed more than $3 billion from 42 releases worldwide.",
         movies: [],
         upcomingMovies: [],
         dob: new Date('10 September 1960')
+    },
+    {
+        name: 'Robert Pattinson',
+        image: 'https://www.gstatic.com/tv/thumb/persons/487714/487714_v9_bb.jpg',
+        bio : "Robert Douglas Thomas Pattinson (born 13 May 1986) is an English actor. After starting to act in a London \
+            theatre club at the age of 15, he began his film career at age 19 by playing Cedric Diggory in the fantasy film Harry \
+            Potter and the Goblet of Fire (2005). He went on to star as Edward Cullen in the film adaptations of the Twilight \
+            novels, consisting of five films between 2008 and 2012, which earned a combined total of over $3.3 billion worldwide. \
+            It brought Pattinson worldwide fame and established him among the highest-paid actors in the world. In 2010, Time \
+            magazine named him one of the 100 most influential people in the world, and he was featured in the Forbes Celebrity \
+            100 list.",
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('13 May 1986')
     },
     {
         name: 'Channing Tatum',
@@ -971,7 +983,10 @@ actorArray = [
         bio : 'Sebastian Stan (born August 13, 1982) is a Romanian-American actor. On television, he has played Carter Baizen\
             in Gossip Girl, Prince Jack Benjamin in Kings, Jefferson in Once Upon a Time, and T.J. Hammond in Political Animals.\
             The latter earned him a nomination for the Critics\' Choice Television Award for Best Supporting Actor in a \
-            Movie/Miniseries.',
+            Movie/Miniseries. Stan gained wide recognition for his role as Bucky Barnes / Winter Soldier in the Marvel Cinematic \
+            Universe, beginning with 2011\'s Captain America: The First Avenger and later also in Captain America: The Winter Soldier \
+            (2014), Ant-Man (2015), Captain America: Civil War (2016), Black Panther (2018), Avengers: Infinity War (2018), and \
+            Avengers: Endgame (2019).',
         movies: [],
         upcomingMovies: [],
         dob: new Date('13 August 1982')
@@ -982,7 +997,11 @@ actorArray = [
         bio : 'Benedict Wong (born 3 July 1971) is an English-Hong Kong actor who has appeared on film, television, and stage. \
             Wong is known for portraying Kublai Khan in Netflix\'s Marco Polo (2014–2016) and Bruce Ng in The Martian (2015). Wong \
             portrays Wong in the Marvel Cinematic Universe, making his first appearance in Doctor Strange (2016) and later in \
-            Avengers: Infinity War (2018) and Avengers: Endgame (2019).',
+            Avengers: Infinity War (2018) and Avengers: Endgame (2019). His first role was in a 1993 BBC Radio play called Kai \
+            Mei Sauce, written by Kevin Wong. He appeared as Errol Spears alongside Sean Lock in the situation comedy 15 Storeys \
+            High, and as Franklin Fu in the second series of Look Around You.In 2007, Wong starred in the feature film Grow Your \
+            Own. Wong went on to appear in the second episode of Series 4 of the Channel 4 comedy The IT Crowd, playing the character \
+            Prime, a previous Countdown contestant who had won the sixteenth Countdown teapot when he was known as Harold Tong.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('3 June 1971')
@@ -1021,7 +1040,8 @@ actorArray = [
         bio : 'Michael Bakari Jordan (born February 9, 1987) is an American actor and producer. He is known for his film roles as\
             shooting victim Oscar Grant in the drama Fruitvale Station (2013), boxer Adonis "Donnie" Creed in the Rocky sequel film \
             Creed (2015) and main antagonist Erik Killmonger in Black Panther (2018), all three of which were co-written and directed\
-            by Ryan Coogler.',
+            by Ryan Coogler. Jordan\'s television roles include Wallace in the HBO series The Wire (2002), Reggie Montgomery in the \
+            ABC series All My Children (2003–2006), and Vince Howard in the NBC drama series Friday Night Lights (2009–2011).',
         movies: [],
         upcomingMovies: [],
         dob: new Date('9 February 1987')
@@ -1032,7 +1052,11 @@ actorArray = [
         bio : 'Martin John Christopher Freeman (born 8 September 1971) is an English actor and comedian, known for portraying Bilbo\
             Baggins in Peter Jackson\'s The Hobbit film trilogy (2012–2014), Tim Canterbury in the original UK version of sitcom \
             mockumentary The Office (2001–2003), Dr. John Watson in the British crime drama Sherlock (2010–2017), and Lester Nygaard\
-            in the dark comedy-crime drama TV series Fargo (2014).',
+            in the dark comedy-crime drama TV series Fargo (2014). His other notable film roles include the romantic comedy Love \
+            Actually (2003), the comic science fiction film The Hitchhiker\'s Guide to the Galaxy (2005), the semi-improvised comedy \
+            Nativity! (2009), the comedic Three Flavours Cornetto trilogy (2004–2013), most prominently in the sci-fi comedy The \
+            World\'s End (2013), and his portrayal of Everett K. Ross in the Marvel films Captain America: Civil War (2016) and \
+            Black Panther (2018).',
         movies: [],
         upcomingMovies: [],
         dob: new Date('8 September 1971')
@@ -1055,7 +1079,9 @@ actorArray = [
         bio : 'Naomie Melanie Harris OBE is an English actress. She started her career as a child, appearing in the television series \
             Simon and the Witch in 1987. She portrayed Selena in 28 Days Later (2002), the witch Tia Dalma in the second and third Pirates\
             of the Caribbean films, and Winnie Mandela in Mandela: Long Walk to Freedom (2013). She won plaudits for her performance as \
-            Eve Moneypenny in the James Bond films Skyfall (2012), Spectre (2015), and No Time to Die (2020).',
+            Eve Moneypenny in the James Bond films Skyfall (2012), Spectre (2015), and No Time to Die (2020). In 2016, she starred in \
+            the critically acclaimed film Moonlight, a performance that earned her several accolades, including nominations for the \
+            Golden Globe, BAFTA, and Academy Award for Best Supporting Actress.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('6 September 1976')
@@ -1078,7 +1104,11 @@ actorArray = [
         image: 'https://www.gstatic.com/tv/thumb/persons/501536/501536_v9_bb.jpg',
         bio : 'Emily Jean "Emma" Stone (born November 6, 1988) is an American actress. The recipient of numerous accolades, \
             including an Academy Award and a Golden Globe Award, she was the world\'s highest-paid actress in 2017. Stone has appeared\
-            in Forbes Celebrity 100 in 2013 and in 2017, she was featured by Time as one of the 100 most influential people in the world.',
+            in Forbes Celebrity 100 in 2013 and in 2017, she was featured by Time as one of the 100 most influential people in the \
+            world. Born and raised in Scottsdale, Arizona, Stone began acting as a child, in a theater production of The Wind in \
+            the Willows in 2000. As a teenager, she relocated to Los Angeles with her mother and made her television debut in In \
+            Search of the New Partridge Family (2004), a reality show that produced only an unsold pilot. After small television \
+            roles, she made her film debut in Superbad (2007), and received positive media attention for her role in Zombieland (2009). ',
         movies: [],
         upcomingMovies: [],
         dob: new Date('6 November 1988')
@@ -1088,7 +1118,10 @@ actorArray = [
         image: 'https://www.gstatic.com/tv/thumb/persons/168053/168053_v9_bb.jpg',
         bio : 'Amy Lou Adams (born August 20, 1974) is an American actress. Known for both her comedic and dramatic performances, \
             she has placed three times in annual rankings of the highest-paid actresses in the world. Her accolades include two \
-            Golden Globes, and nominations for six Academy Awards and seven British Academy Film Awards.',
+            Golden Globes, and nominations for six Academy Awards and seven British Academy Film Awards. After moving to Los Angeles, \
+            she made guest appearances in television and took on "mean girl" parts in small-scale features. Her first major role \
+            came in Steven Spielberg\'s 2002 biopic Catch Me If You Can, opposite Leonardo DiCaprio, but she was unemployed for a \
+            year afterward. Her breakthrough came in the part of a loquacious pregnant woman in the 2005 independent film Junebug.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('20 August 1974')
@@ -1146,7 +1179,9 @@ actorArray = [
             writing and starring in the romantic comedy The Big Sick (2017) and for being a main cast member on HBO\'s comedy \
             series Silicon Valley (2014–2019). For writing the former with his wife Emily V. Gordon, Nanjiani was nominated for \
             the Academy Award for Best Original Screenplay. In 2018, Time named him one of the 100 most influential people in the \
-            world.',
+            world. Nanjiani has also voiced Prismo on the animated series Adventure Time and starred in the TNT series Franklin \
+            & Bash and the Adult Swim series Newsreaders. He also co-hosted the Comedy Central show The Meltdown with Jonah and \
+            Kumail as well as playing various roles in the series Portlandia.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('21 February 1978')
@@ -1190,7 +1225,9 @@ actorArray = [
         image: 'https://www.gstatic.com/tv/thumb/persons/1570/1570_v9_bb.jpg',
         bio : 'Arnold Alois Schwarzenegger is an Austrian-American actor, filmmaker, businessman, author, and former politician \
             and professional bodybuilder. He served as the 38th Governor of California from 2003 to 2011. As of 2020, he is the \
-            most recent Republican governor of California.',
+            most recent Republican governor of California. Schwarzenegger began lifting weights at the age of 15, and went on to win \
+            the Mr. Universe title at age 20 before winning the Mr. Olympia contest seven times; he remains a prominent presence in \
+            bodybuilding and has written many books and articles on the sport.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('30 July 1947')
@@ -1211,7 +1248,7 @@ actorArray = [
         name: 'Idris Elba',
         image: 'https://www.gstatic.com/tv/thumb/persons/178333/178333_v9_bc.jpg',
         bio : 'Idrissa Akuna Elba OBE is an English actor, writer, producer, musician, DJ, rapper, and singer. He is known for \
-            roles including Stringer Bell in the HBO series The Wire,[4] DCI John Luther in the BBC One series Luther, and Nelson \
+            roles including Stringer Bell in the HBO series The Wire, DCI John Luther in the BBC One series Luther, and Nelson \
             Mandela in the biographical film Mandela: Long Walk to Freedom (2013). He has been nominated four times for a Golden \
             Globe Award for Best Actor – Miniseries or Television Film, winning one, and was nominated five times for a Primetime \
             Emmy Award.',
@@ -1275,7 +1312,10 @@ actorArray = [
             in the AMC television drama series Mad Men (2007–2015). For much of the mid-1990s, he lived in Los Angeles, making \
             appearances in television series Providence, The Division, What About Brian, and Related. In 2000, he made his feature \
             film debut in the space adventure film Space Cowboys. The next year, he had a minor role in the independent comedy \
-            Kissing Jessica Stein (2001).',
+            Kissing Jessica Stein (2001). In 2008, Hamm appeared in a remake of the science fiction film The Day the Earth Stood \
+            Still. His first leading film role was in the 2010 independent thriller Stolen. He then had leading roles in Million \
+            Dollar Arm (2014), Keeping Up with the Joneses (2016), and Beirut (2018), and supporting roles in The Town (2010), \
+            Sucker Punch (2011), Bridesmaids (2011), Baby Driver (2017), Tag (2018), and Bad Times at the El Royale (2018).',
         movies: [],
         upcomingMovies: [],
         dob: new Date('10 March 1971')
@@ -1286,8 +1326,10 @@ actorArray = [
         bio : 'Logan Wade Lerman (born January 19, 1992) is an American actor, known for playing the title role in the \
             fantasy-adventure Percy Jackson films. He appeared in commercials in the mid-1990s, before starring in the series \
             Jack & Bobby (2004–2005) and the movies The Butterfly Effect (2004) and Hoot (2006). Lerman gained further recognition \
-            for his roles in the western 3:10 to Yuma, the thriller The Number 23, the comedy Meet Bill, and 2009\'s Gamer \
-            and My One and Only.',
+            for his roles in the western 3:10 to Yuma, the thriller The Number 23, the comedy Meet Bill, and 2009\'s Gamer and My \
+            One and Only. He subsequently played d\'Artagnan in 2011\'s The Three Musketeers, starred in the coming-of-age dramas \
+            The Perks of Being a Wallflower (2012), Indignation (2016) and The Vanishing of Sidney Hall (2017), and had major roles \
+            in the 2014 films Noah and Fury. In 2020, he returned to television with the series Hunters.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('19 January 1992')
@@ -1298,7 +1340,12 @@ actorArray = [
         bio : 'Charlize Theron is a South African[4] and American actress and producer. She is the recipient of several accolades, \
             including an Academy Award, a Golden Globe Award, an American Cinematheque Award, and the Silver Bear for Best Actress. \
             Time magazine named her one of the 100 most influential people in the world in 2016, and she is one of the world\'s \
-            highest-paid actresses, as of 2019.',
+            highest-paid actresses, as of 2019. Theron came to international prominence in the 1990s by playing the leading lady \
+            in the Hollywood films The Devil\'s Advocate (1997), Mighty Joe Young (1998), and The Cider House Rules (1999). In \
+            2003, she received critical acclaim for her portrayal of serial killer Aileen Wuornos in Monster, for which she won \
+            the Academy Award for Best Actress, becoming the first South African to win an Oscar in an acting category. She \
+            received another Academy Award nomination for playing a sexually abused woman seeking justice in the drama North \
+            Country (2005).',
         movies: [],
         upcomingMovies: [],
         dob: new Date('7 August 1975')
@@ -1306,11 +1353,14 @@ actorArray = [
     {
         name: 'Seth Rogen',
         image: 'https://www.gstatic.com/tv/thumb/persons/167023/167023_v9_ba.jpg',
-        bio : 'Seth Aaron Rogen is a Canadian-American actor, comedian, writer, producer, and director. He began his career \
-            performing stand-up comedy during his teenage years. While still living in his hometown Vancouver, he landed a supporting \
-            role in Judd Apatow\'s series Freaks and Geeks. Shortly after he moved to Los Angeles for his role, Freaks and Geeks was \
-            officially cancelled after one season due to low viewership. Rogen later got a part on sitcom Undeclared, which also \
-            hired him as a writer.',
+        bio : 'Seth Aaron Rogen (born April 15, 1982) is a Canadian actor, comedian, writer, producer, and director. He began his \
+            career performing stand-up comedy during his teenage years. While still living in his hometown Vancouver, he landed a \
+            supporting role in Judd Apatow\'s series Freaks and Geeks. Shortly after he moved to Los Angeles for his role, Freaks \
+            and Geeks was officially cancelled after one season due to low viewership. Rogen later got a part on sitcom Undeclared, \
+            which also hired him as a writer. After landing his job as a staff writer on the final season of Da Ali G Show, Apatow \
+            guided him toward a film career. As a staff writer, he was nominated for a Primetime Emmy Award for Outstanding Writing \
+            for a Variety Series. Rogen made his first movie appearance in Donnie Darko with a minor role in 2001. Rogen was cast in \
+            a supporting role and credited as a co-producer in Apatow\'s directorial debut, The 40-Year-Old Virgin.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('15 April 1982')
@@ -1318,10 +1368,13 @@ actorArray = [
     {
         name: 'Randall Park',
         image: 'https://m.media-amazon.com/images/M/MV5BN2JjMzMyMTgtZmUzNy00OTExLTljYjYtZGIwMmQzYTdiZTUzXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg',
-        bio : 'Randall Park is an American actor, comedian and writer. He is best known for portraying Kim Jong-un in the 2014 \
-            film The Interview and Eddie Huang\'s father, American restaurateur Louis Huang, in Fresh Off the Boat, for which he was\
-            nominated for the Critics\' Choice Television Award for Best Actor in a Comedy Series in 2016. In 2012, he gained \
-            popularity playing Steve, a prank replacement of Jim Halpert in an episode of The Office.',
+        bio : 'Randall Park (born March 23, 1974) is an American actor, comedian and writer. He is best known for portraying Kim \
+            Jong-un in the 2014 film The Interview and Eddie Huang\'s father, American restaurateur Louis Huang, in Fresh Off the Boat, \
+            for which he was nominated for the Critics\' Choice Television Award for Best Actor in a Comedy Series in 2016. In 2012, \
+            he gained popularity playing Steve, a prank replacement of Jim Halpert in an episode of The Office. He also appears in \
+            the Marvel Cinematic Universe film Ant-Man and the Wasp and upcoming television series WandaVision as FBI agent Jimmy \
+            Woo, as well as in the DC Extended Universe film Aquaman as Dr. Stephen Shin. He has appeared in numerous web series \
+            on Channel 101, including Dr. Miracles and IKEA Heights, and Wong Fu Productions.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('23 March 1974')
@@ -1329,10 +1382,13 @@ actorArray = [
     {
         name: 'Ali Wong',
         image: 'https://www.gstatic.com/tv/thumb/persons/617492/617492_v9_bb.jpg',
-        bio : 'Alexandra Wong (born April 19, 1982) is an American stand-up comedian, actress, and writer. She is noted for her \
-            Netflix stand-up specials Baby Cobra and Hard Knock Wife, both of which received critical acclaim. She is also known \
-            for her leading film role in the 2019 film Always Be My Maybe, which she produced and wrote with her co-star Randall \
-            Park. She is currently a main cast member on the ABC television show American Housewife.',
+        bio : 'Alexandra Wong is an American stand-up comedian, actress, and writer. She is noted for her Netflix stand-up \
+            specials Baby Cobra and Hard Knock Wife, both of which received critical acclaim. She is also known for her leading film \
+            role in the 2019 film Always Be My Maybe, which she produced and wrote with her co-star Randall Park. She is currently a \
+            main cast member on the ABC television show American Housewife. Previously, she appeared on Are You There, Chelsea?, \
+            Inside Amy Schumer, and Black Box. She also wrote for the first three seasons of the sitcom Fresh Off the Boat. Wong \
+            voiced title character Roberta "Bertie" Songthrush, a polite songbird and aspiring baker on the critically acclaimed \
+            animated series Tuca & Bertie and new student "Ali" on the hit series Big Mouth.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('19 April 1982')
@@ -1357,10 +1413,221 @@ actorArray = [
         bio : 'David Harbour is an American actor who has performed in film, television, and the theater. He is known for his role \
             as CIA agent Gregg Beam in Quantum of Solace (2008), Shep Campbell in Revolutionary Road (2008), Van Hauser in End of \
             Watch (2012) and Dexter Tolliver in Suicide Squad (2016). He also plays Chief Jim Hopper on the Netflix original series, \
-            Stranger Things (2016).',
+            Stranger Things (2016). Harbour began acting professionally on Broadway in 1999, in the revival of The Rainmaker. He then \
+            made his television debut that same year in an episode of Law & Order, playing a waiter. He appeared again in 2002 in an \
+            episode of Law & Order: Special Victims Unit, playing a child murderer. Harbour portrayed the recurring role of MI6 Agent \
+            Roger Anderson in the ABC series Pan Am. In 2005, he was nominated for a Tony Award for his performance in a production of \
+            Who\'s Afraid of Virginia Woolf?.',
         movies: [],
         upcomingMovies: [],
         dob: new Date('10 April 1975')
+    },
+    {   name:"Andrew Garfield",
+        image:"https://www.gstatic.com/tv/thumb/persons/506866/506866_v9_bc.jpg",
+        dob: new Date('10 April 1975'),
+        bio:"Andrew Russell Garfield (born 20 August 1983) is a British-American actor. He is the recipient of several accolades, \
+            including a Tony Award, and has been nominated for an Academy Award and two British Academy Film Awards. Born in Los \
+            Angeles and raised in Epsom, England, Garfield began his career on the UK stage and in television productions. He made \
+            his feature-film debut in the 2007 ensemble drama Lions for Lambs. Also that year, his performance in the television \
+            film Boy A earned him a British Academy Television Award for Best Actor. He came to international attention in 2010 \
+            with supporting roles in the drama The Social Network, for which he received a BAFTA nomination for his portrayal of \
+            Eduardo Saverin, and the science fiction romance Never Let Me Go. Garfield subsequently gained wider recognition for \
+            playing Spider-Man in the 2012 superhero film The Amazing Spider-Man and its 2014 sequel. In 2016, Garfield starred in \
+            two critically acclaimed historical dramas, Hacksaw Ridge and Silence.",
+        movies: [],
+        upcomingMovies:[],
+        dob: new Date('20 August 1983')
+    },
+    {
+        name: 'Ana De Armas',
+        image: 'https://www.gstatic.com/tv/thumb/persons/587180/587180_v9_bb.jpg',
+        bio : 'Ana Celia de Armas Caso is a Cuban-Spanish actress. She began her career as a teenager in her native Cuba and most \
+            notably had a leading role in the romantic drama Una rosa de Francia (2006). At the age of 18, she moved to Madrid, Spain \
+            and starred in the popular teen drama El Internado for six seasons from 2007 to 2010. After moving to Los Angeles, de \
+            Armas had English-speaking roles in the horror film Knock Knock (2015) and the crime drama War Dogs (2016). She had a \
+            supporting role in the sports biopic Hands of Stone (2016). De Armas rose to prominence with her role as a holographic \
+            AI projection in the science fiction film Blade Runner 2049 (2017). Her performance as an immigrant nurse in the 2019 \
+            murder mystery film Knives Out was nominated for a Golden Globe Award for Best Actress.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('30 April 1988')
+    },
+    {
+        name: 'Zachary Levi',
+        image: 'https://www.gstatic.com/tv/thumb/persons/272823/272823_v9_bb.jpg',
+        bio : 'Zachary Levi Pugh (born September 29, 1980) is an American actor and singer. He received critical acclaim for \
+            starring as Chuck Bartowski in the series Chuck, and as the title character in Shazam!, as a part of the DC Extended \
+            Universe. He voiced Flynn Rider in the 2010 animated film Tangled, where he performed "I See the Light" with Mandy \
+            Moore; the song won a Grammy Award for Best Song Written for Visual Media. He reprised the voice role in the 2012 \
+            short film Tangled Ever After and in 2017, Rapunzel\'s Tangled Adventure, a Disney Channel television series based \
+            on the film. He has appeared in the Marvel Cinematic Universe films Thor: The Dark World and Thor: Ragnarok as \
+            Fandral. Levi starred as Georg Nowack in the 2016 Broadway revival of She Loves Me opposite Laura Benanti, for \
+            which he received a Tony Award nomination.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('29 September 1980')
+    },
+    {
+        name: 'Dean-Charles Chapman',
+        image: 'https://www.gstatic.com/tv/thumb/persons/807212/807212_v9_bb.jpg',
+        bio : 'Dean-Charles Chapman (born 7 September 1997) is an English actor, known for portraying Billy Elliot in the West End theatre \
+            production of Billy Elliot the Musical, and co-starring as Lance Corporal Tom Blake, one of two soldiers tasked with a \
+            life-or-death mission, in the World War I film 1917, released in 2019. Chapman was born in Essex. He portrayed the lead \
+            role of Stanley Brown in the CBBC sitcom The Revolting World of Stanley Brown, and starred as Tommen Baratheon in the \
+            fourth, fifth and sixth seasons of the HBO drama series Game of Thrones. He starred as Castor in the AMC martial \
+            arts drama series Into the Badlands.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('7 September 1997')
+    },
+    {
+        name: 'George MacKay',
+        image: 'https://www.gstatic.com/tv/thumb/persons/293166/293166_v9_bb.jpg',
+        bio : 'George Andrew J. MacKay (born 13 March 1992) is an English actor. He has appeared in the films The Boys Are Back (2009), Private \
+            Peaceful (2012), How I Live Now (2013), Sunshine on Leith (2013), For Those in Peril (2013), Pride (2014), Captain Fantastic (2016), \
+            Where Hands Touch (2018), Ophelia (2018), and 1917 (2019). MacKay was nominated for the BAFTA Rising Star Award in 2014 and received a \
+            Trophée Chopard at the 2017 Cannes Film Festival. In 2002, MacKay was spotted while at The Harrodian School by an acting scout, who \
+            asked him if he would like to audition for a role in P.J. Hogan\'s 2003 film adaptation of Peter Pan. He attended a workshop, and \
+            won the role of one of the Lost Boys, Curly, in what was his big break.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('13 March 1992')
+    },
+    {
+        name: 'Zendaya',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/2/28/Zendaya_-_2019_by_Glenn_Francis.jpg',
+        bio : 'Zendaya Maree Stoermer Coleman known mononymously as Zendaya, is an American actress and singer. She began her career as a \
+            child model and backup dancer, before gaining prominence for her role as Rocky Blue on the Disney Channel sitcom Shake It \
+            Up (2010–2013). In 2013, Zendaya was a contestant on the sixteenth season of the competition series Dancing with the \
+            Stars. From 2015 to 2018, she produced and starred as K.C. Cooper in the sitcom K.C. Undercover, and in 2019, she \
+            began playing the lead role in the HBO drama series Euphoria. Her film roles include supporting parts in the musical \
+            drama The Greatest Showman (2017) and the superhero films Spider-Man: Homecoming (2017) and Spider-Man: Far from Home \
+            (2019).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('1 September 1996')
+    },
+    {
+        name: 'Zendaya',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/2/28/Zendaya_-_2019_by_Glenn_Francis.jpg',
+        bio : 'Zendaya Maree Stoermer Coleman known mononymously as Zendaya, is an American actress and singer. She began her career as a \
+            child model and backup dancer, before gaining prominence for her role as Rocky Blue on the Disney Channel sitcom Shake It \
+            Up (2010–2013). In 2013, Zendaya was a contestant on the sixteenth season of the competition series Dancing with the \
+            Stars. From 2015 to 2018, she produced and starred as K.C. Cooper in the sitcom K.C. Undercover, and in 2019, she \
+            began playing the lead role in the HBO drama series Euphoria. Her film roles include supporting parts in the musical \
+            drama The Greatest Showman (2017) and the superhero films Spider-Man: Homecoming (2017) and Spider-Man: Far from Home \
+            (2019).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('1 September 1996')
+    },
+    {
+        name: 'Cobie Smulders',
+        image: 'https://www.gstatic.com/tv/thumb/persons/259288/259288_v9_bb.jpg',
+        bio : 'Jacoba Francisca Maria "Cobie" Smulders (born April 3, 1982) is a Canadian actress and model. She plays the lead in \
+            the ABC crime drama Stumptown, where she plays the role of PTSD-stricken military veteran turned private detective \
+            Dexedrine "Dex" Parios. She is best known for starring as Robin Scherbatsky in the CBS sitcom How I Met Your Mother \
+            (2005–2014) and as S.H.I.E.L.D. agent Maria Hill in the Marvel Cinematic Universe, beginning with The Avengers (2012).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('3 April 1982')
+    },
+    {
+        name: 'Peter Dinklage',
+        image: 'https://www.gstatic.com/tv/thumb/persons/299302/299302_v9_bb.jpg',
+        bio : 'Peter Hayden Dinklage is an American actor and producer. Dinklage received universal acclaim for portraying Tyrion \
+            Lannister on the HBO television series Game of Thrones, for which he won the Primetime Emmy Award for Outstanding \
+            Supporting Actor in a Drama Series a record number of four times.[3] He also received a Golden Globe for the role in \
+            2011 as well as the Screen Actors Guild Award in 2020. Born in Morristown, New Jersey, and raised in Brookside, Dinklage \
+            is a dwarf (achondroplasia) and stands 4 ft 5 in (1.35 m) tall. He studied acting at Bennington College, starring in a \
+            number of amateur stage productions. His film debut was in Living in Oblivion (1995) and his breakthrough came with the \
+            comedy-drama The Station Agent (2003).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('11 June 1969')
+    },
+    {
+        name: 'Bradley Cooper',
+        image: 'https://www.gstatic.com/tv/thumb/persons/232104/232104_v9_bb.jpg',
+        bio : 'Bradley Charles Cooper is an American actor and filmmaker. He has been nominated for many awards, including eight \
+            Academy Awards and a Tony Award, and has won two Grammy Awards and a BAFTA Award. Cooper appeared in Forbes Celebrity \
+            100 on three occasions and Time\'s list of 100 most influential people in the world in 2015. His films have grossed $11 \
+            billion worldwide and he was named one of the world\'s highest-paid actors for four years. His breakthrough role came in \
+            2009 with The Hangover, a critically and commercially successful comedy, which spawned two sequels in 2011 and 2013. \
+            Cooper\'s portrayal of a struggling writer in the thriller Limitless (2011) and a rookie police officer in the crime \
+            drama The Place Beyond the Pines (2012) drew praise from critics.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('5 January 1975')
+    },
+    {
+        name: 'Josh Brolin',
+        image: 'https://www.gstatic.com/tv/thumb/persons/74371/74371_v9_bb.jpg',
+        bio : 'Joshua James Brolin (born February 12, 1968) is an American actor. Brolin has appeared in films such as The Goonies \
+            (1985), Mimic (1997), Hollow Man (2000), Grindhouse (2007), No Country for Old Men (2007), American Gangster (2007), W. \
+            (2008), Milk (2008), True Grit (2010), Men in Black 3 (2012), Inherent Vice (2014), Sicario (2015), Hail, Caesar! (2016), \
+            and Deadpool 2 (2018). Brolin began portraying the role of Marvel Comics supervillain Thanos in the Marvel Cinematic \
+            Universe, making his first appearance in Guardians of the Galaxy (2014).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('12 February 1968')
+    },
+    {
+        movies: [],
+        upcomingMovies: [],
+        name: "Tom Hiddleston",
+        image: "https://www.gstatic.com/tv/thumb/persons/286678/286678_v9_bb.jpg",
+        dob: new Date('9 February 1981'),
+        bio: "Thomas William Hiddleston (born 9 February 1981) is an English actor, film producer, and musician. He is the recipient \
+            of several accolades, including a Golden Globe Award and a Laurence Olivier Award, and has been nominated for two Primetime \
+            Emmy Awards. Hiddleston earned a double first in Classics at the University of Cambridge and later proceeded to study \
+            acting at the Royal Academy of Dramatic Art. At the beginning of his career, he appeared in West End productions of \
+            Cymbeline (2007) and Ivanov (2008). He won the Olivier Award for Best Newcomer in a Play for his role in Cymbeline and \
+            was also nominated for the same award for his role as Cassio in Othello (2008). Hiddleston starred as the title character \
+            in a production of Coriolanus (2013-2014) winning the Evening Standard Theatre Award for Best Actor and receiving a \
+            nomination for the Olivier Award for Best Actor. He made his Broadway debut in a 2019 revival of Betrayal.",
+    },
+    {
+        movies: [],
+        upcomingMovies: [],
+        name: "Taika Waititi",
+        image: "https://www.gstatic.com/tv/thumb/persons/590955/590955_v9_bc.jpg",
+        dob: new Date('16 August 1975'),
+        bio: "Taika David Cohen (born 16 August 1975), known professionally as Taika Waititi is a New Zealand filmmaker and actor. \
+            He is the recipient of an Academy Award as well as two further nominations. His feature films Boy (2010) and Hunt for the \
+            Wilderpeople (2016) have each been the top-grossing New Zealand film, with the latter still holding that title as of \
+            January 2020. He co-directed and starred in the horror comedy film What We Do in the Shadows (2014) with Jemaine \
+            Clement. Waititi's most recent directing credits include the Marvel Cinematic Universe superhero film Thor: Ragnarok \
+            (2017) and the satirical black comedy film Jojo Rabbit (2019), the latter of which he also wrote and starred in as \
+            Adolf Hitler. Jojo Rabbit earned critical praise, receiving a nomination for the Academy Award for Best Picture and \
+            winning Waititi the Academy Award for Best Adapted Screenplay.",
+    },
+    {
+        movies: [],
+        upcomingMovies: [],
+        name: "John David Washington",
+        image: "https://www.gstatic.com/tv/thumb/persons/873014/873014_v9_ba.jpg",
+        dob: new Date('28 July 1984'),
+        bio: "John David Washington (born July 28, 1984) is an American actor and former football running back. He played college \
+            football at Morehouse College and signed with the St. Louis Rams as an undrafted free agent in 2006. Professionally, \
+            Washington spent four years as the running back for the United Football League's Sacramento Mountain Lions. Washington \
+            shifted to an acting career like his father, Denzel Washington and mother, Pauletta Washington. He was part of the main \
+            cast of the HBO comedy series Ballers (2015–2019) and starred as Ron Stallworth in Spike Lee's crime film BlacKkKlansman \
+            (2018). For the latter, he received both Golden Globe and Screen Actors Guild Award nominations.",
+    },
+    {
+        movies: [],
+        upcomingMovies: [],
+        name: "Himesh Patel",
+        image: "https://www.gstatic.com/tv/thumb/persons/580137/580137_v9_bb.jpg",
+        dob: new Date('13 October 1990'),
+        bio: "Himesh Jitendra Patel (born 13 October 1990) is an English actor. He is known for playing Tamwar Masood on the BBC \
+            soap opera EastEnders from 2007 to 2016 and for starring in the 2019 romantic comedy film Yesterday.When he was \
+            sixteen, Patel got a call on the day of his GCSEs saying he landed an audition for the British soap opera EastEnders \
+            through an agency in The Young Actor's Company. He finished his last exam and had his parents rush him to his audition. \
+            After his first audition a casting assistant saw him waiting outside the audition room and asked him to read for the \
+            casting director. Patel got the part of Tamwar Masood, and 1 October 2007 marked his first appearance on EastEnders. \
+            In 2011 Patel and Meryl Ferdandes won the Inside Soap Award for Best Wedding.",
     },
 ];
 
@@ -1383,9 +1650,6 @@ function seedActors(){
                                     else console.log("Actor Created: "+ createdActor.name);
                                 });
                             });
-                            setTimeout(() => {
-                                require("./seedMovies")()
-                            }, 1000)
                         }
                     });
                 }

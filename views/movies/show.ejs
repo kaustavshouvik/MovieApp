@@ -22,6 +22,7 @@
                 <li><%= genre %></li>
             <% }); %>
             <p class="my-2"><%= movie.plot %></p>
+            <a class="btn btn-block btn-dark mb-2" href="#">Add To Watchlist</a>
             <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
                 <button class="btn btn-danger btn-block">Delete Movie</button>
             </form>
