@@ -1,0 +1,60 @@
+<%- include("../partials/header") %>
+
+<div class="d-flex justify-content-between align-items-start my-4">
+    <div style="margin-left: 150px;">
+        <table class="table table-striped">
+            <thead class="bg-dark text-light">
+                <th style="width: 100px;"><h4>#</h4></th>
+                <th style="width: 900px;"><h4>Movie Title</h4></th>
+                <th style="width: 200px;"><h4>Rating</h4></th>
+            </thead>
+            <tbody>
+                <% for(i=0; i<movies.length; i++){ %>
+                    <tr>
+                        <td><h4><%= i + 1 %></h4></td>
+                        <td><h4><a href="/movies/<%= movies[i]._id %>"><%= movies[i].name %>(<%= movies[i].release.getFullYear() %>)</a></h4></td>
+                        <td><h4><i style="color: red;" class="fa fa-star pr-1"></i><%= movies[i].ratingValue %>[<%= movies[i].ratingCount %>]</h4></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin-right: 70px; margin-left: 100px;">
+        <form action="/recommendation/genreFilter" id="form1" method="POST">
+            <% genres.forEach((genre) => { %>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend p-1 bg-light" id="genreDiv2">
+                        <div class="pl-1">
+                            <% if(genre1 === genre){ %>
+                                <input type="checkbox" class="check" name="genres" value="<%= genre %>" checked>
+                            <% } else { %>
+                                <input type="checkbox" class="check" name="genres" value="<%= genre %>">
+                            <% } %>
+                        </div>
+                        <div class="pl-2"><p><a class="text-dark" href="/recommendation/genres/<%= genre %>"><%= genre %></a></p></div>
+                    </div>
+                </div>
+            <% }) %>
+            <button class="btn btn-block btn-danger" onclick="fn1()">Filter</button>
+        </form>
+    </div>    
+</div>
+
+<script>
+    function fn1(){
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]')
+        count = 0
+        checkboxes.forEach((checkbox) => {
+            if(checkbox.checked){
+                count++
+            }
+        })
+        if(count > 2 || count === 1){
+            dom = document.getElementById('form1')
+            dom.setAttribute('method', 'GET')
+        }
+    }
+</script>
+
+<%- include("../partials/footer") %>

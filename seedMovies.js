@@ -11,7 +11,7 @@ moviesArray = [
             interference, the laws of physics and their own personal demons to build a revolutionary vehicle for the Ford Motor\
             Co. Together, they plan to compete against the race cars of Enzo Ferrari at the 24 Hours of Le Mans in France in 1966.',
         cast: ['Matt Damon', 'Christian Bale', 'Jon Bernthal'],
-        genres: ['biography', 'drama', 'sport'],
+        genres: ['biography', 'drama', 'sports'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
             username: 'kaustav007'
@@ -126,7 +126,7 @@ moviesArray = [
     {
         name: 'Inception',
         poster: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_QL50_SY1000_CR0,0,675,1000_AL_.jpg',
-        image: 'https://wallpapercave.com/wp/1rj6nGA.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTY3MzMzMDgyMF5BMl5BanBnXkFtZTcwMzY0OTk1Mw@@._V1_QL50_SX1500_CR0,0,1500,999_AL_.jpg',
         release: new Date('16 July 2010'),
         plot: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of \
             planting an idea into the mind of a C.E.O.',
@@ -327,7 +327,7 @@ moviesArray = [
         image: 'https://m.media-amazon.com/images/M/MV5BZjg1MTgyMWYtZjAxNi00OGQ1LWE4NjEtNjc5OGY4NWQ3YTM4XkEyXkFqcGdeQXVyNjczOTE0MzM@._V1_QL50_.jpg',
         release: new Date('2 April 2021'),
         plot: 'Cypher enlists the help of Jakob, Dom\'s younger brother to take revenge on Dom and his team.',
-        cast: ['Vin Diesel', 'Dwayne Johnson', 'Tyrese Gibson', 'Gal Gadot', ],
+        cast: ['Vin Diesel', 'Charlize Theron', 'Tyrese Gibson', 'Gal Gadot', 'John Cena'],
         genres: ['action', 'adventure', 'thriller'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
@@ -583,7 +583,7 @@ moviesArray = [
         image: 'https://syn.org.au/app/uploads/Knives-Out-detectives.jpg',
         release: new Date('27 November 2019'),
         plot: 'A detective investigates the death of a patriarch of an eccentric, combative family.',
-        cast: ['Daniel Craig', 'Chris Evans', 'Ana De Armas'],
+        cast: ['Daniel Craig', 'Chris Evans', 'Ana De Armas', 'Jaeden Martell'],
         genres: ['drama', 'thriller', 'crime', 'mystery'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
@@ -623,8 +623,29 @@ moviesArray = [
         release: new Date('5 April 2019'),
         plot: 'After being abandoned at a fair, Billy constantly searches for his mother. His life, however, takes a huge turn when \
             he inherits the superpowers of a powerful wizard.',
-        cast: ['Zachary Levi', 'Mark Strong'],
+        cast: ['Zachary Levi', 'Mark Strong', 'Jack Dylan Grazer'],
         genres: ['action', 'adventure', 'comedy'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0RQYUONU1AQ7S0Z9OVM6BI9X71/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B081RLMBPJ&qid=1585127991',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/GfFgv_Wo3dE',
+    },
+    {
+        name: 'Jumanji: The Next Level',
+        poster: 'https://m.media-amazon.com/images/M/MV5BOTVjMmFiMDUtOWQ4My00YzhmLWE3MzEtODM1NDFjMWEwZTRkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMzk3NDE0ZTItNjJiOS00YzM1LTkzYTQtOWZhMWUzOGQ2MTRhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL50_SY1000_SX1500_AL_.jpg',
+        release: new Date('13 December 2019'),
+        plot: 'In Jumanji: The Next Level, the gang is back but the game has changed. As they return to rescue one of their own, \
+            the players will have to brave parts unknown from arid deserts to snowy mountains, to escape the world\'s most \
+            dangerous game.',
+        cast: ['Dwayne Johnson', 'Kevin Hart', 'Karen Gillan'],
+        genres: ['adventure', 'comedy', 'action'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
             username: 'kaustav007'
@@ -678,6 +699,144 @@ moviesArray = [
         netflixLink: '',
         hotstarLink: '',
         youtubeLink: 'https://youtu.be/pW3cU6EgGWA',
+    },
+    {
+        name: 'Wonder Woman 1984',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYzAyOGJkMzUtMmRjYS00NGJmLWExNGEtYzI2YjVmMmQzMzFiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL50_SY1000_SX675_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjMzNjYxNTQxNF5BMl5BanBnXkFtZTgwNTczNzA3NTM@._V1_QL50_.jpg',
+        release: new Date('14 August 2020'),
+        plot: 'Wonder Woman squares off against the Cheetah, a villainess who possesses superhuman strength and agility.',
+        cast: ['Gal Gadot', 'Chris Pine', 'Pedro Pascal'],
+        genres: ['action', 'adventure', 'sci-fi', 'superhero'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Baby Driver',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjM3MjQ1MzkxNl5BMl5BanBnXkFtZTgwODk1ODgyMjI@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjIzNjA5OTE2M15BMl5BanBnXkFtZTgwMjczODMyMTI@._V1_QL50_SY1000_CR0,0,1726,1000_AL_.jpg',
+        release: new Date('11 March 2017'),
+        plot: 'Doc forces Baby, a former getaway driver, to partake in a heist, threatening to hurt his girlfriend if he refuses. \
+            The plan goes awry when their arms dealers turn out to be undercover officers.',
+        cast: ['Ansel Elgort', 'Jon Bernthal', 'Jon Hamm', 'Kevin Spacey', 'Jamie Foxx'],
+        genres: ['action', 'crime', 'drama', 'heist'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/Xy7yNGibBIM',
+    },
+    {
+        name: 'Ocean\'s Eleven',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYzVmYzVkMmUtOGRhMi00MTNmLThlMmUtZTljYjlkMjNkMjJkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_QL50_SY1000_CR0,0,675,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BNzE2NDQzMDc0Ml5BMl5BanBnXkFtZTcwMzM5OTQyNw@@._V1_QL50_SY1000_CR0,0,1520,1000_AL_.jpg',
+        release: new Date('5 December 2001'),
+        plot: 'Danny Ocean and his ten accomplices plan to rob three Las Vegas casinos simultaneously.',
+        cast: ['George Clooney', 'Brad Pitt', 'Matt Damon'],
+        genres: ['heist', 'crime', 'thriller'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0RZFTNZ3FJJB8TD0JNI63TJ7AA/ref=atv_sr_def_c_unkc__2_1_2?sr=1-2&pageTypeIdSource=ASIN&pageTypeId=B079VQDG58&qid=1585160432',
+        netflixLink: 'https://www.netflix.com/in/title/60021783?source=35',
+        hotstarLink: 'https://www.hotstar.com/in/movies/oceans-eleven/1221115975',
+        youtubeLink: '',
+    },
+    {
+        name: 'The Invisible Man',
+        poster: 'https://m.media-amazon.com/images/M/MV5BZjFhM2I4ZDYtZWMwNC00NTYzLWE3MDgtNjgxYmM3ZWMxYmVmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL50_SY1000_CR0,0,631,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BNDZmYTVmOGUtYzU4Yi00NmJjLTgzNmUtZjZiNmMyZDM3ZjJjXkEyXkFqcGdeQXVyNjczOTE0MzM@._V1_QL50_SX1777_CR0,0,1777,999_AL_.jpg',
+        release: new Date('28 February 2020'),
+        plot: 'When Cecilia\'s abusive ex takes his own life and leaves her his fortune, she suspects his death was a hoax. As a \
+            series of coincidences turn lethal, Cecilia works to prove that she is being hunted by someone nobody can see.',
+        cast: ['Elisabeth Moss'],
+        genres: ['horror', 'mystery', 'thriller'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'It',
+        poster: 'https://m.media-amazon.com/images/M/MV5BZDVkZmI0YzAtNzdjYi00ZjhhLWE1ODEtMWMzMWMzNDA0NmQ4XkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_QL50_SY1000_CR0,0,666,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjEyMzM3NjM0NF5BMl5BanBnXkFtZTgwMDQ1NzMzMzI@._V1_QL50_SY1000_CR0,0,1502,1000_AL_.jpg',
+        release: new Date('8 September 2017'),
+        plot: 'In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises \
+            itself as a clown and preys on the children of Derry, their small Maine town.',
+        cast: ['Jaeden Martell', 'Jack Dylan Grazer', 'Bill Skarsgård'],
+        genres: ['horror', 'thriller'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: 'https://www.netflix.com/in/title/80177770?source=35',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/AnCDoTaxnhs',
+    },
+    {
+        name: 'Zombieland',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTU5MDg0NTQ1N15BMl5BanBnXkFtZTcwMjA4Mjg3Mg@@._V1_QL50_SY1000_CR0,0,717,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BNDQ1MzM3NjA0N15BMl5BanBnXkFtZTcwOTgyODYxNw@@._V1_QL50_SY1000_CR0,0,1502,1000_AL_.jpg',
+        release: new Date('2 October 2009'),
+        plot: 'A shy student trying to reach his family in Ohio, a gun-toting tough guy trying to find the last Twinkie, and a pair \
+            of sisters trying to get to an amusement park join forces to travel across a zombie-filled America.',
+        cast: ['Woody Harrelson', 'Jesse Eisenberg', 'Emma Stone'],
+        genres: ['zombie', 'comedy', 'action'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/QvkzNqAV6fs',
+    },
+    {
+        name: 'Now You See Me',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTY0NDY3MDMxN15BMl5BanBnXkFtZTcwOTM5NzMzOQ@@._V1_QL50_SY1000_CR0,0,642,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTYyNjk2MzIzOV5BMl5BanBnXkFtZTcwNTk4NjU1OQ@@._V1_QL50_SY1000_CR0,0,1503,1000_AL_.jpg',
+        release: new Date('31 May 2013'),
+        plot: 'Four street magicians, Daniel, Merritt, Henley and Jack, ransack a huge amount of money belonging to insurance baron \
+            Arthur Tressler while being chased by FBI agent Dylan and Interpol agent Alma.',
+        cast: ['Jesse Eisenberg', 'Mark Ruffalo', 'Woody Harrelson', 'Morgan Freeman', 'Michael Caine'],
+        genres: ['mystery', 'crime', 'thriller'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: 'https://www.netflix.com/in/title/70243464?source=35',
+        hotstarLink: '',
+        youtubeLink: '',
     },
 ];
 

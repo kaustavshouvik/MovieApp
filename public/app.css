@@ -19,6 +19,13 @@
     background-color: rgb(110, 7, 110);
 }
 
+#genreDiv2{
+    border: 1px solid rgba(49, 3, 3, 0.582);
+    width: 135px;
+    border-radius: 0.25em;
+    height: 35px;
+}
+
 #cardHead{
     height: 41px;
 }

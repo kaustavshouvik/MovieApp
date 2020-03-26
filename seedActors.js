@@ -690,6 +690,44 @@ actorArray = [
         dob: new Date('19 December 1980')
     },
     {
+        name: 'Kevin Hart',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Kevin_Hart_2014_%28cropped_2%29.jpg',
+        bio : 'Kevin Darnell Hart (born July 6, 1979) is an American stand-up comedian, actor, and producer. Born and raised \
+            in Philadelphia, Pennsylvania, Hart began his career by winning several amateur comedy competitions at clubs throughout \
+            New England, culminating in his first real break in 2001 when he was cast by Judd Apatow for a recurring role on the \
+            TV series Undeclared. The series lasted only one season, but he soon landed other roles in films such as Paper Soldiers \
+            (2002), Scary Movie 3 (2003), Soul Plane (2004), In the Mix (2005), and Little Fockers (2010).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('6 July 1979')
+    },
+    {
+        name: 'John Cena',
+        image: 'https://www.gstatic.com/tv/thumb/persons/487578/487578_v9_ba.jpg',
+        bio : 'John Felix Anthony Cena Jr. is an American professional wrestler, actor, rapper, and television presenter. He is \
+            currently signed to WWE where he wrestles part-time. He is also the current host of Are You Smarter Than a Fifth Grader? \
+            on Nickelodeon and has starred in various films. Born and raised in West Newbury, Massachusetts, Cena moved to \
+            California in 1998 to pursue a career as a bodybuilder. He transitioned into professional wrestling in 1999 when \
+            he debuted for Ultimate Pro Wrestling (UPW) and signed with the World Wrestling Federation (WWF, now WWE) in 2000, \
+            where he was initially assigned to Ohio Valley Wrestling (OVW). He gained fame in WWE after adopting the persona of \
+            a trash-talking rapper, and won his first singles title, the United States Championship, in 2004.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('23 April 1977')
+    },
+    {
+        name: 'Pedro Pascal',
+        image: 'https://www.gstatic.com/tv/thumb/persons/494807/494807_v9_bb.jpg',
+        bio : 'José Pedro Balmaceda Pascal (born April 2, 1975) is a Chilean-American actor. Pascal portrayed Oberyn Martell in the \
+            fourth season of the HBO fantasy series Game of Thrones[2] and Javier Peña in the Netflix biographical crime series \
+            Narcos. He has also starred as mercenary Pero Tovar in The Great Wall (2016); as Agent Whiskey in Kingsman: The Golden \
+            Circle (2017); as Dave York, the primary antagonist in The Equalizer 2 (2018); and as Francisco "Catfish" Morales in \
+            the heist drama Triple Frontier (2019).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('2 April 1975')
+    },
+    {
         name: 'Mark Strong',
         image: 'https://vignette.wikia.nocookie.net/disney/images/a/a0/Mark_Strong.jpg/revision/latest?cb=20190912024923',
         bio : "British actor Mark Strong, who played Jim Prideaux in the 2011 remake of Tinker Tailor Soldier Spy (2011), is often\
@@ -1573,8 +1611,6 @@ actorArray = [
         dob: new Date('12 February 1968')
     },
     {
-        movies: [],
-        upcomingMovies: [],
         name: "Tom Hiddleston",
         image: "https://www.gstatic.com/tv/thumb/persons/286678/286678_v9_bb.jpg",
         dob: new Date('9 February 1981'),
@@ -1586,10 +1622,10 @@ actorArray = [
             was also nominated for the same award for his role as Cassio in Othello (2008). Hiddleston starred as the title character \
             in a production of Coriolanus (2013-2014) winning the Evening Standard Theatre Award for Best Actor and receiving a \
             nomination for the Olivier Award for Best Actor. He made his Broadway debut in a 2019 revival of Betrayal.",
-    },
-    {
         movies: [],
         upcomingMovies: [],
+    },
+    {
         name: "Taika Waititi",
         image: "https://www.gstatic.com/tv/thumb/persons/590955/590955_v9_bc.jpg",
         dob: new Date('16 August 1975'),
@@ -1601,10 +1637,10 @@ actorArray = [
             (2017) and the satirical black comedy film Jojo Rabbit (2019), the latter of which he also wrote and starred in as \
             Adolf Hitler. Jojo Rabbit earned critical praise, receiving a nomination for the Academy Award for Best Picture and \
             winning Waititi the Academy Award for Best Adapted Screenplay.",
-    },
-    {
         movies: [],
         upcomingMovies: [],
+    },
+    {   
         name: "John David Washington",
         image: "https://www.gstatic.com/tv/thumb/persons/873014/873014_v9_ba.jpg",
         dob: new Date('28 July 1984'),
@@ -1614,10 +1650,10 @@ actorArray = [
             shifted to an acting career like his father, Denzel Washington and mother, Pauletta Washington. He was part of the main \
             cast of the HBO comedy series Ballers (2015–2019) and starred as Ron Stallworth in Spike Lee's crime film BlacKkKlansman \
             (2018). For the latter, he received both Golden Globe and Screen Actors Guild Award nominations.",
-    },
-    {
         movies: [],
         upcomingMovies: [],
+    },
+    {
         name: "Himesh Patel",
         image: "https://www.gstatic.com/tv/thumb/persons/580137/580137_v9_bb.jpg",
         dob: new Date('13 October 1990'),
@@ -1628,6 +1664,97 @@ actorArray = [
             After his first audition a casting assistant saw him waiting outside the audition room and asked him to read for the \
             casting director. Patel got the part of Tamwar Masood, and 1 October 2007 marked his first appearance on EastEnders. \
             In 2011 Patel and Meryl Ferdandes won the Inside Soap Award for Best Wedding.",
+        movies: [],
+        upcomingMovies: [],
+    },
+    {
+        name: 'Jamie Foxx',
+        image: 'https://www.gstatic.com/tv/thumb/persons/585/585_v9_bc.jpg',
+        bio : 'Eric Marlon Bishop known professionally as Jamie Foxx, is an American actor, singer, comedian, presenter, and producer. \
+            Foxx became widely known for his portrayal of Ray Charles in the 2004 biographical film Ray, for which he won the Academy \
+            Award, BAFTA, Screen Actors Guild Award, Critics\' Choice Movie Award and Golden Globe Award for Best Actor. That same \
+            year, he was nominated for the Academy Award for Best Supporting Actor for his role in the crime film Collateral. Since \
+            spring 2017, Foxx has served as the host and executive producer of the Fox game show Beat Shazam.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('13 December 1967')
+    },
+    {
+        name: 'Kevin Spacey',
+        image: 'https://www.gstatic.com/tv/thumb/persons/36904/36904_v9_ba.jpg',
+        bio : 'Kevin Spacey Fowler KBE (born July 26, 1959) is an American actor, producer, and singer. Spacey began his career \
+            as a stage actor during the 1980s, obtaining supporting roles in film and television. He gained critical acclaim in the \
+            1990s that culminated in his first Academy Award for Best Supporting Actor for the neo-noir crime thriller The Usual \
+            Suspects (1995) and an Academy Award for Best Actor for the midlife crisis-themed drama American Beauty (1999). Spacey\'s\
+            other starring roles have included the comedy-drama film Swimming with Sharks (1994), the psychological thriller \
+            Seven (1995), the neo-noir crime film L.A. Confidential (1997), the drama Pay It Forward (2000), the science \
+            fiction-mystery film K-PAX (2001), the musical biopic Beyond the Sea (2004), the superhero film Superman \
+            Returns (2006), and the action film Baby Driver (2017).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('26 July 1959')
+    },
+    {
+        name: 'George Clooney',
+        image: 'https://www.gstatic.com/tv/thumb/persons/23213/23213_v9_bb.jpg',
+        bio : 'George Timothy Clooney is an American actor, director, producer and filmmaker. He is the recipient of three Golden \
+            Globe Awards and two Academy Awards, one for acting in Syriana (2006) and the other for co-producing Argo (2012). In 2018, \
+            he was the recipient of the AFI Lifetime Achievement Award. Clooney made his acting debut on television in 1978, and \
+            later gained wide recognition in his role as Dr. Doug Ross on the medical drama ER from 1994 to 1999, for which he \
+            received two Primetime Emmy Award nominations. While working on ER, he began attracting a variety of leading roles \
+            in films, with his breakthrough role in From Dusk till Dawn (1996), and the crime comedy Out of Sight (1998), \
+            in which he first worked with director Steven Soderbergh, who would become a long-time collaborator.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('6 May 1961')
+    },
+    {
+        name: 'Elisabeth Moss',
+        image: 'https://www.gstatic.com/tv/thumb/persons/172088/172088_v9_bb.jpg',
+        bio : 'Elisabeth Singleton Moss is an American actor. She is known for her work in several television dramas, earning such \
+            accolades as two Primetime Emmy Awards and two Golden Globe Awards, which led Vulture to name her the "Queen of Peak TV". \
+            Moss began acting in the early 1990s and first gained recognition for playing Zoey Bartlet, the youngest daughter of \
+            President Josiah Bartlet, in the NBC political drama series The West Wing (1999–2006). Wider recognition came for \
+            playing Peggy Olson, a secretary-turned-copywriter, in the AMC period drama series Mad Men (2007–2015). She won the \
+            Golden Globe Award for Best Actress – Miniseries or Television Film for playing a detective in the BBC miniseries Top \
+            of the Lake (2013), and she won the Primetime Emmy Award for Outstanding Lead Actress in a Drama Series and Outstanding \
+            Drama Series for producing and starring in the Hulu dystopian drama series The Handmaid\'s Tale (2017–present).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('24 July 1982')
+    },
+    {
+        name: 'Bill Skarsgård',
+        image: 'https://www.gstatic.com/tv/thumb/persons/596590/596590_v9_bb.jpg',
+        bio : 'Bill Istvan Günther Skarsgård (born 9 August 1990) is a Swedish actor. He portrayed Pennywise the Dancing Clown in \
+            the supernatural horror films It (2017) and It Chapter Two (2019), based on Stephen King\'s novel of the same name, and \
+            appeared in the comedy Simple Simon (2010), the dystopian thriller The Divergent Series: Allegiant (2016), and the \
+            espionage thriller Atomic Blonde (2017). He also starred in the supernatural horror series Hemlock Grove (2013–2015) \
+            and the anthology horror series Castle Rock (2018–2019).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('9 August 1990')
+    },
+    {
+        name: 'Jack Dylan Grazer',
+        image: 'https://www.gstatic.com/tv/thumb/persons/1037008/1037008_v9_bb.jpg',
+        bio : 'Jack Dylan Grazer (born September 3, 2003) is an American actor. He played the part of Eddie Kaspbrak in the feature \
+            film adaptation of Stephen King\'s It, and reprised his role in the film\'s 2019 sequel. He also starred on the CBS \
+            series Me, Myself, and I, and portrayed Freddy Freeman in the 2019 DC Comics film Shazam!.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('3 September 2003')
+    },
+    {
+        name: 'Jaeden Martell',
+        image: 'https://vignette.wikia.nocookie.net/stephenking/images/e/e9/Jm.jpg/revision/latest?cb=20190513074952',
+        bio : 'Jaeden Martell (born January 4, 2003) formerly known as Jaeden Lieberher, is an American actor. He has portrayed \
+            roles in the 2017 and 2019 film adaptations of the Stephen King novel It, and in the 2019 mystery film Knives Out. He \
+            played the title character in the 2017 film The Book of Henry. Martell received further recognition for his \
+            starring role as Bill Denbrough in the 2017 supernatural horror film It and its 2019 follow-up It Chapter Two.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('4 January 2003')
     },
 ];
 

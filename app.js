@@ -96,6 +96,7 @@ app.post('/movies', isLoggedIn, (req, res)=>{
 
     var actors = title(req.body.cast);
     actorsArr = actors.split(', ');
+
     var newMovie = {
         name: movieTitle,
         poster: req.body.poster,
@@ -181,8 +182,8 @@ app.post('/movies/:id/rating', isLoggedIn, (req, res) => {
         });
     }
 
-    Rating.create(rateIt, function (err, newRating) {
-        Movie.findById(req.params.id, function (err, foundMovie) {
+    Rating.create(rateIt, (err, newRating) => {
+        Movie.findById(req.params.id, (err, foundMovie) => {
             if (err) {
                 console.log(err);
             } else if(foundMovie.release > Date.now()){
@@ -207,7 +208,7 @@ app.post('/movies/:id/rating', isLoggedIn, (req, res) => {
 });
 
 //DELETE A MOVIE ALONG WITH RATINGS AND ACTORS[MOVIES DONE LIST]
-app.delete('/movies/:id', isLoggedIn, function (req, res) {
+app.delete('/movies/:id', isLoggedIn, (req, res) => {
     Movie.findById(req.params.id, (err, foundMovie)=>{
         //FOR ALL ACTORS FIND IF THE ACTOR HAS DONE THAT MOVIE, THEN DELETE IT FROM THE ACTOR'S MOVIES LIST
         for(i=0; i<foundMovie.actors.length; i++){
@@ -223,7 +224,7 @@ app.delete('/movies/:id', isLoggedIn, function (req, res) {
         }
     });
 
-    Movie.findByIdAndDelete(req.params.id, function (err) {
+    Movie.findByIdAndDelete(req.params.id, (err) => {
         if (err) {
             res.send('ERROR HAPPENED!');
         } else {
@@ -447,25 +448,39 @@ app.get('/movies/:id/more', (req, res)=>{
     });
 });
 
+genres = ['Action', 'Adventure', 'Thriller', 'Comedy', 'Mystery', 'Drama', 'Crime', 'Romance', 'Animated', 'Western', 'Superhero', 
+    'Zombie', 'Sci-fi', 'Horror', 'Heist', 'Documentry', 'War', 'Disaster', 'Sports', 'History']
+
+//SHOW ALL THE GENRES
 app.get('/recommendation/genres', (req, res)=>{
-    genres = ['Action', 'Adventure', 'Thriller', 'Comedy', 'Mystery', 'Drama', 'Crime', 'Romance', 'Animated', 'Western', 'Superhero', 
-        'Zombie', 'Science-Fiction', 'Horror', 'Heist', 'Documentry', 'War', 'Disaster', 'Sports', 'History']
     res.render('recommendation/genres', {genres: genres})
 })
 
+//SHOW MOVIES OF A SPECIFIC GENRE
 app.get('/recommendation/genres/:genre', (req, res)=>{
-    if(req.params.genre === 'Science-Fiction'){
-        reqGenre = 'sci-fi'
-    } else {
-        reqGenre = req.params.genre;
-    }
+    reqGenre = req.params.genre;
     reqGenre = reqGenre.toLowerCase();
-    console.log(reqGenre)
 
     Movie.aggregate([{$unwind : '$genres'}, {$match: {genres: {$eq: reqGenre}}}], (err, movies) => {
-        res.render('movies/select', {movies: movies})
+        res.render('recommendation/filterSelect', {movies: movies, genre1: title(reqGenre), genres: genres})
     })
 })
+
+//SHOW PAGE TO SELECT MOVIES OF ANY TWO GENRES
+app.get('/recommendation/genreFilter', (req, res) => {
+    res.render('recommendation/filterSelect', {movies: [], genre1: '', genres: genres})
+});
+
+//SHOW MOVIES OF ANY TWO GENRES
+app.post('/recommendation/genreFilter', (req, res) => {
+    if(String(req.body.genres) === 'undefined'){
+        return res.render('recommendation/filterSelect', {movies: [], genre1: '', genres: genres})
+    }
+
+    Movie.find({$and: [{genres: {$eq: req.body.genres[0].toLowerCase()}}, {genres: {$eq: req.body.genres[1].toLowerCase()}}]}, (err, found) => {
+        res.render('recommendation/filterSelect', {movies: found, genre1: '', genres: genres})
+    })
+});
 //============================================================================
 //USER PROFILE
 // app.get("/profile/:id", (req, res)=>{
