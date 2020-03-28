@@ -677,6 +677,20 @@ actorArray = [
         dob: new Date('22 July 1955')
     },
     {
+        name: 'Johnny Depp',
+        image: 'https://www.gstatic.com/tv/thumb/persons/33623/33623_v9_bc.jpg',
+        bio : 'John Christopher Depp II is an American actor, producer, and musician. He has been nominated for 10 Golden Globe \
+            Awards, winning one for Best Actor for his performance of the title role in Sweeney Todd: The Demon Barber of Fleet \
+            Street (2008), and has been nominated for three Academy Awards for Best Actor, among other accolades. He is regarded \
+            as one of the world\'s biggest film stars. Depp rose to prominence on the 1980s television series 21 Jump Street, \
+            becoming a teen idol. He has gained critical praise for his portrayals of inept screenwriter-director Ed Wood in the \
+            film of the same name, undercover FBI agent Joseph D. Pistone in Donnie Brasco, author J. M. Barrie in Finding \
+            Neverland, and Boston gangster Whitey Bulger in Black Mass.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('9 June 1963')
+    },
+    {
         name: 'Jake Gyllenhaal',
         image: 'https://www.gstatic.com/tv/thumb/persons/163510/163510_v9_ba.jpg',
         bio : "Jacob Benjamin Gyllenhaal (born December 19, 1980) is an American actor and film producer. Born into the Gyllenhaal\
@@ -1724,6 +1738,98 @@ actorArray = [
         dob: new Date('24 July 1982')
     },
     {
+        name: 'Kurt Russell',
+        image: 'https://www.gstatic.com/tv/thumb/persons/1514/1514_v9_ba.jpg',
+        bio : 'Kurt Vogel Russell is an American actor. He began acting on television at the age of 12 in the western series The \
+            Travels of Jaimie McPheeters (1963–1964). In the late 1960s, he signed a ten-year contract with The Walt Disney Company \
+            where, according to Robert Osborne, he became the studio\'s top star of the 1970s. Russell was nominated for a Golden \
+            Globe Award for Best Supporting Actor – Motion Picture for his performance in Silkwood (1983). In the 1980s, he \
+            starred in several films directed by John Carpenter, including anti-hero roles such as army hero-turned-robber Snake \
+            Plissken in the futuristic action film Escape from New York (1981), and its sequel Escape from L.A.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('17 March 1951')
+    },
+    {
+        name: 'Bill Hader',
+        image: 'https://www.gstatic.com/tv/thumb/persons/484312/484312_v9_bb.jpg',
+        bio : 'William Thomas Hader Jr. is an American actor, comedian, writer, producer, and director. He rose to fame as a cast \
+            member on the NBC variety series Saturday Night Live (2005–2013) for which he received four Primetime Emmy Award \
+            nominations and a Peabody Award. Hader has had supporting roles in the films Superbad (2007), Tropic Thunder (2008), \
+            Forgetting Sarah Marshall (2008), Night at the Museum: Battle of the Smithsonian (2009), Paul (2011), Men in Black \
+            3 (2012) and leading roles in The Skeleton Twins (2014), Trainwreck (2015) and It Chapter Two (2019) as an adult \
+            Richie Tozier. He has voiced lead characters in the Cloudy with a Chance of Meatballs franchise (2009–2014), \
+            Inside Out (2015), the Angry Birds films (2016, 2019), Sausage Party (2016), Ralph Breaks the Internet (2018) \
+            and supporting roles in Turbo (2013), Monsters University (2013) and Finding Dory (2016).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('7 June 1978')
+    },
+    {
+        name: 'Amy Poehler',
+        image: 'https://www.gstatic.com/tv/thumb/persons/242722/242722_v9_bb.jpg',
+        bio : 'Amy Meredith Poehler is an American actress, comedian, writer, producer, and director. After studying improv at \
+            Chicago\'s Second City and ImprovOlympic in the early 1990s, she co-founded the improvisational-comedy troupe Upright \
+            Citizens Brigade. In 2001 she joined the cast of the NBC television series Saturday Night Live. She became co-anchor\
+            of SNL\'s Weekend Update in 2004 until she left the series in 2008 to star as Leslie Knope in the NBC sitcom Parks \
+            and Recreation. She has also performed voice acting roles including the lead role in Inside Out, as well as parts \
+            in Shrek the Third, and Horton Hears a Who!. Poehler is an executive producer on the televisions series Welcome \
+            to Sweden, Broad City, Difficult People, Duncanville, and Russian Doll.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('16 September 1971')
+    },
+    {
+        name: 'Rupert Grint',
+        image: 'https://www.gstatic.com/tv/thumb/persons/247025/247025_v9_bc.jpg',
+        bio : 'Rupert Alexander Lloyd Grint (born 24 August 1988) is an English actor and producer. He rose to prominence for his \
+            portrayal of Ron Weasley, one of the three main characters in the Harry Potter film series. Grint was cast as Ron at the \
+            age of 11, having previously acted only in school plays and at his local theatre group. From 2001 to 2011, he starred \
+            in all eight Harry Potter films.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('24 August 1988')
+    },
+    {
+        name: 'Alan Rickman',
+        image: 'https://www.gstatic.com/tv/thumb/persons/2894/2894_v9_ba.jpg',
+        bio : 'Alan Sidney Patrick Rickman (21 February 1946 – 14 January 2016) was an English actor and director. Known for his \
+            languid tone and delivery, Rickman\'s signature sound was the result of a speech impediment when he could not move his \
+            lower jaw properly as a child. He trained at the Royal Academy of Dramatic Art in London and became a member of the \
+            Royal Shakespeare Company (RSC), performing in modern and classical theatre productions. He played the Vicomte de Valmont\
+            in the RSC stage production of Les Liaisons Dangereuses in 1985, and after the production transferred to the West End \
+            in 1986 and Broadway in 1987 he was nominated for a Tony Award.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('21 February 1946')
+    },
+    {
+        name: 'Eddie Redmayne',
+        image: 'https://www.gstatic.com/tv/thumb/persons/448398/448398_v9_bb.jpg',
+        bio : 'Edward John David Redmayne OBE (born 6 January 1982) is an English actor. He began his professional acting career as \
+            a youth in West End theatre, before making his screen debut in 1998 with guest television appearances. His first film \
+            roles came in 2006 with Like Minds and The Good Shepherd, and he went on to play supporting roles in several films. On \
+            stage, Redmayne starred in the productions of Red from 2009 to 2010 and Richard II from 2011 to 2012. The former won \
+            him the Tony Award for Best Featured Actor in a Play. His film breakthrough came with the roles of Colin Clark in the \
+            biographical drama My Week with Marilyn (2011) and Marius Pontmercy in Tom Hooper\'s musical Les Misérables (2012).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('6 January 1982')
+    },
+    {
+        name: 'Katherine Waterston',
+        image: 'https://superstarsbio.com/wp-content/uploads/2019/09/Katherine-Waterston-hight.jpg',
+        bio : 'Katherine Boyer Waterston is an American actress. She made her feature film debut in Michael Clayton (2007). She \
+            then had supporting roles in films including Robot & Frank, Being Flynn (both 2012) and The Disappearance of Eleanor \
+            Rigby (2013) before her breakthrough performance as Shasta Fay Hepworth in Paul Thomas Anderson\'s Inherent Vice (2014). \
+            In 2015, she portrayed Chrisann Brennan in Steve Jobs. She had a starring role as Tina Goldstein in the Harry Potter \
+            spin-off Fantastic Beasts and Where to Find Them (2016), which she reprised in its 2018 sequel. Other film roles \
+            include Ridley Scott\'s Alien: Covenant (2017), Steven Soderbergh\'s Logan Lucky (2017) and Jonah Hill\'s Mid90s (2018).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('3 March 1980')
+    },
+    {
         name: 'Bill Skarsgård',
         image: 'https://www.gstatic.com/tv/thumb/persons/596590/596590_v9_bb.jpg',
         bio : 'Bill Istvan Günther Skarsgård (born 9 August 1990) is a Swedish actor. He portrayed Pennywise the Dancing Clown in \
@@ -1755,6 +1861,56 @@ actorArray = [
         movies: [],
         upcomingMovies: [],
         dob: new Date('4 January 2003')
+    },
+    {
+        name: 'Chiwetel Ejiofor',
+        image: 'https://www.gstatic.com/tv/thumb/persons/247378/247378_v9_bb.jpg',
+        bio : 'Chiwetel Umeadi Ejiofor is a British actor. After enrolling at the National Youth Theatre in 1995 and attending the \
+            London Academy of Music and Dramatic Art, at age 19 and three months into his course, Ejiofor was cast by Steven \
+            Spielberg to play a supporting role in the film Amistad (1997) as James Covey. Ejiofor portrayed the characters \
+            Okwe in Dirty Pretty Things (2002), Lola in Kinky Boots (2005), The Operative in Serenity (2005), Adrian Helmsley \
+            in 2012 (2009), Solomon Northup in 12 Years a Slave (2013), Vincent Kapoor in The Martian (2015), Karl Mordo in \
+            Doctor Strange (2016), Dr. Watson in Sherlock Gnomes (2018) and Trywell Kamkwamba in The Boy Who Harnessed the Wind (2019).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('10 July 1977')
+    },
+    {
+        name: 'Dan Fogler',
+        image: 'https://www.gstatic.com/tv/thumb/persons/493325/493325_v9_bb.jpg',
+        bio : 'Daniel Kevin Fogler (born October 20, 1976) is an American actor, comedian and writer. He has appeared in films \
+            Balls of Fury, Good Luck Chuck, Fantastic Beasts and Where to Find Them, Fantastic Beasts: The Crimes of Grindelwald \
+            and done voice acting for Kung Fu Panda and Horton Hears a Who! He currently stars on The Walking Dead as Luke. In \
+            2005, Fogler made his Broadway debut as William Barfée in The 25th Annual Putnam County Spelling Bee, for which he \
+            won the Tony Award for Best Featured Actor in a Musical.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('20 October 1976')
+    },
+    {
+        name: 'Jude Law',
+        image: 'https://www.gstatic.com/tv/thumb/persons/71369/71369_v9_bb.jpg',
+        bio : 'David Jude Heyworth Law (born 29 December 1972) is an English actor. He has received multiple awards including a \
+            BAFTA Film Award as well as nominations for two Academy Awards, four Golden Globe Awards, three Laurence Olivier Awards \
+            and two Tony Awards. In 2007, he received an Honorary César and was named a knight of the Order of Arts and Letters by \
+            the French government, in recognition of his contribution to World Cinema Arts.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('16 November 2018')
+    },
+    {
+        name: 'Macaulay Culkin',
+        image: 'https://www.gstatic.com/tv/thumb/persons/381/381_v9_bb.jpg',
+        bio : 'Macaulay Carson Culkin (born August 26, 1980) is an American actor and musician. He is known for playing Kevin \
+            McCallister in the Christmas films Home Alone (1990), for which he was nominated for a Golden Globe Award for Best \
+            Actor – Motion Picture Musical or Comedy, and Home Alone 2: Lost in New York (1992). Along with the Home Alone \
+            series, Culkin also starred in the films My Girl (1991), The Good Son (1993), The Nutcracker (1993), Getting Even \
+            with Dad (1994), The Pagemaster (1994) and Richie Rich (1994). He has been nominated for Kids\' Choice Awards, MTV \
+            Movie Awards and Young Artist Awards. At the height of his fame, he was regarded as the most successful child actor \
+            since Shirley Temple.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('26 August 1980')
     },
 ];
 

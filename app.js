@@ -54,6 +54,18 @@ function title(name) {
 function removeDuplicates(array) {
     return array.filter((a, b) => array.indexOf(a) === b)
 };
+
+function getCommon(arr1, arr2) {
+    var common = [];
+    for(var i=0 ; i<arr1.length ; ++i) {
+        for(var j=0 ; j<arr2.length ; ++j) {
+            if(arr1[i] == arr2[j]) {
+                common.push(arr1[i]);
+            }
+        }
+    }
+    return common;
+}
 //==========================================================
 
 app.use((req, res, next) => {
@@ -448,8 +460,8 @@ app.get('/movies/:id/more', (req, res)=>{
     });
 });
 
-genres = ['Action', 'Adventure', 'Thriller', 'Comedy', 'Mystery', 'Drama', 'Crime', 'Romance', 'Animated', 'Western', 'Superhero', 
-    'Zombie', 'Sci-fi', 'Horror', 'Heist', 'Documentry', 'War', 'Disaster', 'Sports', 'History']
+genres = ['Action', 'Adventure', 'Thriller', 'Biography', 'Comedy', 'Family', 'Fantasy', 'Mystery', 'Drama', 'Crime', 'Romance', 'Animated', 
+    'Western', 'Superhero', 'Zombie', 'Sci-fi', 'Horror', 'Heist', 'War', 'Sports', 'Post Apocalyptic']
 
 //SHOW ALL THE GENRES
 app.get('/recommendation/genres', (req, res)=>{
@@ -460,6 +472,7 @@ app.get('/recommendation/genres', (req, res)=>{
 app.get('/recommendation/genres/:genre', (req, res)=>{
     reqGenre = req.params.genre;
     reqGenre = reqGenre.toLowerCase();
+    console.log(reqGenre)
 
     Movie.aggregate([{$unwind : '$genres'}, {$match: {genres: {$eq: reqGenre}}}], (err, movies) => {
         res.render('recommendation/filterSelect', {movies: movies, genre1: title(reqGenre), genres: genres})
@@ -481,6 +494,33 @@ app.post('/recommendation/genreFilter', (req, res) => {
         res.render('recommendation/filterSelect', {movies: found, genre1: '', genres: genres})
     })
 });
+
+app.get('/recommendation/selectMovies', (req, res) => {
+    movies = ['The Dark Knight', 'Inception', 'Game Night', 'John Wick', 'Zombieland', 'Avengers: Infinity War']
+    res.render('recommendation/selectMovies', {movies: movies})
+})
+
+app.post('/recommendation/selectMovies', (req, res) => {
+    Movie.find({name: {$in: [req.body.movie[0], req.body.movie[1]]}}, (err, found) => {
+        // a = found[0].genres + ',' + found[1].genres
+        common = getCommon(found[0].genres, found[1].genres)
+        if(common.length === 1){
+            return res.redirect('/recommendation/genres/'+common[0])
+        }
+        // a = a.split(',')
+        // a = removeDuplicates(a)
+        // console.log(a)
+        // a = a.filter(function(item) {
+        //     return !common.includes(item); 
+        // })
+        // // console.log(a)
+        console.log(common)//*
+        Movie.find({$and: [{genres: {$eq: common[0]}}, {genres: {$eq: common[1]}}]}, (err, found) => {
+            res.render('recommendation/filterSelect', {movies: found, genre1: '', genres: genres})
+        })
+    })
+    // res.send('hello')
+})
 //============================================================================
 //USER PROFILE
 // app.get("/profile/:id", (req, res)=>{

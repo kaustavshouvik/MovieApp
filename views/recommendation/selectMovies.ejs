@@ -1,0 +1,17 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <form action="/recommendation/selectMovies" method="POST">
+        <% movies.forEach((movie) => { %>
+            <div class="d-flex align-items-start">
+                <div>
+                    <input type="checkbox" name="movie" value="<%= movie %>">
+                </div>
+                <div class="ml-3"><h3><%= movie %></h3></div>
+            </div>
+        <% }) %>
+        <button>Submit</button>
+    </form>
+</div>
+
+<%- include("../partials/footer") %>

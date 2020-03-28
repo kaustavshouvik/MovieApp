@@ -390,7 +390,7 @@ moviesArray = [
         plot: 'Judy Hopps and Nick Wilde team up to uncover the mystery behind fourteen missing predators. They end up finding out that the \
             conspiracy is larger than it seems.',
         cast: ['Ginnifer Goodwin', 'Jason Bateman', 'Idris Elba', 'J.K. Simmons', 'Octavia Spencer'],
-        genres: ['animated', 'adventure', 'comedy'],
+        genres: ['animated', 'adventure', 'comedy', 'mystery'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
             username: 'kaustav007'
@@ -819,6 +819,26 @@ moviesArray = [
         youtubeLink: 'https://youtu.be/QvkzNqAV6fs',
     },
     {
+        name: 'Inside Out',
+        poster: 'https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTQ4MDQwNTU3NF5BMl5BanBnXkFtZTgwNTk3NTE2NTE@._V1_QL50_.jpg',
+        release: new Date('19 June 2015'),
+        plot: 'After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, \
+            Disgust and Sadness - conflict on how best to navigate a new city, house, and school.',
+        cast: ['Amy Poehler', 'Bill Hader'],
+        genres: ['animated', 'comedy', 'adventure'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/fnD07MYXzPA',
+    },
+    {
         name: 'Now You See Me',
         poster: 'https://m.media-amazon.com/images/M/MV5BMTY0NDY3MDMxN15BMl5BanBnXkFtZTcwOTM5NzMzOQ@@._V1_QL50_SY1000_CR0,0,642,1000_AL_.jpg',
         image: 'https://m.media-amazon.com/images/M/MV5BMTYyNjk2MzIzOV5BMl5BanBnXkFtZTcwNTk4NjU1OQ@@._V1_QL50_SY1000_CR0,0,1503,1000_AL_.jpg',
@@ -837,6 +857,206 @@ moviesArray = [
         netflixLink: 'https://www.netflix.com/in/title/70243464?source=35',
         hotstarLink: '',
         youtubeLink: '',
+    },
+    {
+        name: 'World War Z',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNDQ4YzFmNzktMmM5ZC00MDZjLTk1OTktNDE2ODE4YjM2MjJjXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_QL50_SY1000_SX650_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjE0MTI3ODc4NF5BMl5BanBnXkFtZTcwMTI0MTY2OQ@@._V1_QL50_SX1500_CR0,0,1500,999_AL_.jpg',
+        release: new Date('21 June 2013'),
+        plot: 'Former United Nations employee Gerry Lane traverses the world in a race against time to stop a zombie pandemic that is \
+            toppling armies and governments and threatens to destroy humanity itself.',
+        cast: ['Brad Pitt'],
+        genres: ['zombie', 'adventure', 'action'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0FBAXV5BUJI5RAORQ7F6799NF4/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B01M9F2VX9&qid=1585321923',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/noPVj6D8xyo',
+    },
+    {
+        name: 'The Book of Eli',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNTE1OWI1YzgtZjEyMy00MjQ4LWE0NWMtYTNhYjc0ZDQ3ZGRkXkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_QL50_SY1000_CR0,0,666,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTM0NzE3NDU4Nl5BMl5BanBnXkFtZTcwMDQwNTcwMw@@._V1_QL50_SY1000_CR0,0,1503,1000_AL_.jpg',
+        release: new Date('15 January 2010'),
+        plot: 'A post-apocalyptic tale, in which a lone man fights his way across America in order to protect a sacred book that \
+            holds the secrets to saving humankind.',
+        cast: ['Denzel Washington', 'Mila Kunis', 'Gary Oldman'],
+        genres: ['post apocalyptic', 'action', 'drama'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: 'https://www.netflix.com/in/title/70114342?source=35',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Django Unchained',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTk4NzQwODM5MF5BMl5BanBnXkFtZTcwNjgzNTI3Nw@@._V1_QL50_SY1000_CR0,0,1486,1000_AL_.jpg',
+        release: new Date('25 December 2012'),
+        plot: 'When Django, a slave, is freed, he joins forces with a bounty hunter to rescue his wife, who has been captured by a \
+            hard-hearted plantation owner.',
+        cast: ['Jamie Foxx', 'Leonardo DiCaprio', 'Samuel L. Jackson'],
+        genres: ['western', 'drama', 'action'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: 'https://www.netflix.com/in/title/70230640?source=35',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'The Hateful Eight',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjA1MTc1NTg5NV5BMl5BanBnXkFtZTgwOTM2MDEzNzE@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjEyMDI1MjkwMl5BMl5BanBnXkFtZTgwMDA5MDM1NjE@._V1_QL50_.jpg',
+        release: new Date('30 December 2015'),
+        plot: 'In the dead of a Wyoming winter, a bounty hunter and his prisoner find shelter in a cabin currently inhabited by a \
+            collection of nefarious characters.',
+        cast: ['Kurt Russell', 'Samuel L. Jackson'],
+        genres: ['western', 'drama', 'action', 'crime'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'I Am Legend',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYTE1ZTBlYzgtNmMyNS00ZTQ2LWE4NjEtZjUxNDJkNTg2MzlhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL50_SY1000_SX675_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BZjVhNWMxMzUtNDJmZS00NjI0LTg4ZjEtYTY2ZjQ3NTBkODlmXkEyXkFqcGdeQXVyNjUxNDQwMzA@._V1_QL50_SX1777_CR0,0,1777,770_AL_.jpg',
+        release: new Date('14 December 2007'),
+        plot: 'Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City \
+            struggles valiantly to find a cure in this post-apocalyptic action thriller.',
+        cast: ['Will Smith'],
+        genres: ['post apocalyptic', 'drama', 'thriller'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0QOJQDZH8Q9CONBTKR4AXWPN3U/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/qSfNwhL9hAk',
+    },
+    {
+        name: 'Harry Potter and the Sorcerer\'s Stone',
+        poster: 'https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_QL50_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTMzNzY4NDgzMl5BMl5BanBnXkFtZTcwMTMzNDc3Mw@@._V1_QL50_SY1000_CR0,0,1525,1000_AL_.jpg',
+        release: new Date('16 November 2001'),
+        plot: 'An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible \
+            evil that haunts the magical world.',
+        cast: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint', 'Alan Rickman'],
+        genres: ['family', 'adventure', 'fantasy'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0N8WYH0W6L7Q0ODHGQCHMMRH4R/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Harry Potter and the Prisoner of Azkaban',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_QL50_SY1000_CR0,0,676,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BNTcxMjQxOTQwNV5BMl5BanBnXkFtZTcwOTAxNjUwNA@@._V1_QL50_SY1000_CR0,0,1518,1000_AL_.jpg',
+        release: new Date('4 June 2004'),
+        plot: 'Harry Potter, Ron and Hermione return to Hogwarts School of Witchcraft and Wizardry for their third year of study, where \
+            they delve into the mystery surrounding an escaped prisoner who poses a dangerous threat to the young wizard.',
+        cast: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint', 'Alan Rickman', 'Gary Oldman'],
+        genres: ['family', 'adventure', 'fantasy'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0HKBCOWZ6L75JX0GXBANJSQLIM/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Fantastic Beasts and Where to Find Them',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjMxOTM1OTI4MV5BMl5BanBnXkFtZTgwODE5OTYxMDI@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTgxNDY1MjkyMl5BMl5BanBnXkFtZTgwNDIyMTI1MDI@._V1_QL50_SX1777_CR0,0,1777,744_AL_.jpg',
+        release: new Date('18 November 2016'),
+        plot: 'The adventures of writer Newt Scamander in New York\'s secret community of witches and wizards seventy years \
+            before Harry Potter reads his book in school.',
+        cast: ['Eddie Redmayne', 'Katherine Waterston', 'Ezra Miller', 'Johnny Depp', 'Dan Fogler'],
+        genres: ['family', 'adventure', 'fantasy'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0I9W62JMEYIHAM6X9XUKKCCVA9/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Fantastic Beasts: The Crimes of Grindelwald',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYWVlMDI5N2UtZTIyMC00NjZkLWI5Y2QtODM5NGE5MzA0NmVjXkEyXkFqcGdeQXVyNzU3NjUxMzE@._V1_QL50_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjQ0MDMzNjY2M15BMl5BanBnXkFtZTgwNDU1OTE3NjM@._V1_QL50_SX1777_CR0,0,1777,744_AL_.jpg',
+        release: new Date('18 November 2016'),
+        plot: 'Gellert Grindelwald plans to raise an army of wizards to rule over non-magical beings. In response, Newt \
+            Scamander\'s former professor, Albus Dumbledore, seeks his help to stop him.',
+        cast: ['Eddie Redmayne', 'Katherine Waterston', 'Ezra Miller', 'Johnny Depp', 'Dan Fogler', 'Jude Law'],
+        genres: ['family', 'adventure', 'fantasy'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: 'https://www.primevideo.com/detail/0MW6RRL5IS3VSNTAICPS4TWY9B/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: '',
+    },
+    {
+        name: 'Home Alone',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL50_SY1000_CR0,0,672,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMTgwODY4MzAzNl5BMl5BanBnXkFtZTcwNzMzMTk4NA@@._V1_QL50_SY1000_CR0,0,1491,1000_AL_.jpg',
+        release: new Date('16 November 1990'),
+        plot: 'An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home \
+            alone by his family during Christmas vacation.',
+        cast: ['Macaulay Culkin'],
+        genres: ['family', 'comedy'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',  
+        netflixLink: '',
+        hotstarLink: 'https://www.hotstar.com/in/movies/home-alone/1770000922',
+        youtubeLink: 'https://youtu.be/BDr4yycjXWk',
     },
 ];
 
