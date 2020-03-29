@@ -879,7 +879,7 @@ moviesArray = [
         youtubeLink: 'https://youtu.be/noPVj6D8xyo',
     },
     {
-        name: 'The Book of Eli',
+        name: 'The Book Of Eli',
         poster: 'https://m.media-amazon.com/images/M/MV5BNTE1OWI1YzgtZjEyMy00MjQ4LWE0NWMtYTNhYjc0ZDQ3ZGRkXkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_QL50_SY1000_CR0,0,666,1000_AL_.jpg',
         image: 'https://m.media-amazon.com/images/M/MV5BMTM0NzE3NDU4Nl5BMl5BanBnXkFtZTcwMDQwNTcwMw@@._V1_QL50_SY1000_CR0,0,1503,1000_AL_.jpg',
         release: new Date('15 January 2010'),
@@ -959,7 +959,7 @@ moviesArray = [
         youtubeLink: 'https://youtu.be/qSfNwhL9hAk',
     },
     {
-        name: 'Harry Potter and the Sorcerer\'s Stone',
+        name: 'Harry Potter And The Sorcerer\'s Stone',
         poster: 'https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_QL50_.jpg',
         image: 'https://m.media-amazon.com/images/M/MV5BMTMzNzY4NDgzMl5BMl5BanBnXkFtZTcwMTMzNDc3Mw@@._V1_QL50_SY1000_CR0,0,1525,1000_AL_.jpg',
         release: new Date('16 November 2001'),
@@ -979,7 +979,7 @@ moviesArray = [
         youtubeLink: '',
     },
     {
-        name: 'Harry Potter and the Prisoner of Azkaban',
+        name: 'Harry Potter And The Prisoner Of Azkaban',
         poster: 'https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_QL50_SY1000_CR0,0,676,1000_AL_.jpg',
         image: 'https://m.media-amazon.com/images/M/MV5BNTcxMjQxOTQwNV5BMl5BanBnXkFtZTcwOTAxNjUwNA@@._V1_QL50_SY1000_CR0,0,1518,1000_AL_.jpg',
         release: new Date('4 June 2004'),
@@ -999,7 +999,7 @@ moviesArray = [
         youtubeLink: '',
     },
     {
-        name: 'Fantastic Beasts and Where to Find Them',
+        name: 'Fantastic Beasts And Where To Find Them',
         poster: 'https://m.media-amazon.com/images/M/MV5BMjMxOTM1OTI4MV5BMl5BanBnXkFtZTgwODE5OTYxMDI@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
         image: 'https://m.media-amazon.com/images/M/MV5BMTgxNDY1MjkyMl5BMl5BanBnXkFtZTgwNDIyMTI1MDI@._V1_QL50_SX1777_CR0,0,1777,744_AL_.jpg',
         release: new Date('18 November 2016'),

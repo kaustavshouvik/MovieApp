@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<div class="container my-5">
+    <div class="card">
+        <div class="d-flex justify-content-between align-items-start">
+            <div class="mt-1 ml-2">
+                <h3><%= user.name %></h3>
+                <div class="d-flex justify-content-start">
+                    <h5>YOUR WATCHLIST</h5>
+                </div>
+                <div>
+                    <h6>Select Movies To Remove From WatchList - </h6>
+                    <form action="/User/Profile/<%= user._id %>/editWatchList?_method=PUT" method="POST">
+                        <% user.watchList.forEach(movie => { %>
+                            <input type="checkbox" name="movie" value="<%= movie._id %>"><%= movie.name %><br>
+                        <% }) %>
+                        <button class="btn btn-danger btn-sm">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div id="imgProfile">
+                <img src="" alt="PROFILE PIC">
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

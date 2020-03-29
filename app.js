@@ -9,7 +9,7 @@ const express           = require('express'),
     Actor               = require('./models/actor'),
     Movie               = require('./models/movie');
 
-mongoose.connect('mongodb://localhost/movieappv3', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect('mongodb://localhost/movieappv4', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
 
 const app = express();
 
@@ -65,6 +65,20 @@ function getCommon(arr1, arr2) {
         }
     }
     return common;
+}
+
+function getRandom(arr, n) {
+    var result = new Array(n),
+        len = arr.length,
+        taken = new Array(len);
+    if (n > len)
+        throw new RangeError("getRandom: more elements taken than available");
+    while (n--) {
+        var x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
 }
 //==========================================================
 
@@ -460,8 +474,8 @@ app.get('/movies/:id/more', (req, res)=>{
     });
 });
 
-genres = ['Action', 'Adventure', 'Thriller', 'Biography', 'Comedy', 'Family', 'Fantasy', 'Mystery', 'Drama', 'Crime', 'Romance', 'Animated', 
-    'Western', 'Superhero', 'Zombie', 'Sci-fi', 'Horror', 'Heist', 'War', 'Sports', 'Post Apocalyptic']
+genres = ['Action', 'Adventure', 'Animated', 'Biography', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy', 'Heist', 'Horror', 'Mystery',
+    'Post Apocalyptic', 'Romance', 'Sci-fi', 'Sports', 'Superhero', 'Thriller', 'War', 'Western', 'Zombie']
 
 //SHOW ALL THE GENRES
 app.get('/recommendation/genres', (req, res)=>{
@@ -472,7 +486,6 @@ app.get('/recommendation/genres', (req, res)=>{
 app.get('/recommendation/genres/:genre', (req, res)=>{
     reqGenre = req.params.genre;
     reqGenre = reqGenre.toLowerCase();
-    console.log(reqGenre)
 
     Movie.aggregate([{$unwind : '$genres'}, {$match: {genres: {$eq: reqGenre}}}], (err, movies) => {
         res.render('recommendation/filterSelect', {movies: movies, genre1: title(reqGenre), genres: genres})
@@ -488,52 +501,104 @@ app.get('/recommendation/genreFilter', (req, res) => {
 app.post('/recommendation/genreFilter', (req, res) => {
     if(String(req.body.genres) === 'undefined'){
         return res.render('recommendation/filterSelect', {movies: [], genre1: '', genres: genres})
+    } else if(req.body.genres.length === 2) {
+        Movie.find({$and: [{genres: {$eq: req.body.genres[0].toLowerCase()}}, {genres: {$eq: req.body.genres[1].toLowerCase()}}]}, (err, found) => {
+            res.render('recommendation/filterSelect', {movies: found, genre1: '', genres: genres})
+        })
+    } else if(req.body.genres.length === 3) {
+        if(req.body.genres != 'War') {
+            Movie.find({$and: [{genres: {$eq: req.body.genres[0].toLowerCase()}}, {genres: {$eq: req.body.genres[1].toLowerCase()}}, 
+            {genres: {$eq: req.body.genres[2].toLowerCase()}}]}, (err, found) => {
+                res.render('recommendation/filterSelect', {movies: found, genre1: '', genres: genres})
+            })
+        } else {
+            return res.redirect('/recommendation/genres/war')
+        }
+    } else if(req.body.genres.length >= 3 && typeof req.body.genres === 'string'){
+        return res.redirect('/recommendation/genres/' + title(req.body.genres))
+    } else {
+        return res.render('recommendation/filterSelect', {movies: [], genre1: '', genres: genres})
     }
-
-    Movie.find({$and: [{genres: {$eq: req.body.genres[0].toLowerCase()}}, {genres: {$eq: req.body.genres[1].toLowerCase()}}]}, (err, found) => {
-        res.render('recommendation/filterSelect', {movies: found, genre1: '', genres: genres})
-    })
 });
 
 app.get('/recommendation/selectMovies', (req, res) => {
-    movies = ['The Dark Knight', 'Inception', 'Game Night', 'John Wick', 'Zombieland', 'Avengers: Infinity War']
-    res.render('recommendation/selectMovies', {movies: movies})
+    Movie.find({}, (err, movies) => {
+        list = getRandom(movies, 6)
+        res.render('recommendation/selectMovies', {movies: list})
+    })
 })
 
 app.post('/recommendation/selectMovies', (req, res) => {
-    Movie.find({name: {$in: [req.body.movie[0], req.body.movie[1]]}}, (err, found) => {
-        // a = found[0].genres + ',' + found[1].genres
-        common = getCommon(found[0].genres, found[1].genres)
-        if(common.length === 1){
-            return res.redirect('/recommendation/genres/'+common[0])
-        }
-        // a = a.split(',')
-        // a = removeDuplicates(a)
-        // console.log(a)
-        // a = a.filter(function(item) {
-        //     return !common.includes(item); 
-        // })
-        // // console.log(a)
-        console.log(common)//*
-        Movie.find({$and: [{genres: {$eq: common[0]}}, {genres: {$eq: common[1]}}]}, (err, found) => {
-            res.render('recommendation/filterSelect', {movies: found, genre1: '', genres: genres})
+    if(req.body.movie.length === 2){
+        Movie.find({name: {$in: [req.body.movie[0], req.body.movie[1]]}}, (err, found) => {
+            common = getCommon(found[0].genres, found[1].genres)
+            if(common.length === 1){
+                return res.redirect('/recommendation/genres/'+common[0])
+            }
+            console.log(common)
+            Movie.find({$and: [{genres: {$eq: common[0]}}, {genres: {$eq: common[1]}}]}, (err, found) => {
+                res.render('recommendation/filterSelect', {movies: found, genre1: '', genres: genres})
+            })
         })
-    })
-    // res.send('hello')
+    } else {
+        return res.redirect('/recommendation/selectMovies');
+    }
 })
 //============================================================================
 //USER PROFILE
-// app.get("/profile/:id", (req, res)=>{
-//     User.findById(req.params.id, (err, foundUser)=>{
-//         person = {
-//             id: foundUser._id,
-//             username: foundUser.username
-//         };
-//         Rating.find({ratedBy: person}, (err, ratings)=>{
-//             res.render("profile", {user: foundUser, ratings: ratings});
-//         });
-//     });
-// });
+app.get('/User/AddToWatchList/:id', (req, res) => {
+    Movie.findById(req.params.id, (err, foundMovie) => {
+        if(err) console.log(err);
+        else {
+            currentList = req.user.watchList;
+            currentMovie = req.params.id;
+
+            for(i=0; i<currentList.length; i++){
+                if(String(currentList[i]) == currentMovie){
+                    return res.redirect('/movies/' + foundMovie._id)
+                }
+            }
+
+            req.user.watchList.push(foundMovie)
+            req.user.save()
+            console.log(req.user)
+            res.redirect('/movies/' + foundMovie._id)
+        }
+    })
+})
+
+app.get('/User/Profile/:id', (req, res)=>{
+    User.findById(req.params.id).populate({path: 'watchList', model: Movie}).exec((err, foundUser)=>{
+        person = {
+            id: foundUser._id,
+            username: foundUser.username
+        };
+        Rating.find({ratedBy: person}, (err, ratings)=>{
+            res.render('users/profile', {user: foundUser, ratings: ratings});
+        });
+    });
+});
+
+app.get('/User/Profile/:id/editWatchList', (req, res) => {
+    User.findById(req.params.id).populate({path: 'watchList', model: Movie}).exec((err, foundUser)=>{
+        res.render('users/editwatchlist', {user: foundUser})
+    });
+})
+
+app.put('/User/Profile/:id/editWatchList', (req, res) => {
+    currentList = req.user.watchList;
+    if(String(req.body.movie) != 'undefined'){
+        list = req.body.movie
+        if(typeof list == 'string'){
+            list = Array(list)
+        }
+        req.user.watchList = currentList.filter((el) => !list.includes(String(el)));
+        req.user.save()
+    } else {
+        console.log('please select a movie. please')
+    }
+    res.redirect('/User/Profile/' + req.user._id)
+})
 //===============================================================================
 
 //=============================================================================

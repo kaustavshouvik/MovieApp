@@ -29,3 +29,9 @@
 #cardHead{
     height: 41px;
 }
+
+#imgProfile{
+    height: 300px;
+    width: 300px;
+    border: 1px solid purple;
+}
