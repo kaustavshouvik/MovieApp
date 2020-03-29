@@ -33,7 +33,7 @@ passport.deserializeUser(User.deserializeUser());
 //========================================================
 
 // require('./seedActors')()
-// require('./seedMovies')()
+require('./seedMovies')()
 
 //========================================================
 //USER DEFINED FUNCTIONS
@@ -531,7 +531,7 @@ app.get('/recommendation/selectMovies', (req, res) => {
 app.post('/recommendation/selectMovies', (req, res) => {
     if(req.body.movie.length === 2){
         Movie.find({name: {$in: [req.body.movie[0], req.body.movie[1]]}}, (err, found) => {
-            common = getCommon(found[0].genres, found[1].genres)
+            common = getCommon(found[1].genres, found[0].genres)
             if(common.length === 1){
                 return res.redirect('/recommendation/genres/'+common[0])
             }
@@ -544,8 +544,24 @@ app.post('/recommendation/selectMovies', (req, res) => {
         return res.redirect('/recommendation/selectMovies');
     }
 })
-//============================================================================
-//USER PROFILE
+//=========================================================================================================
+//=========================================================================================================
+//USER ROUTES
+
+//PROFILE PAGE
+app.get('/User/Profile/:id', (req, res)=>{
+    User.findById(req.params.id).populate({path: 'watchList', model: Movie}).exec((err, foundUser)=>{
+        person = {
+            id: foundUser._id,
+            username: foundUser.username
+        };
+        Rating.find({ratedBy: person}, (err, ratings)=>{
+            res.render('users/profile', {user: foundUser, ratings: ratings});
+        });
+    });
+});
+
+//ADD MOVIES TO WATCHLIST OF USER
 app.get('/User/AddToWatchList/:id', (req, res) => {
     Movie.findById(req.params.id, (err, foundMovie) => {
         if(err) console.log(err);
@@ -567,24 +583,14 @@ app.get('/User/AddToWatchList/:id', (req, res) => {
     })
 })
 
-app.get('/User/Profile/:id', (req, res)=>{
-    User.findById(req.params.id).populate({path: 'watchList', model: Movie}).exec((err, foundUser)=>{
-        person = {
-            id: foundUser._id,
-            username: foundUser.username
-        };
-        Rating.find({ratedBy: person}, (err, ratings)=>{
-            res.render('users/profile', {user: foundUser, ratings: ratings});
-        });
-    });
-});
-
+//SHOW PAGE TO EDIT WATCHLIST
 app.get('/User/Profile/:id/editWatchList', (req, res) => {
     User.findById(req.params.id).populate({path: 'watchList', model: Movie}).exec((err, foundUser)=>{
         res.render('users/editwatchlist', {user: foundUser})
     });
 })
 
+//ACTUALLY EDIT THE WATCHLIST
 app.put('/User/Profile/:id/editWatchList', (req, res) => {
     currentList = req.user.watchList;
     if(String(req.body.movie) != 'undefined'){

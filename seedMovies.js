@@ -745,7 +745,7 @@ moviesArray = [
         image: 'https://m.media-amazon.com/images/M/MV5BNzE2NDQzMDc0Ml5BMl5BanBnXkFtZTcwMzM5OTQyNw@@._V1_QL50_SY1000_CR0,0,1520,1000_AL_.jpg',
         release: new Date('5 December 2001'),
         plot: 'Danny Ocean and his ten accomplices plan to rob three Las Vegas casinos simultaneously.',
-        cast: ['George Clooney', 'Brad Pitt', 'Matt Damon'],
+        cast: ['George Clooney', 'Brad Pitt', 'Matt Damon', 'Julia Roberts'],
         genres: ['heist', 'crime', 'thriller'],
         addedBy :{
             id: '5e704f47d93ca1214470756d',
@@ -1057,6 +1057,66 @@ moviesArray = [
         netflixLink: '',
         hotstarLink: 'https://www.hotstar.com/in/movies/home-alone/1770000922',
         youtubeLink: 'https://youtu.be/BDr4yycjXWk',
+    },
+    {
+        name: 'Going In Style',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTc5Mzg3NjI4OF5BMl5BanBnXkFtZTgwNzA3Mzg4MDI@._V1_QL50_SY1000_CR0,0,674,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMjM3NjgxOTQ1Nl5BMl5BanBnXkFtZTgwNTg1MzI5MTI@._V1_QL50_SX1500_CR0,0,1500,999_AL_.jpg',
+        release: new Date('7 April 2017'),
+        plot: 'Desperate to pay the bills and come through for their loved ones, three lifelong pals risk it all by embarking on a \
+            daring bid to knock off the very bank that absconded with their money.',
+        cast: ['Michael Caine', 'Morgan Freeman'],
+        genres: ['comedy', 'crime', 'family'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',  
+        netflixLink: '',
+        hotstarLink: 'https://www.hotstar.com/in/movies/going-in-style/1221124501',
+        youtubeLink: '',
+    },
+    {
+        name: 'Gifted',
+        poster: 'https://www.gstatic.com/tv/thumb/v22vodart/13045694/p13045694_v_v8_ab.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BMzMxODE2MGEtMDA4Yy00NDJkLTg4NWYtOTBlNjE5NDc4NGM5XkEyXkFqcGdeQXVyNDg2MjUxNjM@._V1_QL50_SY1000_CR0,0,1502,1000_AL_.jpg',
+        release: new Date('12 April 2017'),
+        plot: 'Frank, a single man raising his child prodigy niece Mary, is drawn into a custody battle with his mother.',
+        cast: ['Chris Evans', 'Mckenna Grace', 'Octavia Spencer', 'Jenny Slate'],
+        genres: ['drama', 'family'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',  
+        netflixLink: '',
+        hotstarLink: 'https://www.hotstar.com/in/movies/gifted/1770016970',
+        youtubeLink: '',
+    },
+    {
+        name: 'Wonder',
+        poster: 'https://m.media-amazon.com/images/M/MV5BYjFhOWY0OTgtNDkzMC00YWJkLTk1NGEtYWUxNjhmMmQ5ZjYyXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_QL50_SY1000_CR0,0,648,1000_AL_.jpg',
+        image: 'https://m.media-amazon.com/images/M/MV5BM2FlMjBmYWEtYmQyNi00NWQ0LTk4OWUtZTBkNzUwNTNiNmRkXkEyXkFqcGdeQXVyNDg2MjUxNjM@._V1_QL50_SY1000_CR0,0,1505,1000_AL_.jpg',
+        release: new Date('17 November 2017'),
+        plot: 'Based on the New York Times bestseller, this movie tells the incredibly inspiring and heartwarming story of August \
+            Pullman, a boy with facial differences who enters the fifth grade, attending a mainstream elementary school for the \
+            first time.',
+        cast: ['Jacob Tremblay', 'Owen Wilson', 'Julia Roberts'],
+        genres: ['drama', 'family'],
+        addedBy :{
+            id: '5e704f47d93ca1214470756d',
+            username: 'kaustav007'
+        },
+        ratingValue: 'Unrated',
+        ratingCount: 0,
+        primeLink: '',  
+        netflixLink: '',
+        hotstarLink: '',
+        youtubeLink: 'https://youtu.be/kj12aGfhQq4',
     },
 ];
 

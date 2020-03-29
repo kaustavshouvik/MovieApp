@@ -1912,6 +1912,82 @@ actorArray = [
         upcomingMovies: [],
         dob: new Date('26 August 1980')
     },
+    {
+        name: 'Jenny Slate',
+        image: 'https://www.gstatic.com/tv/thumb/persons/555306/555306_v9_ba.jpg',
+        bio : 'Jenny Sarah Slate (born March 25, 1982) is an American actress, comedian and author. She has played Mona-Lisa \
+            Saperstein on Parks and Recreation and was the co-creator of the Marcel the Shell with Shoes On short films and \
+            children\'s book series. She was a cast member on Saturday Night Live during its 2009–10 season and has appeared \
+            in shows such as Bored to Death, Bob\'s Burgers, Kroll Show, House of Lies, Married, Star vs. the Forces of Evil \
+            and Big Mouth as well as the feature films Obvious Child, Zootopia and The Secret Life of Pets.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('25 March 1982')
+    },
+    {
+        name: 'Mckenna Grace',
+        image: 'https://vignette.wikia.nocookie.net/fuller-house/images/2/2d/Mckenna-grace-382349_828x1104.png/revision/latest/scale-to-width-down/340?cb=20190921223309',
+        bio : 'Mckenna Grace is an American teen actress. She began acting professionally at the age of 6, her earliest roles \
+            including Jasmine Bernstein in the Disney XD sitcom Crash & Bernstein (2012–2014) and Faith Newman in the soap opera \
+            The Young and the Restless (2013–2015). Grace is known for her role as Penny Kirkman in the ABC/Netflix show Designated \
+            Survivor. She is also known for portraying Rose Harbenberger in the Netflix comedy series Fuller House (2016–2018), \
+            and young Theodora Crain in the Netflix supernatural horror series The Haunting of Hill House (2018).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('25 June 2006')
+    },
+    {
+        name: 'Harrison Ford',
+        image: 'https://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg',
+        bio : 'Harrison Ford (born July 13, 1942) is an American actor, aviator, and environmental activist. He gained worldwide \
+            fame for his starring role as Han Solo in the original Star Wars Trilogy (1977–1983), eventually reprising the role \
+            decades later in the sequel trilogy (2015–2019). Ford is also widely known for his portrayal of Indiana Jones in the \
+            Indiana Jones film franchise (1981-Present) and as Tom Clancy\'s Jack Ryan in the spy thrillers Patriot Games (1992) \
+            and Clear and Present Danger (1994).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('13 July 1942')
+    },
+    {
+        name: 'Julia Roberts',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Julia_Roberts_2011_Shankbone_3.JPG',
+        bio : 'Julia Fiona Roberts (born October 28, 1967) is an American actress and producer. She established herself as a leading \
+            lady in Hollywood after headlining the romantic comedy film Pretty Woman (1990), which grossed $464 million worldwide. She \
+            has won three Golden Globe Awards, from eight nominations, and has been nominated for four Academy Awards for her film \
+            acting, winning the Academy Award for Best Actress for her performance in Erin Brockovich (2000). Her films have \
+            collectively brought box office receipts of over US$2.8 billion, making her one of the most bankable actresses in \
+            Hollywood. Her most successful films include Mystic Pizza (1988), Steel Magnolias (1989), Pretty Woman (1990), Sleeping \
+            with the Enemy (1991), The Pelican Brief (1993), My Best Friend\'s Wedding (1997), Notting Hill (1999), Runaway \
+            Bride (1999), Erin Brockovich (2000), Ocean\'s Eleven (2001), Ocean\'s Twelve (2004), Charlie Wilson\'s War (2007), \
+            Valentine\'s Day (2010), Eat Pray Love (2010), Money Monster (2016), and Wonder (2017).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('28 October 1967')
+    },
+    {
+        name: 'Owen Wilson',
+        image: 'https://www.gstatic.com/tv/thumb/persons/74682/74682_v9_ba.jpg',
+        bio : 'Owen Cunningham Wilson (born November 18, 1968) is an American actor, producer, and screenwriter. He has had a long \
+            association with filmmaker Wes Anderson, with whom he shared writing and acting credits for Bottle Rocket (1996), \
+            Rushmore (1998), and The Royal Tenenbaums (2001), the latter of which earned him a nomination for the Academy Award\
+            for Best Original Screenplay. He has appeared in a number of Frat Pack comedies and voiced Lightning McQueen in \
+            the Cars franchise. His older brother Andrew and younger brother Luke are also actors.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('18 November 1968')
+    },
+    {
+        name: 'Jacob Tremblay',
+        image: 'https://m.media-amazon.com/images/M/MV5BOWJiOTg5YzQtOWIzNy00NTdkLWEzNmEtYWFkZmY1NTc2OTk5XkEyXkFqcGdeQXVyMzM0MDI2MTE@._V1_UY1200_CR110,0,630,1200_AL_.jpg',
+        bio : 'Jacob Tremblay is a Canadian actor. His breakout performance was his starring role as Jack Newsome in Room (2015), \
+            for which he won the Critics\' Choice Movie Award for Best Young Performer and the Academy of Canadian Cinema and \
+            Television Award for Best Performance by an Actor in a Leading Role, and was nominated for the Screen Actors Guild \
+            Award for Outstanding Performance by a Male Actor in a Supporting Role. In 2017, he starred as August Pullman, a \
+            child with Treacher Collins syndrome, in the drama Wonder, and in 2019 he headlined the R-rated comedy film Good Boys.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('5 October 2006')
+    },
 ];
 
 function seedActors(){
