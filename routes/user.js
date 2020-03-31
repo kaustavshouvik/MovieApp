@@ -1,5 +1,5 @@
 const express = require('express'),
-    router = express.Router(),
+    router = express.Router({mergeParams: true}),
     Movie = require('../models/movie'),
     Rating = require('../models/rating'),
     User = require('../models/user')

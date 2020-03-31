@@ -1,20 +1,19 @@
 var mongoose = require("mongoose");
 
 var ratingSchema = {
-    rating: String,
+    rating: {type: String},
     ratedBy: {
         id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         },
-        username: String
+        username: {type: String}
     },
     movie: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Movie"
     },
-    content: String
+    content: {type: String}
 };
-var Rating = mongoose.model("rating", ratingSchema);
 
-module.exports = Rating;
+module.exports = mongoose.model("rating", ratingSchema);

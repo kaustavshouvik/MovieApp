@@ -96,8 +96,34 @@ router.post('/movies', isLoggedIn, (req, res)=>{
     });
 });
 
+function ratingMovie(id){
+    Movie.findById(id).populate({path: 'ratings', model: Rating}).exec((err, movieFound)=>{
+        if(err){
+            console.log(err);
+        } else {
+            var total = 0, count = movieFound.ratings.length;
+            movieFound.ratings.forEach((rating)=>{
+                total = total + Number(rating.rating);
+            });
+            total = total/count;
+            total = total.toFixed(1);
+            console.log(total, count);
+            Movie.findByIdAndUpdate(id, {$set: {ratingCount: count, ratingValue: total}}, (err)=>{
+                if(err){
+                    console.log(err);
+                } else {
+                    Movie.findById(id, (err, f)=>{
+                        console.log(f);
+                    });
+                    // res.redirect('/movies/' + id + '/reviews');
+                }
+            });
+        }
+    });
+}
+
 //RATING A MOVIE  
-router.post('/movies/:id/rating', isLoggedIn, (req, res) => {
+router.post('/movies/:id/rating', haveYouRated, (req, res) => {
     var rateIt = {
         rating: req.body.rating,
         ratedBy: {
@@ -107,32 +133,6 @@ router.post('/movies/:id/rating', isLoggedIn, (req, res) => {
         content: req.body.content,
         movie: req.params.id
     };
-
-    function ratingMovie(id){
-        Movie.findById(id).populate({path: 'ratings', model: Rating}).exec((err, movieFound)=>{
-            if(err){
-                console.log(err);
-            } else {
-                var total = 0, count = movieFound.ratings.length;
-                movieFound.ratings.forEach((rating)=>{
-                    total = total + Number(rating.rating);
-                });
-                total = total/count;
-                total = total.toFixed(1);
-                console.log(total, count);
-                Movie.findByIdAndUpdate(id, {$set: {ratingCount: count, ratingValue: total}}, (err)=>{
-                    if(err){
-                        console.log(err);
-                    } else {
-                        Movie.findById(id, (err, f)=>{
-                            console.log(f);
-                        });
-                        res.redirect('/movies/' + id + '/reviews');
-                    }
-                });
-            }
-        });
-    }
 
     Rating.create(rateIt, (err, newRating) => {
         Movie.findById(req.params.id, (err, foundMovie) => {
@@ -152,6 +152,7 @@ router.post('/movies/:id/rating', isLoggedIn, (req, res) => {
                     } else {
                         console.log(savedMovie);
                         ratingMovie(savedMovie._id);
+                        res.redirect('/movies/' + foundMovie._id + '/reviews');
                     }
                 });
             }
@@ -204,16 +205,47 @@ router.get('/movies/:id', isLoggedIn, (req, res) => {
     });
 });
 
+// //SHOW THE REVIEWS OF A MOVIE
+// router.get('/movies/:id/reviews', (req, res) => {
+//     Movie.findById(req.params.id).populate({path: 'ratings', model: Rating}).exec((err, found) => {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             res.render('movies/reviews', {movie: found});
+//         }
+//     });
+// });
+
 //SHOW THE REVIEWS OF A MOVIE
-router.get('/movies/:id/reviews', (req, res) => {
+router.get('/movies/:id/reviews', haveYouRated, (req, res) => {
     Movie.findById(req.params.id).populate({path: 'ratings', model: Rating}).exec((err, found) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render('movies/reviews', {movie: found});
-        }
+        res.render('movies/reviews', {movie: found, isRated: isRated});
     });
 });
+
+router.get('/movies/:id/reviews/new', haveYouRated, (req, res) => {
+    Movie.findById(req.params.id, (err, found) => {
+        res.render('movies/reviews/new', {movie: found}); 
+    });
+})
+
+router.get('/movies/:id/reviews/edit', haveYouRated, (req, res) => {
+    Movie.findById(req.params.id, (err, found) => {
+        Rating.findOne({movie: found.id, ratedBy: person}, (err, foundRating) => {
+            res.render('movies/reviews/reviewOption', {movie: found, rating: foundRating})
+        })
+    });
+})
+
+router.put('/movies/:id/reviews/edit', haveYouRated, (req, res) => {
+    console.log(req.body)
+    console.log(person)
+    console.log(ratingId)
+    Rating.findByIdAndUpdate(ratingId, {$set: {rating: req.body.rating, content: req.body.content}}, (err)=>{
+        ratingMovie(req.params.id)
+        res.redirect('/movies/' + req.params.id + '/reviews');
+    })
+})
 
 //SHOW THE CAST OF A MOVIE
 router.get('/movies/:id/cast', (req, res) => {
@@ -249,6 +281,38 @@ function isLoggedIn(req, res, next) {
         return next();
     }
     res.redirect('/login');
+}
+
+var isRated, ratingId;
+
+function haveYouRated(req, res, next) {
+    if(req.isAuthenticated()){
+        Movie.findById(req.params.id).populate({path: 'ratings', model: Rating}).exec((err, found) => {
+            if (err) {
+                res.redirect('back')
+            } else {
+                //DOES THE USER ALREADY HAS RATED THAT MOVIE
+                person = {
+                    id: req.user._id,
+                    username: req.user.username
+                }
+                Rating.findOne({movie: found.id, ratedBy: person}, (err, foundRating) => {
+                    if(err){
+                        res.redirect('back')
+                    } else {
+                        isRated = foundRating == null
+                        if(foundRating){
+                            ratingId = foundRating._id
+                        }
+                        next()
+                    }
+                })
+            }
+        });
+    } else {
+        console.log('YOU NEED TO LOG IN FIRST')
+        res.redirect('back')
+    }
 }
 
 module.exports = router;

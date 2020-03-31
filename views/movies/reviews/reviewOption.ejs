@@ -1,0 +1,32 @@
+<%- include("../../partials/header") %>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col col-md-3">
+            <div class="card">
+                <div class="card-img-top">
+                    <img style="width: 100%; height: 375px; " src="<%= movie.poster %>">
+                </div>
+                <div>
+                    <h3 class="ml-1"><%= movie.ratingValue %></h3>
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-9">
+            <h3><%= movie.name.toUpperCase() %></h3>
+            <form action='/movies/<%= movie._id %>/reviews/edit?_method=PUT' method="POST">
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <input id="rating" type="number" min="0" max="10" name="rating" class="form-control" value="<%= rating.rating %>">
+                </div>
+                <div class="form-group">
+                    <label for="review">Feel Free To Leave A Review:</label>
+                    <textarea id="review" name="content" class="form-control"><%= rating.content %></textarea>
+                </div>
+                <button class="btn btn-lg btn-success">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../../partials/footer") %>

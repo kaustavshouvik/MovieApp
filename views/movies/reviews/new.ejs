@@ -1,0 +1,36 @@
+<%- include("../../partials/header") %>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col col-md-3">
+            <div class="card">
+                <div class="card-img-top">
+                    <img style="width: 100%; height: 375px; " src="<%= movie.poster %>">
+                </div>
+                <div>
+                    <h3 class="ml-1"><%= movie.ratingValue %></h3>
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-9">
+            <h3><%= movie.name.toUpperCase() %></h3>
+            <% if(movie.release > Date.now()){ %>
+                <p class="lead">MOVIE NOT RELEASED YET</p>
+            <% } else { %>
+                <form action='/movies/<%= movie._id %>/rating' method="POST">
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <input id="rating" type="number" min="0" max="10" name="rating" class="form-control" placeholder="Movie Rating">
+                    </div>
+                    <div class="form-group">
+                        <label for="review">Feel Free To Leave A Review:</label>
+                        <textarea id="review" name="content" class="form-control" placeholder="Your Opinion"></textarea>
+                    </div>
+                    <button class="btn btn-lg btn-success">Submit</button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include("../../partials/footer") %>
