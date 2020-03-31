@@ -13,7 +13,7 @@ moviesArray = [
         cast: ['Matt Damon', 'Christian Bale', 'Jon Bernthal'],
         genres: ['biography', 'drama', 'sports'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -33,7 +33,7 @@ moviesArray = [
         cast: ['Christian Bale', 'Heath Ledger', 'Michael Caine', 'Gary Oldman', 'Morgan Freeman'],
         genres: ['crime', 'thriller', 'action', 'drama', 'superhero'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -53,7 +53,7 @@ moviesArray = [
         cast: ['Matt Damon', 'Michael Peña', 'Sebastian Stan', 'Benedict Wong'],
         genres: ['adventure', 'drama', 'sci-fi'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -73,7 +73,7 @@ moviesArray = [
         cast: ['Benedict Cumberbatch', 'Keira Knightley', 'Mark Strong'],
         genres: ['biography', 'drama', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -93,7 +93,7 @@ moviesArray = [
         cast: ['Joaquin Phoenix', 'Robert De Niro'],
         genres: ['crime', 'drama', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -113,7 +113,7 @@ moviesArray = [
         cast: ['Jason Bateman', 'Rachel McAdams'],
         genres: ['comedy', 'action', 'crime'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -133,7 +133,7 @@ moviesArray = [
         cast: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Ellen Page', 'Tom Hardy', 'Michael Caine'],
         genres: ['sci-fi', 'thriller', 'adventure', 'action', 'heist'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -153,7 +153,7 @@ moviesArray = [
         cast: ['Daniel Craig', 'Naomie Harris'],
         genres: ['action', 'adventure', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -173,7 +173,7 @@ moviesArray = [
         cast: ['Chris Pine', 'Simon Pegg', 'Zoe Saldana', 'Benedict Cumberbatch'],
         genres: ['sci-fi', 'action', 'adventure'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -193,7 +193,7 @@ moviesArray = [
         cast: ['Tom Cruise', 'Simon Pegg', 'Henry Cavill'],
         genres: ['action', 'adventure', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -213,7 +213,7 @@ moviesArray = [
         cast: ['Tom Cruise', 'Simon Pegg', 'Jeremy Renner'],
         genres: ['action', 'adventure', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -232,7 +232,7 @@ moviesArray = [
         cast: ['Shailene Woodley', 'Ansel Elgort', 'Willem Dafoe'],
         genres: ['romance', 'drama'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -253,7 +253,7 @@ moviesArray = [
         cast: ['Dave Bautista', 'Kumail Nanjiani', 'Karen Gillan'],
         genres: ['comedy', 'action', 'crime'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -273,7 +273,7 @@ moviesArray = [
         cast: ['Colin Firth', 'Mark Strong', 'George MacKay', 'Dean-Charles Chapman'],
         genres: ['drama', 'war'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -292,7 +292,7 @@ moviesArray = [
         cast: ['Keanu Reeves', 'Lance Reddick', 'Willem Dafoe'],
         genres: ['action', 'thriller', 'crime'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -311,7 +311,7 @@ moviesArray = [
         cast: ['Will Smith', 'Martin Lawrence'],
         genres: ['action', 'comedy', 'crime'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -330,7 +330,7 @@ moviesArray = [
         cast: ['Vin Diesel', 'Charlize Theron', 'Tyrese Gibson', 'Gal Gadot', 'John Cena'],
         genres: ['action', 'adventure', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -353,7 +353,7 @@ moviesArray = [
         cast: ['Charlize Theron', 'Seth Rogen', 'Randall Park'],
         genres: ['comedy', 'romance', 'adventure'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -372,7 +372,7 @@ moviesArray = [
         cast: ['Ali Wong', 'Randall Park', 'Keanu Reeves'],
         genres: ['comedy', 'romance', 'adventure'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -392,7 +392,7 @@ moviesArray = [
         cast: ['Ginnifer Goodwin', 'Jason Bateman', 'Idris Elba', 'J.K. Simmons', 'Octavia Spencer'],
         genres: ['animated', 'adventure', 'comedy', 'mystery'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -411,7 +411,7 @@ moviesArray = [
         cast: ['Scarlett Johansson', 'David Harbour'],
         genres: ['action', 'adventure', 'thriller', 'superhero'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -431,7 +431,7 @@ moviesArray = [
         cast: ['Tom Hanks'],
         genres: ['biography', 'drama'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -451,7 +451,7 @@ moviesArray = [
         cast: ['Scarlett Johansson', 'Morgan Freeman'],
         genres: ['action', 'thriller', 'sci-fi'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -470,7 +470,7 @@ moviesArray = [
         cast: ['Jeremy Renner', 'Anthony Mackie'],
         genres: ["drama", "war", "thriller"],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -489,7 +489,7 @@ moviesArray = [
         cast: ['Keanu Reeves', 'Sandra Bullock'],
         genres: ["thriller", "action", "adventure"],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -508,7 +508,7 @@ moviesArray = [
         cast: ['Will Smith', 'Tom Holland', 'Karen Gillan', 'Ben Mendelsohn'],
         genres: ["animated", "action", "adventure"],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -527,7 +527,7 @@ moviesArray = [
         cast: ['Brad Pitt', 'Logan Lerman', 'Michael Peña', 'Jon Bernthal'],
         genres: ["action", "war", "drama"],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -547,7 +547,7 @@ moviesArray = [
         cast: ['Andrew Garfield'],
         genres: ["biography", "war", "drama"],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -567,7 +567,7 @@ moviesArray = [
         cast: ['Robert Pattinson', 'Michael Caine', 'Himesh Patel', 'John David Washington'],
         genres: ['action', 'thriller', 'drama'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -586,7 +586,7 @@ moviesArray = [
         cast: ['Daniel Craig', 'Chris Evans', 'Ana De Armas', 'Jaeden Martell'],
         genres: ['drama', 'thriller', 'crime', 'mystery'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -606,7 +606,7 @@ moviesArray = [
         cast: ['Chris Hemsworth', 'Tom Hiddleston', 'Idris Elba', 'Benedict Cumberbatch', 'Mark Ruffalo', 'Taika Waititi'],
         genres: ['action', 'adventure', 'comedy', 'superhero'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -626,7 +626,7 @@ moviesArray = [
         cast: ['Zachary Levi', 'Mark Strong', 'Jack Dylan Grazer'],
         genres: ['action', 'adventure', 'comedy'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -647,7 +647,7 @@ moviesArray = [
         cast: ['Dwayne Johnson', 'Kevin Hart', 'Karen Gillan'],
         genres: ['adventure', 'comedy', 'action'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -670,7 +670,7 @@ moviesArray = [
             'Josh Brolin', 'Chris Pratt'],
         genres: ['action', 'adventure', 'sci-fi', 'superhero'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -690,7 +690,7 @@ moviesArray = [
         cast: ['Tom Holland', 'Samuel L. Jackson', 'Jake Gyllenhaal', 'Zendaya', 'Cobie Smulders'],
         genres: ['action', 'adventure', 'sci-fi', 'superhero'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -709,7 +709,7 @@ moviesArray = [
         cast: ['Gal Gadot', 'Chris Pine', 'Pedro Pascal'],
         genres: ['action', 'adventure', 'sci-fi', 'superhero'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -729,7 +729,7 @@ moviesArray = [
         cast: ['Ansel Elgort', 'Jon Bernthal', 'Jon Hamm', 'Kevin Spacey', 'Jamie Foxx'],
         genres: ['action', 'crime', 'drama', 'heist'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -748,7 +748,7 @@ moviesArray = [
         cast: ['George Clooney', 'Brad Pitt', 'Matt Damon', 'Julia Roberts'],
         genres: ['heist', 'crime', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -768,7 +768,7 @@ moviesArray = [
         cast: ['Elisabeth Moss'],
         genres: ['horror', 'mystery', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -788,7 +788,7 @@ moviesArray = [
         cast: ['Jaeden Martell', 'Jack Dylan Grazer', 'Bill Skarsgård'],
         genres: ['horror', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -808,7 +808,7 @@ moviesArray = [
         cast: ['Woody Harrelson', 'Jesse Eisenberg', 'Emma Stone'],
         genres: ['zombie', 'comedy', 'action'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -828,7 +828,7 @@ moviesArray = [
         cast: ['Amy Poehler', 'Bill Hader'],
         genres: ['animated', 'comedy', 'adventure'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -848,7 +848,7 @@ moviesArray = [
         cast: ['Jesse Eisenberg', 'Mark Ruffalo', 'Woody Harrelson', 'Morgan Freeman', 'Michael Caine'],
         genres: ['mystery', 'crime', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -868,7 +868,7 @@ moviesArray = [
         cast: ['Brad Pitt'],
         genres: ['zombie', 'adventure', 'action'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -888,7 +888,7 @@ moviesArray = [
         cast: ['Denzel Washington', 'Mila Kunis', 'Gary Oldman'],
         genres: ['post apocalyptic', 'action', 'drama'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -908,7 +908,7 @@ moviesArray = [
         cast: ['Jamie Foxx', 'Leonardo DiCaprio', 'Samuel L. Jackson'],
         genres: ['western', 'drama', 'action'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -928,7 +928,7 @@ moviesArray = [
         cast: ['Kurt Russell', 'Samuel L. Jackson'],
         genres: ['western', 'drama', 'action', 'crime'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -948,7 +948,7 @@ moviesArray = [
         cast: ['Will Smith'],
         genres: ['post apocalyptic', 'drama', 'thriller'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -968,7 +968,7 @@ moviesArray = [
         cast: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint', 'Alan Rickman'],
         genres: ['family', 'adventure', 'fantasy'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -988,7 +988,7 @@ moviesArray = [
         cast: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint', 'Alan Rickman', 'Gary Oldman'],
         genres: ['family', 'adventure', 'fantasy'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -1008,7 +1008,7 @@ moviesArray = [
         cast: ['Eddie Redmayne', 'Katherine Waterston', 'Ezra Miller', 'Johnny Depp', 'Dan Fogler'],
         genres: ['family', 'adventure', 'fantasy'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -1028,7 +1028,7 @@ moviesArray = [
         cast: ['Eddie Redmayne', 'Katherine Waterston', 'Ezra Miller', 'Johnny Depp', 'Dan Fogler', 'Jude Law'],
         genres: ['family', 'adventure', 'fantasy'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -1048,7 +1048,7 @@ moviesArray = [
         cast: ['Macaulay Culkin'],
         genres: ['family', 'comedy'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -1068,7 +1068,7 @@ moviesArray = [
         cast: ['Michael Caine', 'Morgan Freeman'],
         genres: ['comedy', 'crime', 'family'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -1087,7 +1087,7 @@ moviesArray = [
         cast: ['Chris Evans', 'Mckenna Grace', 'Octavia Spencer', 'Jenny Slate'],
         genres: ['drama', 'family'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -1108,7 +1108,7 @@ moviesArray = [
         cast: ['Jacob Tremblay', 'Owen Wilson', 'Julia Roberts'],
         genres: ['drama', 'family'],
         addedBy :{
-            id: '5e704f47d93ca1214470756d',
+            id: '5e80d8c6de4b5f2fcc5412bc',
             username: 'kaustav007'
         },
         ratingValue: 'Unrated',
@@ -1153,3 +1153,4 @@ function seedMovies(){
 }
 
 module.exports = seedMovies;
+
