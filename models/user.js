@@ -11,7 +11,8 @@ var userSchema = new mongoose.Schema({
     watchList: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Movie",
-    }]
+    }],
+    isAdmin: {type: Boolean, default: false}
 });
 
 userSchema.plugin(passportLocalMongoose);

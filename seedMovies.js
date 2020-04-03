@@ -12,10 +12,6 @@ moviesArray = [
             Co. Together, they plan to compete against the race cars of Enzo Ferrari at the 24 Hours of Le Mans in France in 1966.',
         cast: ['Matt Damon', 'Christian Bale', 'Jon Bernthal'],
         genres: ['biography', 'drama', 'sports'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -32,10 +28,6 @@ moviesArray = [
             greatest psychological and physical tests of his ability to fight injustice.',
         cast: ['Christian Bale', 'Heath Ledger', 'Michael Caine', 'Gary Oldman', 'Morgan Freeman'],
         genres: ['crime', 'thriller', 'action', 'drama', 'superhero'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -52,10 +44,6 @@ moviesArray = [
             to signal to Earth that he is alive.',
         cast: ['Matt Damon', 'Michael Peña', 'Sebastian Stan', 'Benedict Wong'],
         genres: ['adventure', 'drama', 'sci-fi'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -72,10 +60,6 @@ moviesArray = [
             from fellow mathematicians.',
         cast: ['Benedict Cumberbatch', 'Keira Knightley', 'Mark Strong'],
         genres: ['biography', 'drama', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -92,10 +76,6 @@ moviesArray = [
             a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.',
         cast: ['Joaquin Phoenix', 'Robert De Niro'],
         genres: ['crime', 'drama', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -112,10 +92,6 @@ moviesArray = [
             brother of one of them is seemingly kidnapped by dangerous gangsters.',
         cast: ['Jason Bateman', 'Rachel McAdams'],
         genres: ['comedy', 'action', 'crime'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -132,10 +108,6 @@ moviesArray = [
             planting an idea into the mind of a C.E.O.',
         cast: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Ellen Page', 'Tom Hardy', 'Michael Caine'],
         genres: ['sci-fi', 'thriller', 'adventure', 'action', 'heist'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0JTBVK6L41AABWSV8DK605AI0U/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B07D7PLJWR&qid=1584536395',
@@ -152,10 +124,6 @@ moviesArray = [
             turns up asking for help, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.',
         cast: ['Daniel Craig', 'Naomie Harris'],
         genres: ['action', 'adventure', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -172,10 +140,6 @@ moviesArray = [
             leads his team to a war-zone world in search of a weapon of mass destruction.',
         cast: ['Chris Pine', 'Simon Pegg', 'Zoe Saldana', 'Benedict Cumberbatch'],
         genres: ['sci-fi', 'action', 'adventure'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0PDMF1MPDXH0FEOYUBD3AD5TFO/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B01MPWOEKW&qid=1584530662',
@@ -192,10 +156,6 @@ moviesArray = [
             Ethan Hunt, along with his IMF team, sets out to stop the carnage.',
         cast: ['Tom Cruise', 'Simon Pegg', 'Henry Cavill'],
         genres: ['action', 'adventure', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0PZ0FDZ0OLMDOHQ7ZLHU9NIWO4/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B07R23RCYM&qid=1584531517',
@@ -212,10 +172,6 @@ moviesArray = [
             the Syndicate, a highly-skilled terror organisation, before they plan their next attack.',
         cast: ['Tom Cruise', 'Simon Pegg', 'Jeremy Renner'],
         genres: ['action', 'adventure', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0G0VNBB0FQCP54SQZT9P5KSMAJ/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B01MG2JNE7&qid=1584532001',
@@ -231,10 +187,6 @@ moviesArray = [
         plot: 'Two teenage cancer patients begin a life-affirming journey to visit a reclusive author in Amsterdam.',
         cast: ['Shailene Woodley', 'Ansel Elgort', 'Willem Dafoe'],
         genres: ['romance', 'drama'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -252,10 +204,6 @@ moviesArray = [
             shootouts as they pursue violent criminals through the seedy streets of Los Angeles.',
         cast: ['Dave Bautista', 'Kumail Nanjiani', 'Karen Gillan'],
         genres: ['comedy', 'action', 'crime'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -272,10 +220,6 @@ moviesArray = [
             deliver a message that will stop 1,600 men from walking straight into a deadly trap.',
         cast: ['Colin Firth', 'Mark Strong', 'George MacKay', 'Dean-Charles Chapman'],
         genres: ['drama', 'war'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -291,10 +235,6 @@ moviesArray = [
         plot: 'An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.',
         cast: ['Keanu Reeves', 'Lance Reddick', 'Willem Dafoe'],
         genres: ['action', 'thriller', 'crime'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -310,10 +250,6 @@ moviesArray = [
         plot: 'The Bad Boys Mike Lowrey and Marcus Burnett are back together for one last ride in the highly anticipated Bad Boys for Life.',
         cast: ['Will Smith', 'Martin Lawrence'],
         genres: ['action', 'comedy', 'crime'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -329,10 +265,6 @@ moviesArray = [
         plot: 'Cypher enlists the help of Jakob, Dom\'s younger brother to take revenge on Dom and his team.',
         cast: ['Vin Diesel', 'Charlize Theron', 'Tyrese Gibson', 'Gal Gadot', 'John Cena'],
         genres: ['action', 'adventure', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -352,10 +284,6 @@ moviesArray = [
             dismay of her trusted advisers.',
         cast: ['Charlize Theron', 'Seth Rogen', 'Randall Park'],
         genres: ['comedy', 'romance', 'adventure'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -371,10 +299,6 @@ moviesArray = [
         plot: 'Everyone assumed Sasha and Marcus would wind up together except for Sasha and Marcus. Reconnecting after 15 years, the two start to wonder - maybe?',
         cast: ['Ali Wong', 'Randall Park', 'Keanu Reeves'],
         genres: ['comedy', 'romance', 'adventure'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -391,10 +315,6 @@ moviesArray = [
             conspiracy is larger than it seems.',
         cast: ['Ginnifer Goodwin', 'Jason Bateman', 'Idris Elba', 'J.K. Simmons', 'Octavia Spencer'],
         genres: ['animated', 'adventure', 'comedy', 'mystery'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -410,10 +330,6 @@ moviesArray = [
         plot: 'A film about Natasha Romanoff in her quests between the films Civil War and Infinity War.',
         cast: ['Scarlett Johansson', 'David Harbour'],
         genres: ['action', 'adventure', 'thriller', 'superhero'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -430,10 +346,6 @@ moviesArray = [
             plane on the Hudson River in order to save the flight\'s passengers and crew.',
         cast: ['Tom Hanks'],
         genres: ['biography', 'drama'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0HBS95GS6AU2YJFA3D7VBNX951/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B072358XV2&qid=1584774164',
@@ -450,10 +362,6 @@ moviesArray = [
             evolved beyond human logic.',
         cast: ['Scarlett Johansson', 'Morgan Freeman'],
         genres: ['action', 'thriller', 'sci-fi'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0ND7Y71UEBCZB0EV0P5ZAWWZBD/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B07K4DHVL5&qid=1584963725',
@@ -469,10 +377,6 @@ moviesArray = [
         plot: 'During the Iraq War, a Sergeant recently assigned to an army bomb squad is put at odds with his squad mates due to his maverick way of handling his work.',
         cast: ['Jeremy Renner', 'Anthony Mackie'],
         genres: ["drama", "war", "thriller"],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0J3SVA2ER7XK58BHO6KF6YAV4Y/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B082LLT7BQ&qid=1584968375',
@@ -488,10 +392,6 @@ moviesArray = [
         plot: 'A young police officer must prevent a bomb exploding aboard a city bus by keeping its speed above 50 mph.',
         cast: ['Keanu Reeves', 'Sandra Bullock'],
         genres: ["thriller", "action", "adventure"],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -507,10 +407,6 @@ moviesArray = [
         plot: 'When the world\'s best spy is turned into a pigeon, he must rely on his nerdy tech officer to save the world.',
         cast: ['Will Smith', 'Tom Holland', 'Karen Gillan', 'Ben Mendelsohn'],
         genres: ["animated", "action", "adventure"],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -526,10 +422,6 @@ moviesArray = [
         plot: 'A grizzled tank commander makes tough decisions as he and his crew fight their way across Germany in April, 1945.',
         cast: ['Brad Pitt', 'Logan Lerman', 'Michael Peña', 'Jon Bernthal'],
         genres: ["action", "war", "drama"],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -546,10 +438,6 @@ moviesArray = [
             becomes the first man in American history to receive the Medal of Honor without firing a shot.',
         cast: ['Andrew Garfield'],
         genres: ["biography", "war", "drama"],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -566,10 +454,6 @@ moviesArray = [
             time travel and rebirth.',
         cast: ['Robert Pattinson', 'Michael Caine', 'Himesh Patel', 'John David Washington'],
         genres: ['action', 'thriller', 'drama'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -585,10 +469,6 @@ moviesArray = [
         plot: 'A detective investigates the death of a patriarch of an eccentric, combative family.',
         cast: ['Daniel Craig', 'Chris Evans', 'Ana De Armas', 'Jaeden Martell'],
         genres: ['drama', 'thriller', 'crime', 'mystery'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -605,10 +485,6 @@ moviesArray = [
             the goddess of death.',
         cast: ['Chris Hemsworth', 'Tom Hiddleston', 'Idris Elba', 'Benedict Cumberbatch', 'Mark Ruffalo', 'Taika Waititi'],
         genres: ['action', 'adventure', 'comedy', 'superhero'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -625,10 +501,6 @@ moviesArray = [
             he inherits the superpowers of a powerful wizard.',
         cast: ['Zachary Levi', 'Mark Strong', 'Jack Dylan Grazer'],
         genres: ['action', 'adventure', 'comedy'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0RQYUONU1AQ7S0Z9OVM6BI9X71/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B081RLMBPJ&qid=1585127991',
@@ -646,10 +518,6 @@ moviesArray = [
             dangerous game.',
         cast: ['Dwayne Johnson', 'Kevin Hart', 'Karen Gillan'],
         genres: ['adventure', 'comedy', 'action'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0RQYUONU1AQ7S0Z9OVM6BI9X71/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B081RLMBPJ&qid=1585127991',
@@ -669,10 +537,6 @@ moviesArray = [
             'Sebastian Stan', 'Idris Elba', 'Peter Dinklage', 'Benedict Wong', 'Dave Bautista', 'Vin Diesel', 'Bradley Cooper',
             'Josh Brolin', 'Chris Pratt'],
         genres: ['action', 'adventure', 'sci-fi', 'superhero'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -689,10 +553,6 @@ moviesArray = [
             Soon, he receives help from Mysterio, a fellow hero with mysterious origins.',
         cast: ['Tom Holland', 'Samuel L. Jackson', 'Jake Gyllenhaal', 'Zendaya', 'Cobie Smulders'],
         genres: ['action', 'adventure', 'sci-fi', 'superhero'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0KRH21HZEEX3FGTRXV0D3O3R61/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B07ZF9ZKBT&qid=1585146912',
@@ -708,10 +568,6 @@ moviesArray = [
         plot: 'Wonder Woman squares off against the Cheetah, a villainess who possesses superhuman strength and agility.',
         cast: ['Gal Gadot', 'Chris Pine', 'Pedro Pascal'],
         genres: ['action', 'adventure', 'sci-fi', 'superhero'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -728,10 +584,6 @@ moviesArray = [
             The plan goes awry when their arms dealers turn out to be undercover officers.',
         cast: ['Ansel Elgort', 'Jon Bernthal', 'Jon Hamm', 'Kevin Spacey', 'Jamie Foxx'],
         genres: ['action', 'crime', 'drama', 'heist'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -747,10 +599,6 @@ moviesArray = [
         plot: 'Danny Ocean and his ten accomplices plan to rob three Las Vegas casinos simultaneously.',
         cast: ['George Clooney', 'Brad Pitt', 'Matt Damon', 'Julia Roberts'],
         genres: ['heist', 'crime', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0RZFTNZ3FJJB8TD0JNI63TJ7AA/ref=atv_sr_def_c_unkc__2_1_2?sr=1-2&pageTypeIdSource=ASIN&pageTypeId=B079VQDG58&qid=1585160432',
@@ -767,10 +615,6 @@ moviesArray = [
             series of coincidences turn lethal, Cecilia works to prove that she is being hunted by someone nobody can see.',
         cast: ['Elisabeth Moss'],
         genres: ['horror', 'mystery', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -787,10 +631,6 @@ moviesArray = [
             itself as a clown and preys on the children of Derry, their small Maine town.',
         cast: ['Jaeden Martell', 'Jack Dylan Grazer', 'Bill Skarsgård'],
         genres: ['horror', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -807,10 +647,6 @@ moviesArray = [
             of sisters trying to get to an amusement park join forces to travel across a zombie-filled America.',
         cast: ['Woody Harrelson', 'Jesse Eisenberg', 'Emma Stone'],
         genres: ['zombie', 'comedy', 'action'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -827,10 +663,6 @@ moviesArray = [
             Disgust and Sadness - conflict on how best to navigate a new city, house, and school.',
         cast: ['Amy Poehler', 'Bill Hader'],
         genres: ['animated', 'comedy', 'adventure'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -847,10 +679,6 @@ moviesArray = [
             Arthur Tressler while being chased by FBI agent Dylan and Interpol agent Alma.',
         cast: ['Jesse Eisenberg', 'Mark Ruffalo', 'Woody Harrelson', 'Morgan Freeman', 'Michael Caine'],
         genres: ['mystery', 'crime', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -867,10 +695,6 @@ moviesArray = [
             toppling armies and governments and threatens to destroy humanity itself.',
         cast: ['Brad Pitt'],
         genres: ['zombie', 'adventure', 'action'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0FBAXV5BUJI5RAORQ7F6799NF4/ref=atv_sr_def_c_unkc__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B01M9F2VX9&qid=1585321923',
@@ -887,10 +711,6 @@ moviesArray = [
             holds the secrets to saving humankind.',
         cast: ['Denzel Washington', 'Mila Kunis', 'Gary Oldman'],
         genres: ['post apocalyptic', 'action', 'drama'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -907,10 +727,6 @@ moviesArray = [
             hard-hearted plantation owner.',
         cast: ['Jamie Foxx', 'Leonardo DiCaprio', 'Samuel L. Jackson'],
         genres: ['western', 'drama', 'action'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -927,10 +743,6 @@ moviesArray = [
             collection of nefarious characters.',
         cast: ['Kurt Russell', 'Samuel L. Jackson'],
         genres: ['western', 'drama', 'action', 'crime'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',
@@ -947,10 +759,6 @@ moviesArray = [
             struggles valiantly to find a cure in this post-apocalyptic action thriller.',
         cast: ['Will Smith'],
         genres: ['post apocalyptic', 'drama', 'thriller'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0QOJQDZH8Q9CONBTKR4AXWPN3U/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
@@ -967,10 +775,6 @@ moviesArray = [
             evil that haunts the magical world.',
         cast: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint', 'Alan Rickman'],
         genres: ['family', 'adventure', 'fantasy'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0N8WYH0W6L7Q0ODHGQCHMMRH4R/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
@@ -987,10 +791,6 @@ moviesArray = [
             they delve into the mystery surrounding an escaped prisoner who poses a dangerous threat to the young wizard.',
         cast: ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint', 'Alan Rickman', 'Gary Oldman'],
         genres: ['family', 'adventure', 'fantasy'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0HKBCOWZ6L75JX0GXBANJSQLIM/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
@@ -1007,10 +807,6 @@ moviesArray = [
             before Harry Potter reads his book in school.',
         cast: ['Eddie Redmayne', 'Katherine Waterston', 'Ezra Miller', 'Johnny Depp', 'Dan Fogler'],
         genres: ['family', 'adventure', 'fantasy'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0I9W62JMEYIHAM6X9XUKKCCVA9/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
@@ -1027,10 +823,6 @@ moviesArray = [
             Scamander\'s former professor, Albus Dumbledore, seeks his help to stop him.',
         cast: ['Eddie Redmayne', 'Katherine Waterston', 'Ezra Miller', 'Johnny Depp', 'Dan Fogler', 'Jude Law'],
         genres: ['family', 'adventure', 'fantasy'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: 'https://www.primevideo.com/detail/0MW6RRL5IS3VSNTAICPS4TWY9B/ref=atv_dl_rdr?tag=imdbtag_tt_wbr_pvs_piv_in-21',  
@@ -1047,10 +839,6 @@ moviesArray = [
             alone by his family during Christmas vacation.',
         cast: ['Macaulay Culkin'],
         genres: ['family', 'comedy'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',  
@@ -1067,10 +855,6 @@ moviesArray = [
             daring bid to knock off the very bank that absconded with their money.',
         cast: ['Michael Caine', 'Morgan Freeman'],
         genres: ['comedy', 'crime', 'family'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',  
@@ -1086,10 +870,6 @@ moviesArray = [
         plot: 'Frank, a single man raising his child prodigy niece Mary, is drawn into a custody battle with his mother.',
         cast: ['Chris Evans', 'Mckenna Grace', 'Octavia Spencer', 'Jenny Slate'],
         genres: ['drama', 'family'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',  
@@ -1107,10 +887,6 @@ moviesArray = [
             first time.',
         cast: ['Jacob Tremblay', 'Owen Wilson', 'Julia Roberts'],
         genres: ['drama', 'family'],
-        addedBy :{
-            id: '5e80d8c6de4b5f2fcc5412bc',
-            username: 'kaustav007'
-        },
         ratingValue: 'Unrated',
         ratingCount: 0,
         primeLink: '',  
@@ -1153,4 +929,3 @@ function seedMovies(){
 }
 
 module.exports = seedMovies;
-

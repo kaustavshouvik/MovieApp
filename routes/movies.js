@@ -30,12 +30,12 @@ router.get('/movies', (req, res)=>{
 });
 
 //SHOW A PAGE TO ADD NEW MOVIES TO THE DATABASE
-router.get('/movies/new', isLoggedIn, (req, res)=>{
-    res.render('movies/new');
+router.get('/movies/new', youAdmin, (req, res)=>{
+    res.render('movies/new'); 
 });
 
 //ADD A MOVIE TO THE DATABASE
-router.post('/movies', isLoggedIn, (req, res)=>{
+router.post('/movies', youAdmin, (req, res)=>{
     var releaseDate = new Date(req.body.release);           //DATE SETUP
     releaseDate.setHours(releaseDate.getHours() - 5);
     releaseDate.setMinutes(releaseDate.getMinutes() - 30);
@@ -59,13 +59,7 @@ router.post('/movies', isLoggedIn, (req, res)=>{
         //     budget: req.body.budget,
         //     profit: req.body.profit
         // },
-        addedBy: {
-            id: req.user._id,
-            username: req.user.username
-        },
         release: releaseDate,
-        ratingValue: 'Unrated',
-        ratingCount: 0,
         primeLink: req.body.link.prime.trim(),
         netflixLink: req.body.link.netflix.trim(),
         hotstarLink: req.body.link.hotstar.trim(),
@@ -75,7 +69,7 @@ router.post('/movies', isLoggedIn, (req, res)=>{
     Movie.create(newMovie, (err, createdMovie)=>{
         if(err){
             console.log(err);
-            return res.redirect('/movies/new');
+            res.redirect('back');
         } else {
             actorsArr.forEach((actor)=>{
                 Actor.findOne({name: actor}, (err, foundActor)=>{
@@ -115,7 +109,6 @@ function ratingMovie(id){
                     Movie.findById(id, (err, f)=>{
                         console.log(f);
                     });
-                    // res.redirect('/movies/' + id + '/reviews');
                 }
             });
         }
@@ -124,44 +117,49 @@ function ratingMovie(id){
 
 //RATING A MOVIE  
 router.post('/movies/:id/rating', haveYouRated, (req, res) => {
-    var rateIt = {
-        rating: req.body.rating,
-        ratedBy: {
-            id: req.user._id,
-            username: req.user.username
-        },
-        content: req.body.content,
-        movie: req.params.id
-    };
-
-    Rating.create(rateIt, (err, newRating) => {
-        Movie.findById(req.params.id, (err, foundMovie) => {
-            if (err) {
-                console.log(err);
-            } else if(foundMovie.release > Date.now()){
-                //DELETE THE NEWLY CREATED RATING AS MOVIE IS NOT RELEASED
-                Rating.findByIdAndDelete(newRating._id, (err, deleted)=>{
-                    console.log(deleted);
-                });
-                return res.redirect('/movies');
-            } else {
-                foundMovie.ratings.push(newRating);
-                foundMovie.save((err, savedMovie)=>{
-                    if(err){
-                        console.log(err);
-                    } else {
-                        console.log(savedMovie);
-                        ratingMovie(savedMovie._id);
-                        res.redirect('/movies/' + foundMovie._id + '/reviews');
-                    }
-                });
+    Movie.findById(req.params.id, (err, found) => {
+        var rateIt = {
+            rating: req.body.rating,
+            ratedBy: {
+                id: req.user._id,
+                username: req.user.username
+            },
+            content: req.body.content,
+            movie: {
+                id: found._id,
+                name: found.name
             }
-        });
-    });
+        };
+
+        Rating.create(rateIt, (err, newRating) => {
+            Movie.findById(req.params.id, (err, foundMovie) => {
+                if (err) {
+                    console.log(err);
+                } else if(foundMovie.release > Date.now()){
+                    //DELETE THE NEWLY CREATED RATING AS MOVIE IS NOT RELEASED
+                    Rating.findByIdAndDelete(newRating._id, (err, deleted)=>{
+                        console.log(deleted);
+                    });
+                    return res.redirect('/movies');
+                } else {
+                    foundMovie.ratings.push(newRating);
+                    foundMovie.save((err, savedMovie)=>{
+                        if(err){
+                            console.log(err);
+                        } else {
+                            console.log(savedMovie);
+                            ratingMovie(savedMovie._id);
+                            res.redirect('/movies/' + foundMovie._id + '/reviews');
+                        }
+                    });
+                }
+            });
+        });    
+    })
 });
 
 //DELETE A MOVIE ALONG WITH RATINGS AND ACTORS[MOVIES DONE LIST]
-router.delete('/movies/:id', isLoggedIn, (req, res) => {
+router.delete('/movies/:id', youAdmin, (req, res) => {
     Movie.findById(req.params.id, (err, foundMovie)=>{
         //FOR ALL ACTORS FIND IF THE ACTOR HAS DONE THAT MOVIE, THEN DELETE IT FROM THE ACTOR'S MOVIES LIST
         for(i=0; i<foundMovie.actors.length; i++){
@@ -182,7 +180,10 @@ router.delete('/movies/:id', isLoggedIn, (req, res) => {
             res.send('ERROR HAPPENED!');
         } else {
             //DELETE ALL THE RATINGS BELONGING TO THAT MOVIE
-            Rating.deleteMany({movie: req.params.id}, (err) => {
+            movie = {
+                id: req.params.id
+            }
+            Rating.deleteMany({movie: movie}, (err) => {
                 if(err){
                     console.log(err);
                 }
@@ -195,26 +196,15 @@ router.delete('/movies/:id', isLoggedIn, (req, res) => {
 
 //SHOW MORE DETAILS ABOUT A MOVIE
 router.get('/movies/:id', isLoggedIn, (req, res) => {
-    Movie.findById(req.params.id, (err, foundM) => {
+    Movie.findById(req.params.id, (err, found) => {
         if (err) {
             console.log(err);
-            res.redirect('/');
+            res.redirect('back');
         } else {
-            res.render('movies/show', {movie: foundM});
+            res.render('movies/show', {movie: found});
         }
     });
 });
-
-// //SHOW THE REVIEWS OF A MOVIE
-// router.get('/movies/:id/reviews', (req, res) => {
-//     Movie.findById(req.params.id).populate({path: 'ratings', model: Rating}).exec((err, found) => {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             res.render('movies/reviews', {movie: found});
-//         }
-//     });
-// });
 
 //SHOW THE REVIEWS OF A MOVIE
 router.get('/movies/:id/reviews', haveYouRated, (req, res) => {
@@ -231,9 +221,18 @@ router.get('/movies/:id/reviews/new', haveYouRated, (req, res) => {
 
 router.get('/movies/:id/reviews/edit', haveYouRated, (req, res) => {
     Movie.findById(req.params.id, (err, found) => {
-        Rating.findOne({movie: found.id, ratedBy: person}, (err, foundRating) => {
-            res.render('movies/reviews/reviewOption', {movie: found, rating: foundRating})
-        })
+        if(err) {
+            console.log(err);
+            res.redirect('back');
+        } else {
+            movie = {
+                id: found._id,
+                name: found.name
+            }
+            Rating.findOne({movie: movie, ratedBy: person}, (err, foundRating) => {
+                res.render('movies/reviews/reviewOption', {movie: found, rating: foundRating})
+            })
+        }
     });
 })
 
@@ -247,8 +246,12 @@ router.put('/movies/:id/reviews/edit', haveYouRated, (req, res) => {
     })
 })
 
+router.delete('/movies/:id/reviews/delete', (req, res) => {
+    res.send('hello, you just deleted this review. LOL. Fooled You!')
+})
+
 //SHOW THE CAST OF A MOVIE
-router.get('/movies/:id/cast', (req, res) => {
+router.get('/movies/:id/cast', isLoggedIn, (req, res) => {
     Movie.findById(req.params.id).populate({path: 'actors', model: Actor}).exec((err, found) => {
         if(err){
             console.log(err);
@@ -259,14 +262,14 @@ router.get('/movies/:id/cast', (req, res) => {
 });
 
 //SHOW A PAGE WITH LINKS TO WATCH A MOVIE
-router.get('/movies/:id/stream', (req, res) => {
+router.get('/movies/:id/stream', isLoggedIn, (req, res) => {
     Movie.findById(req.params.id, (err, foundMovie)=>{
         res.render('movies/stream', {movie: foundMovie});
     });
 });
 
 //SHOW MORE MOVIES WITH RESPECT TO THE SELECTED MOVIE
-router.get('/movies/:id/more', (req, res)=>{
+router.get('/movies/:id/more', isLoggedIn, (req, res)=>{
     Movie.findById(req.params.id, (err, foundMovie)=>{
         var like1 = foundMovie.genres[0], like2 = foundMovie.genres[1];
         Movie.find({$and: [{genres: {$eq: like1}}, {genres: {$eq: like2}}, {name: {$ne: foundMovie.name}}]}, (err, found) => {
@@ -296,7 +299,11 @@ function haveYouRated(req, res, next) {
                     id: req.user._id,
                     username: req.user.username
                 }
-                Rating.findOne({movie: found.id, ratedBy: person}, (err, foundRating) => {
+                movie = {
+                    id: found._id,
+                    name: found.name
+                }
+                Rating.findOne({movie: movie, ratedBy: person}, (err, foundRating) => {
                     if(err){
                         res.redirect('back')
                     } else {
@@ -311,6 +318,18 @@ function haveYouRated(req, res, next) {
         });
     } else {
         console.log('YOU NEED TO LOG IN FIRST')
+        res.redirect('back')
+    }
+}
+
+function youAdmin(req, res, next){
+    if(req.isAuthenticated()){
+        if(req.user.isAdmin){
+            next()
+        } else {
+            res.redirect('back')
+        }
+    } else {
         res.redirect('back')
     }
 }

@@ -8,20 +8,25 @@ const express = require('express'),
 //USER ROUTES
 
 //PROFILE PAGE
-router.get('/User/Profile/:id', (req, res)=>{
+router.get('/user/profile/:id', (req, res)=>{
     User.findById(req.params.id).populate({path: 'watchList', model: Movie}).exec((err, foundUser)=>{
-        person = {
-            id: foundUser._id,
-            username: foundUser.username
-        };
-        Rating.find({ratedBy: person}, (err, ratings)=>{
-            res.render('users/profile', {user: foundUser, ratings: ratings});
-        });
+        if(err){
+            console.log(err);
+            res.redirect('back');
+        } else {
+            person = {
+                id: foundUser._id,
+                username: foundUser.username
+            };
+            Rating.find({ratedBy: person}, (err, ratings)=>{
+                res.render('users/profile', {user: foundUser, ratings: ratings});
+            });
+        }
     });
 });
 
 //ADD MOVIES TO WATCHLIST OF USER
-router.get('/User/AddToWatchList/:id', (req, res) => {
+router.get('/user/addtowatchlist/:id', (req, res) => {
     Movie.findById(req.params.id, (err, foundMovie) => {
         if(err) console.log(err);
         else {
@@ -29,7 +34,7 @@ router.get('/User/AddToWatchList/:id', (req, res) => {
             currentMovie = req.params.id;
 
             for(i=0; i<currentList.length; i++){
-                if(String(currentList[i]) == currentMovie){
+                if(currentList[i].equals(currentMovie)){
                     return res.redirect('/movies/' + foundMovie._id)
                 }
             }
@@ -43,14 +48,14 @@ router.get('/User/AddToWatchList/:id', (req, res) => {
 })
 
 //SHOW PAGE TO EDIT WATCHLIST
-router.get('/User/Profile/:id/editWatchList', (req, res) => {
+router.get('/user/profile/:id/editwatchlist', (req, res) => {
     User.findById(req.params.id).populate({path: 'watchList', model: Movie}).exec((err, foundUser)=>{
         res.render('users/editwatchlist', {user: foundUser})
     });
 })
 
 //ACTUALLY EDIT THE WATCHLIST
-router.put('/User/Profile/:id/editWatchList', (req, res) => {
+router.put('/user/profile/:id/editwatchlist', (req, res) => {
     currentList = req.user.watchList;
     if(String(req.body.movie) != 'undefined'){
         list = req.body.movie
@@ -62,7 +67,7 @@ router.put('/User/Profile/:id/editWatchList', (req, res) => {
     } else {
         console.log('please select a movie. please')
     }
-    res.redirect('/User/Profile/' + req.user._id)
+    res.redirect('/user/profile/' + req.user._id)
 })
 //===============================================================================
 

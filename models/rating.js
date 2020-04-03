@@ -10,8 +10,11 @@ var ratingSchema = {
         username: {type: String}
     },
     movie: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Movie"
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Movie"
+        },
+        name: {type: String}
     },
     content: {type: String}
 };

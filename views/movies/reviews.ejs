@@ -17,7 +17,9 @@
             <h3><%= movie.name.toUpperCase() %> - Rating: <%= movie.ratingValue %> [<%= movie.ratingCount %>]</h3>
             <% if(isRated == false){ %>
                 <a class="btn btn-md mt-2 btn-warning" href='/movies/<%= movie._id %>/reviews/edit'>Edit Review</a>
-                <a class="btn btn-md mt-2 btn-danger" href='/movies/<%= movie._id %>/reviews/option'>Delete Review</a>
+                <form action="/movies/<%= movie._id %>/reviews/delete?_method=DELETE" method="POST">
+                    <button class="btn btn-md mt-2 btn-danger">Delete Review</button>
+                </form>
             <% } else { %>
                 <a class="btn btn-md mt-2" id="newReview" href="/movies/<%= movie._id %>/reviews/new">Add Review</a>
             <% } %>

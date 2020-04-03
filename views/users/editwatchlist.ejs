@@ -10,7 +10,7 @@
                 </div>
                 <div>
                     <h6>Select Movies To Remove From WatchList - </h6>
-                    <form action="/User/Profile/<%= user._id %>/editWatchList?_method=PUT" method="POST">
+                    <form action="/user/profile/<%= user._id %>/editwatchlist?_method=PUT" method="POST">
                         <% user.watchList.forEach(movie => { %>
                             <input type="checkbox" name="movie" value="<%= movie._id %>"><%= movie.name %><br>
                         <% }) %>

@@ -17,13 +17,12 @@
             <h1 class="display-4"><%= movie.name.toUpperCase() %></h1>
             <div><img class="card-img" src="<%= movie.image %>" style="width: 100%;"></div>
             <hr>
-            <h4><strong>Added By: <%= movie.addedBy.username %></strong></h4>
             <% movie.genres.forEach((genre)=>{ %>
                 <li><%= genre %></li>
             <% }); %>
             <p class="my-2"><%= movie.plot %></p>
             <a class="btn btn-block btn-dark mb-2" href="/User/AddToWatchList/<%= movie._id %>">Add To Watchlist</a>
-            <% if(movie.addedBy.id.equals(currentUser._id)){ %>
+            <% if(currentUser.isAdmin){ %>
                 <form action="/movies/<%= movie._id %>?_method=PUT" method="POST">
                     <button class="btn btn-warning btn-block">Edit Movie</button>
                 </form>
