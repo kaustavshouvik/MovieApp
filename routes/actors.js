@@ -1,7 +1,8 @@
 const express = require('express'),
     router = express.Router(),
     Movie = require('../models/movie'),
-    Actor = require('../models/actor');
+    Actor = require('../models/actor'),
+    middleware = require('../middlewares');
 
 //===================================================================================
 //ACTORS ROUTES
@@ -32,12 +33,12 @@ router.get('/actors', (req, res) => {
 });
 
 //SHOW FORM TO ADD NEW ACTORS
-router.get('/actors/new', youAdmin, (req, res) => {
+router.get('/actors/new', middleware.youAdmin, (req, res) => {
     res.render('actors/new');
 });
 
 //ADD A NEW ACTOR TO DATABASE
-router.post('/actors', youAdmin, (req, res) => {
+router.post('/actors', middleware.youAdmin, (req, res) => {
     var newActor = {
         name: title(req.body.name),
         image: req.body.image,
@@ -67,7 +68,7 @@ router.get('/actors/:id', (req, res) => {
 });
 
 //DELETE AN ACTOR FROM THE DATABASE
-router.delete('/actors/:id', youAdmin, (req, res)=>{
+router.delete('/actors/:id', middleware.youAdmin, (req, res)=>{
     Actor.findOne({_id: req.params.id}, (err, foundActor)=>{
         //FOR ALL THE MOVIES THE ACTOR HAS DONE REMOVE THAT ACTOR FROM THE MOVIE'S ACTORS LIST
         foundActor.movies.forEach((movie)=>{
@@ -92,18 +93,5 @@ router.delete('/actors/:id', youAdmin, (req, res)=>{
         }
     });
 });
-
-
-function youAdmin(req, res, next){
-    if(req.isAuthenticated()){
-        if(req.user.isAdmin){
-            next()
-        } else {
-            res.redirect('back')
-        }
-    } else {
-        res.redirect('back')
-    }
-}
 
 module.exports = router;

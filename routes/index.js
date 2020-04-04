@@ -5,12 +5,6 @@ const express = require('express'),
     Actor = require('../models/actor'),
     User = require('../models/user');
 
-//SHOW HOMEPAGE
-router.get('/', (req, res) => {
-    res.render('home');
-});
-
-
 function title(name) {
     name = name.trim();
     name = name.replace(/\s\s+/g, ' ');
@@ -24,6 +18,11 @@ function title(name) {
     name = newName.join("");
     return name;
 }
+
+//SHOW HOMEPAGE
+router.get('/', (req, res) => {
+    res.render('home');
+});
 
 //==================================================================================
 //SEARCHING FOR A MOVIE/ACTOR
@@ -158,17 +157,9 @@ router.post('/login', passport.authenticate('local', {
 //LOGOUT ROUTE
 router.get('/logout', (req, res) => {
     req.logOut();
+    req.flash('success', 'Logged you out!');
     res.redirect('/movies');
 });
-
-//FUNCTION TO CHECK IF USER IS LOGGED IN OR NOT[THIS FUNCTION CAN ADDED TO ANY ROUTE]
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/login');
-}
 //=============================================================================
-
 
 module.exports = router;

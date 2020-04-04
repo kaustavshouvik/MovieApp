@@ -23,9 +23,7 @@
             <p class="my-2"><%= movie.plot %></p>
             <a class="btn btn-block btn-dark mb-2" href="/User/AddToWatchList/<%= movie._id %>">Add To Watchlist</a>
             <% if(currentUser.isAdmin){ %>
-                <form action="/movies/<%= movie._id %>?_method=PUT" method="POST">
-                    <button class="btn btn-warning btn-block">Edit Movie</button>
-                </form>
+                <a class="btn btn-warning btn-block" href="/movies/<%= movie._id %>/edit">Edit Movie</a>
                 <form class="mt-2" action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
                     <button class="btn btn-danger btn-block">Delete Movie</button>
                 </form>

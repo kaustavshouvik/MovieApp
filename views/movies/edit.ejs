@@ -1,58 +1,55 @@
 <%- include("../partials/header") %>
 
 <div class="container">
-    <form action="/movies" method="POST" class="my-5 px-5">
+    <form action="/movies/<%= movie._id %>?_method=PUT" method="POST" class="my-5 px-5">
         <div class="form-group">
             <label for="name">Movie Name:</label>
-            <input id="name" type="text" name="name" class="form-control" placeholder="Movie Name">
+            <input id="name" type="text" name="name" class="form-control" value="<%= movie.name %>">
         </div>
         <div class="form-group">
             <label for="poster">Movie Poster:</label>
-            <input id="poster" type="text" name="poster" class="form-control" placeholder="Movie Poster">
+            <input id="poster" type="text" name="poster" class="form-control" value="<%= movie.poster %>">
         </div>
         <div class="form-group">
             <label for="img">Movie Image:</label>
-            <input id="img" type="text" name="image" class="form-control" placeholder="Movie Image">
+            <input id="img" type="text" name="image" class="form-control" value="<%= movie.image %>">
         </div>
         <div class="form-group">
             <label for="genre">Movie Genre:</label>
-            <input id="genre" type="text" name="genres" class="form-control" placeholder="Movie Genre">
+            <input id="genre" type="text" name="genres" class="form-control" value="<%= movie.genres %>">
         </div>
         <div class="form-group">
             <label for="release">Release Date:</label>
-        <input id="release" type="date" name="release" class="form-control" placeholder="Movie Release Date">
+            <input id="release" type="date" name="release" class="form-control" value="<%= new Date(movie.release).toISOString().slice(0,10) %>">
         </div>
         <div class="form-group">
-            <label for="cast">Movie Cast:</label>
-            <input id="cast" type="text" name="cast" class="form-control" placeholder="Movie Cast">
-        </div>
-        <div class="form-group">
-            <label> Movie Plot: <br> <textarea class="mt-2" name="plot" placeholder="Movie Plot" cols="138" rows="4"></textarea>
+            <label> 
+                Movie Plot: <br> <textarea class="mt-2" name="plot" placeholder="Movie Plot" cols="138" rows="4"><%= movie.plot %></textarea>
             </label>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Box Office(Budget)</label>
             <input id="boxoffice1" type="text" name="budget" class="form-control" placeholder="Budget">
         </div>
         <div class="form-group">
             <label for="boxoffice2">Box Office(Profit):</label>
             <input id="boxoffice2" type="text" name="profit" class="form-control" placeholder="Profit">
-        </div>
+        </div> -->
         <div class="form-group">
             <label for="primeLink">Amazon Prime Video Link:</label>
-            <input id="primeLink" type="text" name="link[prime]" class="form-control" placeholder="Amazon Prime Video Link">
+            <input id="primeLink" type="text" name="link[prime]" class="form-control" value="<%= movie.primeLink %>">
         </div>
         <div class="form-group">
             <label for="netflixLink">Netflix Link:</label>
-            <input id="netflixLink" type="text" name="link[netflix]" class="form-control" placeholder="Netflix Link">
+            <input id="netflixLink" type="text" name="link[netflix]" class="form-control" value="<%= movie.netflixLink %>">
         </div>
         <div class="form-group">
             <label for="hotstarLink">Hotstar Link:</label>
-            <input id="hotstarLink" type="text" name="link[hotstar]" class="form-control" placeholder="Hotstar Link">
+            <input id="hotstarLink" type="text" name="link[hotstar]" class="form-control" value="<%= movie.hotstarLink %>">
         </div>
         <div class="form-group">
             <label for="youtubeLink">Youtube Link:</label>
-            <input id="youtubeLink" type="text" name="link[youtube]" class="form-control" placeholder="Youtube Link">
+            <input id="youtubeLink" type="text" name="link[youtube]" class="form-control" value="<%= movie.youtubeLink %>">
         </div>
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
     </form>

@@ -19,10 +19,10 @@ var movieSchema = {
     },
     ratingValue: {type: String, default: 'Unrated'},
     ratingCount: {type: Number, default: 0},
-    primeLink: {type: String},
-    netflixLink: {type: String},
-    hotstarLink: {type: String},
-    youtubeLink: {type: String},
+    primeLink: {type: String, default: ''},
+    netflixLink: {type: String, default: ''},
+    hotstarLink: {type: String, default: ''},
+    youtubeLink: {type: String, default: ''},
     ratings: [
         {
             type: mongoose.Schema.Types.ObjectId,

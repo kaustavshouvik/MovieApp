@@ -40,3 +40,7 @@
     background-color: #990099;
     color: white;
 }
+
+#reviewDeleteForm{
+    display: inline;
+}

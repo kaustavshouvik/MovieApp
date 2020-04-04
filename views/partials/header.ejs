@@ -21,6 +21,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About Us</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/actors">Actors</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Select Movies
@@ -48,3 +51,15 @@
             </ul>
         </div>
     </nav>
+    <div class="container mt-3">
+        <% if(errorMessage && errorMessage.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= errorMessage %>
+            </div>
+        <% } %>
+        <% if(successMessage && successMessage.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= successMessage %>
+            </div>
+        <% }%>
+    </div>

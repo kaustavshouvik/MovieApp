@@ -22,9 +22,11 @@
         <div>
             <img src="<%= actor.image %>" style="width: 300px; height: 100%;">
             <h4>Born: <%= actor.dob.toDateString() %></h4>
-            <form action="/actors/<%= actor._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-danger">Delete Actor</button>
-            </form>
+            <% if(currentUser && currentUser.isAdmin){ %>
+                <form action="/actors/<%= actor._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete Actor</button>
+                </form>
+            <% } %>
         </div>
     </div>
 </div>
