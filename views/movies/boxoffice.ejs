@@ -1,0 +1,34 @@
+<%- include("../partials/header") %>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col col-md-3">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>">ABOUT</a>
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/reviews">REVIEWS</a>
+                <a class="list-group-item list-group-item-action" href="#">FULL-PLOT</a>
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/cast">CAST</a>
+                <a class="list-group-item list-group-item-action active" href="/movies/<%= movie._id %>/boxoffice">BOX OFFICE</a>
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/stream">WHERE TO WATCH</a>
+                <a class="list-group-item list-group-item-action" href="/movies/<%= movie._id %>/more">MORE LIKE THIS</a>
+            </div>
+        </div>
+        <div class="col col-md-9 card p-3">
+            <h3><%= movie.name.toUpperCase() %></h3>
+            <% if(movie.release > Date.now()){ %>
+                <p class="lead">MOVIE NOT RELEASED YET!</p>
+            <% } else { %>
+                <h4>Budget: $<%= movie.boxoffice.budget %> Million</h4>
+                <h4>Box Office Collection: $<%= movie.boxoffice.profit %> Million</h4>
+                <p>Hit Factor: <%= hitFactor %></p>
+                <% if(movie.boxoffice.profit >= 1000){ %>
+                    <div style="background-color: lightgoldenrodyellow;" class="p-3 mb-2">BILLION DOLLAR CLUB</div>
+                <% } else if(movie.boxoffice.profit >= 100 && movie.boxoffice.profit < 1000){ %>
+                    <div style="background-color: gold;" class="p-3 mb-2 text-white"><%= (Math.floor(movie.boxoffice.profit/100) * 100) %> MILLION CLUB</div>
+                <% } %>
+            <% } %>
+        </div>    
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

@@ -3,21 +3,8 @@ const express = require('express'),
     Movie = require('../models/movie'),
     Actor = require('../models/actor'),
     Rating = require('../models/rating'),
-    middleware = require('../middlewares');
-
-function title(name) {
-    name = name.trim();
-    name = name.replace(/\s\s+/g, ' ');
-    newName = name.split("");
-    newName[0] = newName[0].toUpperCase();
-    for (i = 1; i < newName.length; i++) {
-        if (newName[i - 1] === ' ') {
-            newName[i] = newName[i].toUpperCase();
-        }
-    }
-    name = newName.join("");
-    return name;
-}
+    middleware = require('../middlewares'),
+    userFunctions = require('../user_defined_functions/userFunctions');
 
 //SHOW ALL MOVIES
 router.get('/movies', (req, res)=>{
@@ -41,13 +28,13 @@ router.post('/movies', middleware.youAdmin, (req, res)=>{
     releaseDate.setHours(releaseDate.getHours() - 5);
     releaseDate.setMinutes(releaseDate.getMinutes() - 30);
 
-    var genres = title(req.body.genres);    //GENRES SETUP
+    var genres = userFunctions.title(req.body.genres);      //GENRES SETUP
     genres = genres.toLowerCase();
     genres = genres.split(', ');
 
-    var movieTitle = title(req.body.name);
+    var movieTitle = userFunctions.title(req.body.name.toLowerCase());
 
-    var actors = title(req.body.cast);
+    var actors = userFunctions.title(req.body.cast);
     actorsArr = actors.split(', ');
 
     var newMovie = {
@@ -61,19 +48,28 @@ router.post('/movies', middleware.youAdmin, (req, res)=>{
             profit: req.body.profit
         },
         release: releaseDate,
+        primeLink: req.body.link.prime.trim(),
+        netflixLink: req.body.link.netflix.trim(),
+        hotstarLink: req.body.link.hotstar.trim(),
+        youtubeLink: req.body.link.youtube.trim(),
     };
 
     Movie.create(newMovie, (err, createdMovie)=>{
         if(err){
             console.log(err);
+            req.flash('error', 'Something went wrong. Please try again!')
             res.redirect('back');
         } else {
             actorsArr.forEach((actor)=>{
                 Actor.findOne({name: actor}, (err, foundActor)=>{
                     if(!foundActor){
-                        console.log('No Actor Found To Add Movie To');
+                        console.log('Actor not found!');
                     } else {
-                        foundActor.movies.push(createdMovie);
+                        if(newMovie.release > Date.now()){
+                            foundActor.upcomingMovies.push(createdMovie);
+                        } else {
+                            foundActor.movies.push(createdMovie);
+                        }
                         foundActor.save();
                         Movie.findOne({name: movieTitle}, (err, foundMovie)=>{
                             foundMovie.actors.push(foundActor);
@@ -144,6 +140,7 @@ router.post('/movies/:id/rating', middleware.haveYouRated, (req, res) => {
                         } else {
                             console.log(`Old rating: ${savedMovie.ratingValue}, Old count: ${savedMovie.ratingCount}`);
                             ratingMovie(savedMovie._id);
+                            req.flash('success', 'Your review has been successfully added!')
                             res.redirect('/movies/' + foundMovie._id + '/reviews');
                         }
                     });
@@ -184,6 +181,7 @@ router.delete('/movies/:id', middleware.youAdmin, (req, res) => {
                 }
             });
             console.log('Movie deleted');
+            req.flash('success', 'Successfully deleted movie')
             res.redirect('/movies');
         }
     });
@@ -205,16 +203,16 @@ router.get('/movies/:id/edit', middleware.youAdmin, (req, res) => {
 });
 
 router.put('/movies/:id', middleware.youAdmin, (req, res) =>{
-    var genres = title(req.body.genres);    //GENRES SETUP
+    var genres = userFunctions.title(req.body.genres);    //GENRES SETUP
     genres = genres.toLowerCase();
     req.body.genres = genres.split(',');
-
-    Movie.findByIdAndUpdate(req.params.id, {$set: req.body}, (err) => {
+    
+    Movie.findByIdAndUpdate(req.params.id, {$set: req.body}, (err, movie) => {
         if(err) {
             console.log(err);
         } else {
             req.flash('success', 'Movie successfully updated')
-            res.redirect(`/movies/${req.params.id}/`);
+            res.redirect(`/movies/${req.params.id}/`)
         }
     })
 })
@@ -238,7 +236,7 @@ router.get('/movies/:id', middleware.isLoggedIn, (req, res) => {
 router.get('/movies/:id/reviews', middleware.haveYouRated, (req, res) => {
     var text = {path: 'ratings', model: Rating};
     Movie.findById(req.params.id).populate(text).exec((err, found) => {
-        res.render('movies/reviews', {movie: found, isRated: middleware.isRated});
+        res.render('movies/reviews/reviews', {movie: found, isRated: middleware.isRated});
     });
 });
 
@@ -263,7 +261,7 @@ router.get('/movies/:id/reviews/edit', middleware.haveYouRated, (req, res) => {
                 name: found.name
             }
             Rating.findOne({movie: movie, ratedBy: person}, (err, foundRating) => {
-                res.render('movies/reviews/reviewOption', {movie: found, rating: foundRating})
+                res.render('movies/reviews/edit', {movie: found, rating: foundRating})
             })
         }
     });
@@ -276,6 +274,7 @@ router.put('/movies/:id/reviews/edit', middleware.haveYouRated, (req, res) => {
             res.redirect('back');
         } else {
             ratingMovie(req.params.id)
+            req.flash('success', 'You have successfully updated your review!')
             res.redirect('/movies/' + req.params.id + '/reviews');    
         }
     })
@@ -304,10 +303,19 @@ router.delete('/movies/:id/reviews/delete', middleware.haveYouRated, (req, res) 
             Movie.findByIdAndUpdate(foundMovie._id, {$set: {ratings: currentList}}, (err, updated) => {
                 ratingMovie(foundMovie._id)
             })
-            res.redirect('/movies/' + foundMovie._id + '/reviews');
+            req.flash('success', 'Your review has been successfully deleted!')
+            res.redirect(`/movies/${foundMovie._id}/reviews`);
         })
     })
 })
+
+//SHOW DETAILS ABOUT BOX OFFICE COLLECTION OF THAT MOVIE
+router.get('/movies/:id/boxoffice', (req, res) => {
+    Movie.findById(req.params.id, (err, found) => {
+        hitFactor = (found.boxoffice.profit / found.boxoffice.budget).toFixed(2);
+        res.render('movies/boxoffice', {movie: found, hitFactor: hitFactor});
+    })
+});
 
 //SHOW THE CAST OF A MOVIE
 router.get('/movies/:id/cast', middleware.isLoggedIn, (req, res) => {

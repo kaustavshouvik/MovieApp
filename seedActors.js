@@ -1988,6 +1988,42 @@ actorArray = [
         upcomingMovies: [],
         dob: new Date('5 October 2006')
     },
+    {
+        name: 'Jung Yu-mi',
+        image: 'https://asianwiki.com/images/4/44/Jung_Yu-Mi_%281983%29-p01.jpg',
+        bio : 'Jung Yu-mi is a South Korean actress. Jung made her feature film debut in Blossom Again (2005), for which she \
+            received acting recognition. She has since starred in the critically acclaimed films Family Ties (2006), Chaw (2009), \
+            My Dear Desperado (2010), and the box office hits The Crucible (2011), Train to Busan (2016) and Kim Ji-young, Born \
+            1982 (2019). She also frequently appears in films by auteur Hong Sang-soo, notably Oki\'s Movie (2010) and Our Sunhi \
+            (2013). Jung has drawn praise for her unique screen presence and versatility.',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('18 January 1983')
+    },
+    {
+        name: 'Ma Dong-Seok',
+        image: 'https://www.gstatic.com/tv/thumb/persons/642889/642889_v9_ba.jpg',
+        bio : 'Ma Dong-seok (born Lee Dong-seok on March 1, 1971), also known as Don Lee, is a Korean–American actor. With his break \
+            out performance in Train to Busan and subsequent leading roles, Ma has become one of the most popular and bankable actors \
+            in South Korea. Ma rose to fame for his supporting roles in the films The Neighbor, Nameless Gangster: Rules of the Time, \
+            and The Unjust. He then played leading roles in Norigae, Murderer, and One on One. Ma\'s role in the zombie film Train to \
+            Busan propelled him to international popularity. His subsequent leading roles in films Derailed, The Bros, and The \
+            Outlaws have been critical and commercial successes. However later, Ma received criticism for always playing the \
+            same roles. In 2019, he joined the cast of the Marvel Cinematic Universe film The Eternals',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('1 March 1971')
+    },
+    {
+        name: 'Gong Yoo',
+        image: 'https://www.gstatic.com/tv/thumb/persons/583993/583993_v9_ba.jpg',
+        bio : 'Gong Ji-cheol (born July 10, 1979), better known by his stage name Gong Yoo (Korean: 공유), is a South Korean actor. \
+            He is best known for his roles in television dramas Coffee Prince (2007) and Guardian: The Lonely and Great God \
+            (2016–2017), and the films Silenced (2011), Train to Busan (2016) and The Age of Shadows (2016).',
+        movies: [],
+        upcomingMovies: [],
+        dob: new Date('10 July 1979')
+    },
 ];
 
 function seedActors(){

@@ -2,24 +2,11 @@ const express = require('express'),
     router = express.Router(),
     Movie = require('../models/movie'),
     Actor = require('../models/actor'),
-    middleware = require('../middlewares');
+    middleware = require('../middlewares'),
+    userFunctions = require('../user_defined_functions/userFunctions');
 
 //===================================================================================
 //ACTORS ROUTES
-
-function title(name) {
-    name = name.trim();
-    name = name.replace(/\s\s+/g, ' ');
-    newName = name.split("");
-    newName[0] = newName[0].toUpperCase();
-    for (i = 1; i < newName.length; i++) {
-        if (newName[i - 1] === ' ') {
-            newName[i] = newName[i].toUpperCase();
-        }
-    }
-    name = newName.join("");
-    return name;
-}
 
 //SHOW ALL ACTORS
 router.get('/actors', (req, res) => {
@@ -40,7 +27,7 @@ router.get('/actors/new', middleware.youAdmin, (req, res) => {
 //ADD A NEW ACTOR TO DATABASE
 router.post('/actors', middleware.youAdmin, (req, res) => {
     var newActor = {
-        name: title(req.body.name),
+        name: userFunctions.title(req.body.name),
         image: req.body.image,
         dob: req.body.dob,
         bio: req.body.bio,
@@ -61,7 +48,6 @@ router.get('/actors/:id', (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(foundActor.name);
             res.render('actors/show', {actor: foundActor});
         }
     });

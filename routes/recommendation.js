@@ -1,21 +1,8 @@
 const express = require('express'),
     router = express.Router({mergeParams: true}),
-    Movie = require('../models/movie');
+    Movie = require('../models/movie'),
+    userFunctions = require('../user_defined_functions/userFunctions');
 
-
-function title(name) {
-    name = name.trim();
-    name = name.replace(/\s\s+/g, ' ');
-    newName = name.split("");
-    newName[0] = newName[0].toUpperCase();
-    for (i = 1; i < newName.length; i++) {
-        if (newName[i - 1] === ' ') {
-            newName[i] = newName[i].toUpperCase();
-        }
-    }
-    name = newName.join("");
-    return name;
-}
 
 function removeDuplicates(array) {
     return array.filter((a, b) => array.indexOf(a) === b)
@@ -61,7 +48,7 @@ router.get('/recommendation/genres/:genre', (req, res)=>{
     reqGenre = reqGenre.toLowerCase();
 
     Movie.aggregate([{$unwind : '$genres'}, {$match: {genres: {$eq: reqGenre}}}], (err, movies) => {
-        res.render('recommendation/filterSelect', {movies: movies, genre1: title(reqGenre), genres: genres})
+        res.render('recommendation/filterSelect', {movies: movies, genre1: userFunctions.title(reqGenre), genres: genres})
     })
 })
 
@@ -76,7 +63,7 @@ router.post('/recommendation/genreFilter', (req, res) => {
         req.flash('error', 'Please select 1 or more genres')
         res.redirect('/recommendation/genreFilter')
     } else if(typeof req.body.genres == 'string'){
-        res.redirect('/recommendation/genres/' + title(req.body.genres))
+        res.redirect('/recommendation/genres/' + userFunctions.title(req.body.genres))
     } else {
         console.log(req.body.genres)
         var text = [];

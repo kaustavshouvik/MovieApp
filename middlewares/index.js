@@ -31,7 +31,7 @@ middlewareObj.haveYouRated = (req, res, next) => {
     if(req.isAuthenticated()){
         Movie.findById(req.params.id).populate({path: 'ratings', model: Rating}).exec((err, found) => {
             if (err) {
-                // req.flash('error', 'Movie not found');
+                req.flash('error', 'Movie not found');
                 console.log('movie not found');
                 res.redirect('back')
             } else {

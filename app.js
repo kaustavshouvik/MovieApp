@@ -5,7 +5,9 @@ const express           = require('express'),
     LocalStrategy       = require('passport-local'),
     methodOverride      = require('method-override'),
     flash               = require('connect-flash'),
-    User                = require('./models/user');
+    User                = require('./models/user'),
+    Movie               = require('./models/movie'),
+    Actor               = require('./models/actor');
 
 var movieRoutes             = require('./routes/movies'),
     actorRoutes             = require('./routes/actors'),
@@ -13,7 +15,12 @@ var movieRoutes             = require('./routes/movies'),
     recommendationRoutes    = require('./routes/recommendation'),
     indexRoutes             = require('./routes/index');
 
-mongoose.connect('mongodb://localhost/movieappv4', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
+mongoose.connect('mongodb://localhost/movieappv4', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+});
 
 const app = express();
 
@@ -42,6 +49,20 @@ passport.deserializeUser(User.deserializeUser());
 
 //==========================================================
 
+// function upcomingMoviesActorList(){
+//     Movie.find({}).populate({path: 'actors', model: Actor}).exec((err, movies) => {
+//         movies.forEach(movie => {
+//             if(movie.release > Date.now()){
+//                 console.log('yeasss')
+//                 console.log(movie)
+//             }
+//         })
+//     })
+// }
+
+// upcomingMoviesActorList()
+
+//==========================================================
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     res.locals.errorMessage = req.flash('error');

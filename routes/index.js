@@ -3,21 +3,8 @@ const express = require('express'),
     router = express.Router({mergeParams: true}),
     Movie = require('../models/movie'),
     Actor = require('../models/actor'),
-    User = require('../models/user');
-
-function title(name) {
-    name = name.trim();
-    name = name.replace(/\s\s+/g, ' ');
-    newName = name.split("");
-    newName[0] = newName[0].toUpperCase();
-    for (i = 1; i < newName.length; i++) {
-        if (newName[i - 1] === ' ') {
-            newName[i] = newName[i].toUpperCase();
-        }
-    }
-    name = newName.join("");
-    return name;
-}
+    User = require('../models/user'),
+    userFunctions = require('../user_defined_functions/userFunctions');
 
 //SHOW HOMEPAGE
 router.get('/', (req, res) => {
@@ -27,7 +14,7 @@ router.get('/', (req, res) => {
 //==================================================================================
 //SEARCHING FOR A MOVIE/ACTOR
 router.post('/search', (req, res) => {
-    name = title(req.body.search);
+    name = userFunctions.title(req.body.search.toLowerCase());
     Movie.findOne({name: name}, (err, foundMovie) => {
         if (err) {
             console.log(err);
@@ -107,11 +94,6 @@ router.get('/upcoming', (req, res)=>{
     })
 });
 
-
-
-
-
-
 //=============================================================================
 //AUTHENTICATION ROUTES
 
@@ -133,10 +115,12 @@ router.post('/register', (req, res) => {
     User.register(newUser, req.body.password, (err, user) => {
         if (err) {
             console.log(err);
-            return res.redirect('/');
+            req.flash('error', err.message);
+            return res.redirect('/movies');
         }
         //LOGIN THE NEWLY REGISTERED USER
-        passport.authenticate('local')(req, res, function () {
+        passport.authenticate('local')(req, res, () => {
+            req.flash('success', `Welcome to Movie Picker ${user.username}`)
             res.redirect('/movies');
             console.log(user);
         });
@@ -151,7 +135,9 @@ router.get('/login', (req, res) => {
 //LOGGING THE USER IN
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/movies',
-    failureRedirect: '/login'
+    successFlash: `Welcome back`,
+    failureRedirect: '/login',
+    failureFlash: `Something went wrong`
 }), (req, res) => {});
 
 //LOGOUT ROUTE

@@ -4,39 +4,43 @@
     <form action="/movies" method="POST" class="my-5 px-5">
         <div class="form-group">
             <label for="name">Movie Name:</label>
-            <input id="name" type="text" name="name" class="form-control" placeholder="Movie Name">
+            <input id="name" type="text" name="name" class="form-control" placeholder="Movie Name" required>
         </div>
         <div class="form-group">
             <label for="poster">Movie Poster:</label>
-            <input id="poster" type="text" name="poster" class="form-control" placeholder="Movie Poster">
+            <input id="poster" type="text" name="poster" class="form-control" placeholder="Movie Poster" required>
         </div>
         <div class="form-group">
-            <label for="img">Movie Image:</label>
-            <input id="img" type="text" name="image" class="form-control" placeholder="Movie Image">
+            <label for="image">Movie Image:</label>
+            <input id="image" type="text" name="image" class="form-control" placeholder="Movie Image" required>
         </div>
-        <div class="form-group">
-            <label for="genre">Movie Genre:</label>
-            <input id="genre" type="text" name="genres" class="form-control" placeholder="Movie Genre">
-        </div>
-        <div class="form-group">
-            <label for="release">Release Date:</label>
-        <input id="release" type="date" name="release" class="form-control" placeholder="Movie Release Date">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="release">Release Date:</label>
+                <input id="release" type="date" name="release" class="form-control" placeholder="Movie Release Date" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="genre">Movie Genres:</label>
+                <input id="genre" type="text" name="genres" class="form-control" placeholder="Movie Genre" required>
+            </div>
         </div>
         <div class="form-group">
             <label for="cast">Movie Cast:</label>
-            <input id="cast" type="text" name="cast" class="form-control" placeholder="Movie Cast">
+            <input id="cast" type="text" name="cast" class="form-control" placeholder="Movie Cast" required>
         </div>
         <div class="form-group">
-            <label> Movie Plot: <br> <textarea class="mt-2" name="plot" placeholder="Movie Plot" cols="138" rows="4"></textarea>
+            <label> Movie Plot: <br> <textarea class="mt-2 text-justify" name="plot" placeholder="Movie Plot" cols="138" rows="4"></textarea>
             </label>
         </div>
-        <div class="form-group">
-            <label>Box Office(Budget)</label>
-            <input id="boxoffice1" type="text" name="budget" class="form-control" placeholder="Budget">
-        </div>
-        <div class="form-group">
-            <label for="boxoffice2">Box Office(Profit):</label>
-            <input id="boxoffice2" type="text" name="profit" class="form-control" placeholder="Profit">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Box Office Budget In Million[$]:</label>
+                <input id="boxoffice1" type="text" name="budget" class="form-control" placeholder="Budget">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="boxoffice2">Box Office Collection In Million[$]:</label>
+                <input id="boxoffice2" type="text" name="profit" class="form-control" placeholder="Profit">
+            </div>
         </div>
         <div class="form-group">
             <label for="primeLink">Amazon Prime Video Link:</label>

@@ -13,9 +13,9 @@ var movieSchema = {
     ],
     release: {type: Date, required: true},
     plot: {type: String},
-    boxoffice: {
-        budget: {type: String},
-        profit: {type: String}
+    boxoffice: {    //IN MILLIONS[DOLLARS]
+        budget: {type: Number},
+        profit: {type: Number}
     },
     ratingValue: {type: String, default: 'Unrated'},
     ratingCount: {type: Number, default: 0},
