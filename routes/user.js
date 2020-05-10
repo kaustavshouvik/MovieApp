@@ -4,9 +4,6 @@ const express = require('express'),
     Rating = require('../models/rating'),
     User = require('../models/user')
 
-//=========================================================================================================
-//USER ROUTES
-
 //PROFILE PAGE
 router.get('/user/profile/:id', (req, res)=>{
     User.findById(req.params.id).populate({path: 'watchList', model: Movie}).exec((err, foundUser)=>{
@@ -30,13 +27,9 @@ router.get('/user/addtowatchlist/:id', (req, res) => {
     Movie.findById(req.params.id, (err, foundMovie) => {
         if(err) console.log(err);
         else {
-            currentList = req.user.watchList;
-            currentMovie = req.params.id;
-
-            for(i=0; i<currentList.length; i++){
-                if(currentList[i].equals(currentMovie)){
-                    return res.redirect('/movies/' + foundMovie._id)
-                }
+            if(req.user.watchList.includes(req.params.id)){
+                req.flash('error', 'Movie Already Added To Watchlist');
+                return res.redirect(`/movies/${foundMovie._id}`);
             }
 
             req.user.watchList.push(foundMovie)
@@ -58,17 +51,16 @@ router.get('/user/profile/:id/editwatchlist', (req, res) => {
 router.put('/user/profile/:id/editwatchlist', (req, res) => {
     currentList = req.user.watchList;
     if(String(req.body.movie) != 'undefined'){
-        list = req.body.movie
+        let list = req.body.movie;
         if(typeof list == 'string'){
-            list = Array(list)
+            list = Array(list);
         }
         req.user.watchList = currentList.filter((el) => !list.includes(String(el)));
         req.user.save()
     } else {
-        console.log('please select a movie. please')
+        console.log('please select a movie. please');
     }
-    res.redirect('/user/profile/' + req.user._id)
+    res.redirect(`/user/profile/${req.user._id}`);
 })
-//===============================================================================
 
 module.exports = router;

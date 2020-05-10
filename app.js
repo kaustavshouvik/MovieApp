@@ -5,9 +5,7 @@ const express           = require('express'),
     LocalStrategy       = require('passport-local'),
     methodOverride      = require('method-override'),
     flash               = require('connect-flash'),
-    User                = require('./models/user'),
-    Movie               = require('./models/movie'),
-    Actor               = require('./models/actor');
+    User                = require('./models/user');
 
 var movieRoutes             = require('./routes/movies'),
     actorRoutes             = require('./routes/actors'),
@@ -20,6 +18,10 @@ mongoose.connect('mongodb://localhost/movieappv4', {
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true
+}).then(() => {
+    console.log('Connected to MongoDB')
+}).catch(err => {
+    console.log('Error: ' + err.message);
 });
 
 const app = express();
@@ -49,19 +51,6 @@ passport.deserializeUser(User.deserializeUser());
 
 //==========================================================
 
-// function upcomingMoviesActorList(){
-//     Movie.find({}).populate({path: 'actors', model: Actor}).exec((err, movies) => {
-//         movies.forEach(movie => {
-//             if(movie.release > Date.now()){
-//                 console.log('yeasss')
-//                 console.log(movie)
-//             }
-//         })
-//     })
-// }
-
-// upcomingMoviesActorList()
-
 //==========================================================
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
@@ -78,7 +67,7 @@ app.use(userRoutes)
 
 //=============================================================================
 //SERVER SETUP
-app.listen(3000, (req, res) => {
+app.listen(process.env.PORT || 3000, (req, res) => {
     console.log('SERVER STARTED AT PORT 3000!');
 });
 //==============================================================================

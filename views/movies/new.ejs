@@ -4,29 +4,35 @@
     <form action="/movies" method="POST" class="my-5 px-5">
         <div class="form-group">
             <label for="name">Movie Name:</label>
-            <input id="name" type="text" name="name" class="form-control" placeholder="Movie Name" required>
+            <!-- <input id="name" type="text" name="name" class="form-control" placeholder="Movie Name" required> -->
+            <input id="name" type="text" name="name" class="form-control" placeholder="Movie Name" onblur="trimIt(this)">
         </div>
         <div class="form-group">
             <label for="poster">Movie Poster:</label>
-            <input id="poster" type="text" name="poster" class="form-control" placeholder="Movie Poster" required>
+            <!-- <input id="poster" type="text" name="poster" class="form-control" placeholder="Movie Poster" required> -->
+            <input id="poster" type="text" name="poster" class="form-control" placeholder="Movie Poster" onblur="trimIt(this)">
         </div>
         <div class="form-group">
             <label for="image">Movie Image:</label>
-            <input id="image" type="text" name="image" class="form-control" placeholder="Movie Image" required>
+            <!-- <input id="image" type="text" name="image" class="form-control" placeholder="Movie Image" required> -->
+            <input id="image" type="text" name="image" class="form-control" placeholder="Movie Image" onblur="trimIt(this)">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="release">Release Date:</label>
-                <input id="release" type="date" name="release" class="form-control" placeholder="Movie Release Date" required>
+                <!-- <input id="release" type="date" name="release" class="form-control" placeholder="Movie Release Date" required> -->
+                <input id="release" type="date" name="release" class="form-control" placeholder="Movie Release Date">
             </div>
             <div class="form-group col-md-6">
                 <label for="genre">Movie Genres:</label>
-                <input id="genre" type="text" name="genres" class="form-control" placeholder="Movie Genre" required>
+                <!-- <input id="genre" type="text" name="genres" class="form-control" placeholder="Movie Genre" required> -->
+                <input id="genre" type="text" name="genres" class="form-control" placeholder="Movie Genre" onblur="trimIt(this)">
             </div>
         </div>
         <div class="form-group">
             <label for="cast">Movie Cast:</label>
-            <input id="cast" type="text" name="cast" class="form-control" placeholder="Movie Cast" required>
+            <!-- <input id="cast" type="text" name="actors" class="form-control" placeholder="Movie Cast" required> -->
+            <input id="cast" type="text" name="actors" class="form-control" placeholder="Movie Cast" onblur="trimIt(this)">
         </div>
         <div class="form-group">
             <label> Movie Plot: <br> <textarea class="mt-2 text-justify" name="plot" placeholder="Movie Plot" cols="138" rows="4"></textarea>
@@ -35,31 +41,38 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Box Office Budget In Million[$]:</label>
-                <input id="boxoffice1" type="text" name="budget" class="form-control" placeholder="Budget">
+                <input id="boxoffice1" type="text" name="boxoffice[budget]" class="form-control" placeholder="Budget" onblur="trimIt(this)">
             </div>
             <div class="form-group col-md-6">
                 <label for="boxoffice2">Box Office Collection In Million[$]:</label>
-                <input id="boxoffice2" type="text" name="profit" class="form-control" placeholder="Profit">
+                <input id="boxoffice2" type="text" name="boxoffice[profit]" class="form-control" placeholder="Profit" onblur="trimIt(this)">
             </div>
         </div>
         <div class="form-group">
             <label for="primeLink">Amazon Prime Video Link:</label>
-            <input id="primeLink" type="text" name="link[prime]" class="form-control" placeholder="Amazon Prime Video Link">
+            <input id="primeLink" type="text" name="primeLink" class="form-control" placeholder="Amazon Prime Video Link" onblur="trimIt(this)">
         </div>
         <div class="form-group">
             <label for="netflixLink">Netflix Link:</label>
-            <input id="netflixLink" type="text" name="link[netflix]" class="form-control" placeholder="Netflix Link">
+            <input id="netflixLink" type="text" name="netflixLink" class="form-control" placeholder="Netflix Link" onblur="trimIt(this)">
         </div>
         <div class="form-group">
             <label for="hotstarLink">Hotstar Link:</label>
-            <input id="hotstarLink" type="text" name="link[hotstar]" class="form-control" placeholder="Hotstar Link">
+            <input id="hotstarLink" type="text" name="hotstarLink" class="form-control" placeholder="Hotstar Link" onblur="trimIt(this)">
         </div>
         <div class="form-group">
             <label for="youtubeLink">Youtube Link:</label>
-            <input id="youtubeLink" type="text" name="link[youtube]" class="form-control" placeholder="Youtube Link">
+            <input id="youtubeLink" type="text" name="youtubeLink" class="form-control" placeholder="Youtube Link" onblur="trimIt(this)">
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        <button id="submitBtn" type="submit" class="btn btn-primary btn-block">Submit</button>
     </form>
 </div>
+
+<script type="text/javascript">
+    const trimIt = (x) => {
+        x.value = x.value.trim();
+    }
+</script>
+
 
 <%- include("../partials/footer") %>

@@ -48,11 +48,14 @@ router.get('/recommendation', (req, res) => {
 
 //ROUTE TO SHOW THE HIGHEST RATED MOVIES
 router.get('/highest', (req, res) => {
-    Movie.aggregate([{$sort: {ratingValue: -1}}, {$match: {$and: [{ratingValue: {$ne: 'Unrated'}}, {ratingValue: {$ne: '10.0'}}]}}], (err, found) => {
+    Movie.aggregate([{$sort: {ratingValue: -1}}, {$match: {$and: [
+            {ratingValue: {$ne: 'Unrated'}},
+            {ratingValue: {$ne: '10.0'}},
+            {ratingValue: {$ne: 'NaN'}}
+        ]}}], (err, found) => {
+        console.log(found.length);
         if(err) {
             console.log(err);
-        } else if(found.length === 0) {
-            res.render('movies/select', {movies: found});
         } else {
             Movie.find({ratingValue: {$eq: '10.0'}}, (err, movies) => {
                 movies.forEach((movie) => {

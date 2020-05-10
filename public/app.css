@@ -44,3 +44,8 @@
 #reviewDeleteForm{
     display: inline;
 }
+
+i.fa-user{
+    font-size: 1.3em;
+    color: rgb(85, 62, 17);
+}

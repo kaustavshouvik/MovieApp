@@ -5,9 +5,6 @@ const express = require('express'),
     middleware = require('../middlewares'),
     userFunctions = require('../user_defined_functions/userFunctions');
 
-//===================================================================================
-//ACTORS ROUTES
-
 //SHOW ALL ACTORS
 router.get('/actors', (req, res) => {
     Actor.find({}, (err, actors) => {
@@ -23,6 +20,7 @@ router.get('/actors', (req, res) => {
 router.get('/actors/new', middleware.youAdmin, (req, res) => {
     res.render('actors/new');
 });
+
 
 //ADD A NEW ACTOR TO DATABASE
 router.post('/actors', middleware.youAdmin, (req, res) => {
@@ -55,24 +53,22 @@ router.get('/actors/:id', (req, res) => {
 
 //DELETE AN ACTOR FROM THE DATABASE
 router.delete('/actors/:id', middleware.youAdmin, (req, res)=>{
-    Actor.findOne({_id: req.params.id}, (err, foundActor)=>{
+    Actor.findById(req.params.id, (err, foundActor)=>{
         //FOR ALL THE MOVIES THE ACTOR HAS DONE REMOVE THAT ACTOR FROM THE MOVIE'S ACTORS LIST
         foundActor.movies.forEach((movie)=>{
-            Movie.findOne({_id: movie}, (err, foundMovie)=>{
-                for(i=0; i<foundMovie.actors.length; i++){
-                    if(String(foundMovie.actors[i]) == String(foundActor._id)){
-                        break;
-                    }
-                }
+            Movie.findById(movie, (err, foundMovie)=>{
+                if(err) return res.redirect('back');
+                let i = foundMovie.actors.indexOf(foundActor._id);
                 foundMovie.actors.splice(i, 1);
                 foundMovie.save();
             });
         })
     });
 
-    Actor.findByIdAndDelete(req.params.id, (err, deletedActor)=>{
+    Actor.findByIdAndDelete(req.params.id, (err)=>{
         if(err){
             console.log(err);
+            return res.redirect('back');
         } else {
             console.log('Actor deleted');
             res.redirect('/actors');

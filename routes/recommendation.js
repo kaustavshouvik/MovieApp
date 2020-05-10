@@ -3,7 +3,8 @@ const express = require('express'),
     Movie = require('../models/movie'),
     userFunctions = require('../user_defined_functions/userFunctions');
 
-
+//=====================================================================================
+//USER DEFINED FUNCTIONS
 function removeDuplicates(array) {
     return array.filter((a, b) => array.indexOf(a) === b)
 };
@@ -33,6 +34,7 @@ function getRandom(arr, n) {
     }
     return result;
 }
+//=====================================================================================
 
 genres = ['Action', 'Adventure', 'Animated', 'Biography', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy', 'Heist', 'Horror', 'Mystery',
     'Post Apocalyptic', 'Romance', 'Sci-fi', 'Sports', 'Superhero', 'Thriller', 'War', 'Western', 'Zombie']
@@ -79,8 +81,8 @@ router.post('/recommendation/genreFilter', (req, res) => {
 });
 
 router.get('/recommendation/selectMovies', (req, res) => {
-    Movie.find({}, (err, movies) => {
-        if(movies.length > 6) list = getRandom(movies, 6)
+    Movie.find({release: {$lte: new Date()}}, (err, found) => {
+        if(found.length > 6) list = getRandom(found, 6)
         else list = []
         res.render('recommendation/selectMovies', {movies: list})
     })
@@ -120,6 +122,5 @@ router.post('/recommendation/selectMovies', (req, res) => {
     })
 
 })
-//=========================================================================================================
 
 module.exports = router;

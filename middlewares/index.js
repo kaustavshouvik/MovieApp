@@ -27,6 +27,7 @@ middlewareObj.youAdmin = (req, res, next) => {
 
 middlewareObj.ratingId;
 middlewareObj.isRated;
+
 middlewareObj.haveYouRated = (req, res, next) => {
     if(req.isAuthenticated()){
         Movie.findById(req.params.id).populate({path: 'ratings', model: Rating}).exec((err, found) => {
