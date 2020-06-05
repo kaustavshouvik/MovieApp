@@ -51,6 +51,25 @@ router.get('/actors/:id', (req, res) => {
     });
 });
 
+//SHOW FORM TO EDIT AN ACTOR
+router.get('/actors/:id/edit', middleware.youAdmin, (req, res) => {
+    Actor.findById(req.params.id, (err, actor) => {
+        if(err) return res.redirect('back');
+        res.render('actors/edit', {actor: actor});
+    });
+});
+
+//LOGIC TO EDIT THE ACTOR
+router.put('/actors/:id', (req, res) => {
+    Actor.findByIdAndUpdate(req.params.id, {$set: req.body}, (err, updated) => {
+        if(err){
+            req.flash('error', 'Something went wrong.');
+            return res.redirect('back');
+        }
+        res.redirect(`/actors/${req.params.id}`);
+    })
+});
+
 //DELETE AN ACTOR FROM THE DATABASE
 router.delete('/actors/:id', middleware.youAdmin, (req, res)=>{
     Actor.findById(req.params.id, (err, foundActor)=>{

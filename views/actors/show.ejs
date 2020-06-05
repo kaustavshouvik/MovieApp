@@ -23,9 +23,12 @@
             <img src="<%= actor.image %>" style="width: 300px; height: 100%;">
             <h4>Born: <%= actor.dob.toDateString() %></h4>
             <% if(currentUser && currentUser.isAdmin){ %>
-                <form action="/actors/<%= actor._id %>?_method=DELETE" method="POST">
-                    <button class="btn btn-danger">Delete Actor</button>
-                </form>
+                <div class="d-flex justify-content-between">
+                    <form id="deleteActor" action="/actors/<%= actor._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete Actor</button>
+                    </form>
+                    <a class="ml-2 btn btn-warning" href="/actors/<%= actor._id %>/edit">Edit Actor Details</a>
+                </div>
             <% } %>
         </div>
     </div>
